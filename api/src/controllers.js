@@ -1,13 +1,21 @@
-var mongojs = require('mongojs');
+var mysql = require('mysql');
 
 var credentials = require('./../app/credentials'),
-    db = mongojs('mongodb://' + credentials.username + ':' + credentials.password + '@ds025973.mlab.com:25973/views_db', ['users']);
+    db = mysql.createConnection({
+      host: credentials.host,
+      user: credentials.user,
+      password: credentials.password,
+      database: credentials.db
+    });
 
 var users = {
+  name: "users",
+
   getAll: function(req, res, next) {
-    db.users.find(function (err, products) {
-        controllers.header(res);
-        res.end(JSON.stringify(products));
+    db.query("SELECT * FROM " + users.name, function(error, results) {
+      if(error) throw error;
+      controllers.header(res);
+      res.end(JSON.stringify(results));
     });
 
     return next();
