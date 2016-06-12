@@ -1,0 +1,20 @@
+{
+  "name": "gulp",
+  "version": "0.0.1",
+  "devDependencies": {
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-bower": "latest",
+    "gulp-clean": "^0.3.2",
+    "gulp-cssbeautify": "latest",
+    "gulp-csscomb": "latest",
+    "gulp-csso": "latest",
+    "gulp-load-plugins": "latest",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-util": "latest"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
