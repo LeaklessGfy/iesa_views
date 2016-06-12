@@ -19,25 +19,91 @@ var users = {
   ],
 
   getCollection: function(req, res, next) {
-    controllers.init(req, res, 0, 200);
-    db.query("SELECT * FROM " + users.name, controllers.callback);
-
+    controllers.getCollection(users.name, req, res);
     return next();
   },
 
   getItem: function(req, res, next) {
-    controllers.init(req, res, 1, 200);
-    db.query("SELECT * FROM " + users.name + " WHERE id = ? LIMIT 1", [req.params.id], controllers.callback);
-
+    controllers.getItem(users.name, req, res);
     return next();
   },
 
   postItem: function(req, res, next) {
-    controllers.init(req, res, 2, 202);
-    if(controllers.isValid(users.constraints)) {
-      db.query("INSERT INTO " + users.name + " SET ?", req.body, controllers.callback);
-    }
+    controllers.postItem(users.name, req, res, users.constraints);
+    return next();
+  }
+};
 
+var swipes = {
+  name: "swipes",
+  constraints: [
+    {
+      validator: validator.notBlank,
+      fields: ["sender", "receiver"]
+    }
+  ],
+
+  getCollection: function(req, res, next) {
+    controllers.getCollection(swipes.name, req, res);
+    return next();
+  },
+
+  getItem: function(req, res, next) {
+    controllers.getItem(swipes.name, req, res);
+    return next();
+  },
+
+  postItem: function(req, res, next) {
+    controllers.postItem(swipes.name, req, res, swipes.constraints);
+    return next();
+  }
+};
+
+var candidates = {
+  name: "candidates",
+  constraints: [
+    {
+      validator: validator.notBlank,
+      fields: ["user_id", "number", "description"]
+    }, 
+    {
+      validator: validator.mustBeInstance,
+      fileds: [{field: "user_id", instance: "users"}]
+    }
+  ],
+
+  getCollection: function(req, res, next) {
+    controllers.getCollection(candidates.name, req, res);
+    return next();
+  },
+
+  getItem: function(req, res, next) {
+    controllers.getItem(candidates.name, req, res);
+    return next();
+  },
+
+  postItem: function(req, res, next) {
+    controllers.postItem(candidates.name, req, res, candidates.constraints);
+    return next();
+  }
+};
+
+var payments = {
+  name: "payments",
+  constraints: [],
+
+  getCollection: function(req, res, next) {
+    controllers.getCollection(payments.name, req, res);
+    return next();
+  },
+
+  getItem: function(req, res, next) {
+    controllers.getItem(payments.name, req, res);
+    return next();
+  },
+
+  postItem: function(req, res, next) {
+    controllers.postItem(payments.name, req, res, payments.constraints);
     return next();
   }
 };
@@ -47,6 +113,9 @@ var users = {
  */
 var controllers = {
   users: users,
+  swipes: swipes,
+  candidates: candidates,
+  payments: payments,
 
   req: null,
   res: null,
@@ -75,6 +144,23 @@ var controllers = {
     }
 
     return true;
+  },
+
+  getCollection: function(name, req, res) {
+    controllers.init(req, res, 0, 200);
+    db.query("SELECT * FROM " + name, controllers.callback);
+  },
+
+  getItem: function(name, req, res) {
+    controllers.init(req, res, 1, 200);
+    db.query("SELECT * FROM " + name + " WHERE id = ? LIMIT 1", [req.params.id], controllers.callback);
+  },
+
+  postItem: function(name, req, res, constraints) {
+    controllers.init(req, res, 2, 202);
+    if(controllers.isValid(constraints)) {
+      db.query("INSERT INTO " + name + " SET ?", req.body, controllers.callback);
+    }
   },
 
   badRequest: function(msg, fields) {
