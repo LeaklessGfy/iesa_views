@@ -73,6 +73,10 @@ header {
   margin-top: 50px;
 }
 
+header h1 {
+  margin-top: 0;
+}
+
 #logo-area {
   position: relative;
   z-index: 10;
