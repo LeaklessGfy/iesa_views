@@ -151,7 +151,7 @@ input[type='submit'] {
   color: #6e7676;
   border: none;
   border-bottom: 1px solid #a08308;
-  background: none;
+  background: none !important;
 }
 
 .mc-field-group input:focus {
@@ -160,6 +160,42 @@ input[type='submit'] {
 
 .mc-field-group label {
   display: none;
+}
+
+footer {
+  padding: 22px 0;
+  color: #f1f2f2;
+  border-top: 1px solid #6e7676;
+}
+
+.copyright {
+  display: inline-block;
+}
+
+.logo-agency {
+  display: inline-block;
+}
+
+.contact-us {
+  display: inline-block;
+  float: right;
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    text-align: center;
+  }
+
+  .contact-us {
+    display: block;
+    float: none;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .contact-us a {
+    margin: 10px;
+  }
 }
 
 /*# sourceMappingURL=maps/main.css.map */
