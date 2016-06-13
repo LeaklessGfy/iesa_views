@@ -4,10 +4,7 @@ footer {
   color: $secondary-color;
 }
 
-.copyright {
-  display: inline-block;
-}
-
+.copyright,
 .logo-agency {
   display: inline-block;
 }
@@ -15,12 +12,15 @@ footer {
 .contact-us {
   display: inline-block;
   float: right;
+  a {
+    margin-left: 10px;
+  }
 }
 
 @media (max-width: 767px) {
   .copyright {
     text-align: center;
-    
+    display: block;
 }
   .contact-us {
     display: block;

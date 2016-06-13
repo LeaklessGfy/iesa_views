@@ -168,10 +168,7 @@ footer {
   border-top: 1px solid #6e7676;
 }
 
-.copyright {
-  display: inline-block;
-}
-
+.copyright,
 .logo-agency {
   display: inline-block;
 }
@@ -181,8 +178,13 @@ footer {
   float: right;
 }
 
+.contact-us a {
+  margin-left: 10px;
+}
+
 @media (max-width: 767px) {
   .copyright {
+    display: block;
     text-align: center;
   }
 
