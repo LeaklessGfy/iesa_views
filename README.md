@@ -2,16 +2,30 @@
 
 ## API
 
-*A Node.js API to rule them all*
+**An API to rule them all**
+
+Technology:
+- Node.js
+- JSON
 
 ## WWW
 
-*Web version of the project (landing page and front)*
+**Web (landing page and front)**
+
+Technology: 
+- PHP
+- HTML / CSS
+- JS
 
 ## APP
 
-*The application in Cordova*
+**Application (Android and iOS)**
 
-You will find install procedure of these project in their appropriate folder's readme.
+Technology:
+- HTML / CSS
+- JS
+- Cordova
 
-ALL RIGHTS RESERVED TO: Views - IESA (Mathieu Rodrigues, Morgane Delorme & Vincent Rasquier)
+You will find installation procedure of these project in their appropriate folder's readme.
+
+*ALL RIGHTS RESERVED TO: Views - IESA (Mathieu Rodrigues, Morgane Delorme & Vincent Rasquier)*
