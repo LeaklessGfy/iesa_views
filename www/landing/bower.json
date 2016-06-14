@@ -1,0 +1,19 @@
+{
+  "name": "gulp",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "https://github.com/Mateus17/starter_webproject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "font-awesome": "^4.6.1",
+    "bootstrap-sass": "^3.3.6"
+  }
+}
