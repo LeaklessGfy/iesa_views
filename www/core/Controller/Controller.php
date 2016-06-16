@@ -27,6 +27,16 @@ class Controller {
 			exit(var_dump($results));
 		});
 
+		$router->map('GET|POST', '/connexion', function() {
+			if($_SERVER['REQUEST_METHOD'] === 'POST') {
+				$user = $_POST['user'];
+
+				$result = $this->api->post("users", $user);
+			}
+
+			require __DIR__ . '/../../views/login.php';
+		});
+
 		return $router;
 	}
 }
