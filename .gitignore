@@ -1,2 +1,3 @@
 api/app/credentials.json
 api/node_modules/*
+www/vendor/*
