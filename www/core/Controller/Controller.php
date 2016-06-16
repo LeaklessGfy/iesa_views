@@ -2,9 +2,14 @@
 
 namespace Core\Controller;
 
+use Core\Endpoint\ApiCaller;
+
 class Controller {
-	public function __construct() 
+	private $creds;
+
+	public function __construct($api) 
 	{
+		$this->api = $api;
 	}
 
 	public function generate($router)
@@ -15,6 +20,11 @@ class Controller {
 
 		$router->map('GET', '/paul', function() {
 
+		});
+
+		$router->map('GET', '/endpoint', function() {
+			$results = $this->api->get("users");
+			exit(var_dump($results));
 		});
 
 		return $router;

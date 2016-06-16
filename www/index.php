@@ -7,10 +7,12 @@
     require_once __DIR__.'/vendor/autoload.php';
     require_once __DIR__.'/core/autoload.php';
 
-    $controller = new Core\Controller\Controller();
+    $creds = new App\Creds;
+    $api = new Core\Endpoint\ApiCaller($creds);
+    $controller = new Core\Controller\Controller($api);
 
     $router = new AltoRouter();
-    $router->setBasePath('/public/iesa_views/www');
+    $router->setBasePath($creds->getBasePath());
 
     $router = $controller->generate($router);
 
