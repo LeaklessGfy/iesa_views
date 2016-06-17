@@ -1,5 +1,5 @@
 <?php
-    $rankingValue = 1;
+    $rankingValue = 0;
 ?>
 	<!doctype html>
 
@@ -30,7 +30,7 @@
 
 					<div class="btn-group" role="group">
 						<button type="button" class="btn btn-default btn-rank btn-success" data-rank="users">Candidats</button>
-						<button type="button" class="btn btn-default btn-rank" data-rank="scripts">Scénarios</button>
+						<button type="button" class="btn btn-default btn-rank active-nok" data-rank="scripts">Scénarios</button>
 					</div>
 
 					<table class="table">
@@ -42,15 +42,17 @@
 								<th>Vote</th>
 							</tr>
 						</thead>
-						<tbody>
-							<?php foreach ($results as $result) { ?>
+						<!--<tbody>
+
 								<tr>
 									<th><?php echo $rankingValue++ ?></th>
 									<td><img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $result['name'].' '. $result['lastname']; ?>" width="50px" height="auto"></td>
                                     <td><?php echo $result['name'].' '. $result['lastname']; ?></td>
 									<td>N/A</td>
 								</tr>
-							<?php } ?>
+
+						</tbody>-->
+						<tbody>
 						</tbody>
 					</table>
 				</div>
@@ -62,20 +64,36 @@
 		<script>
 			(function($) {
 				$('.btn-rank').on('click', function() {
-					$('.btn-rank').toggleClass('btn-success');
-					//$('.btn-rank').data('btn-success');
-					var data = $(this).data('rank');
+					if ($(this).hasClass('active-nok')) {
+						$('.btn-rank').toggleClass('btn-success');
+						$('.btn-rank').toggleClass('active-nok');
 
-					$.ajax({
-						url: "<?php generateUrl("api/ranking") ?>",
-						data: {data: data},
-						success: function(result) {
-							alert(result);
-						},
-						error: function() {
-							alert("error");
-						}
-					});
+						var data = $(this).data('rank');
+
+						$.ajax({
+							url: "<?php generateUrl("api/ranking") ?>",
+							data: {data: data},
+							success: function(result) {
+
+								var json = JSON.parse(result);
+								var html = "";
+
+								for (var i = 0; i < json.length; i++) {
+									if (data === 'users') {
+										var ligne = "<tr><td>" + (i + 1) + "</td><td><img width='50px' height='auto' src='res/avatar/" + json[i].avatar + "'></td><td>" + json[i].name + " " + json[i].lastname + "</td><td>N/A</td></tr>";
+									} else {
+										var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>N/A</td></tr>";
+									}
+									html += ligne;
+								}
+
+								$('.table tbody').html(html);
+							},
+							error: function() {
+								console.log("error");
+							}
+						});
+					}
 				});
 			})(jQuery);
 		</script>

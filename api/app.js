@@ -12,6 +12,10 @@ server.get('/users', controllers.users.getCollection);
 server.get('/users/:id', controllers.users.getItem);
 server.post('/users', controllers.users.postItem);
 
+server.get('/scripts', controllers.scripts.getCollection);
+server.get('/scripts/:id', controllers.scripts.getItem);
+server.post('/scripts', controllers.scripts.postItem);
+
 server.get('/swipes', controllers.swipes.getCollection);
 server.get('/swipes/:id', controllers.swipes.getItem);
 server.post('/swipes', controllers.swipes.postItem);
