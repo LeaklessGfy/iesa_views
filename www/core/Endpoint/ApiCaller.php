@@ -6,22 +6,28 @@ class ApiCaller {
 	private $base_url;
 	private $port;
 
-	public function __construct($base_url, $port)
+	public function __construct($creds)
 	{
-		$this->base_url = $base_url;
-		$this->port = $port; 
+		$this->baseUrl = $creds->getApiUrl();
+		$this->port = $creds->getApiPort();
 	}
 
 	public function generateUrl($url)
 	{
-		return $this->base_url . ":" . $this->port . "/" . $url;
+		return $this->baseUrl . ":" . $this->port . "/" . $url;
 	}
 
-	public function get($url, $opts)
+	public function get($url, $opts = array())
 	{
 		$url = $this->generateUrl($url);
+
+		try {
+			$results = file_get_contents($url);
+		} catch(Exception $e) {
+			$results = $e;
+		}
 		
-		return file_get_contents($url);
+		return json_decode($results, true);
 	}
 
 	public function post($url, $opts)
