@@ -28,6 +28,12 @@ class Controller {
 			require __DIR__ . '/../../views/ranking.php';
 		});
 
+		$router->map('GET', '/api/ranking', function() {
+			$results = $this->api->get($_GET['data']);
+
+			echo json_encode($results);
+		});
+
 		$router->map('GET|POST', '/connexion', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$user = $_POST['user'];

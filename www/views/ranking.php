@@ -28,6 +28,11 @@
 				<div class="col-xs-12 col-sm-6 col-sm-offset-3">
                     <h1 class="text-center">Classement</h1>
 
+					<div class="btn-group" role="group">
+						<button type="button" class="btn btn-default btn-rank btn-success" data-rank="users">Candidats</button>
+						<button type="button" class="btn btn-default btn-rank" data-rank="scripts">Scénarios</button>
+					</div>
+
 					<table class="table">
 						<thead>
 							<tr>
@@ -45,13 +50,35 @@
                                     <td><?php echo $result['name'].' '. $result['lastname']; ?></td>
 									<td>N/A</td>
 								</tr>
-								<?php } ?>
+							<?php } ?>
 						</tbody>
 					</table>
 				</div>
 			</section>
 		</main>
 
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			(function($) {
+				$('.btn-rank').on('click', function() {
+					$('.btn-rank').toggleClass('btn-success');
+					//$('.btn-rank').data('btn-success');
+					var data = $(this).data('rank');
+
+					$.ajax({
+						url: "<?php generateUrl("api/ranking") ?>",
+						data: {data: data},
+						success: function(result) {
+							alert(result);
+						},
+						error: function() {
+							alert("error");
+						}
+					});
+				});
+			})(jQuery);
+		</script>
 	</body>
 
 	</html>
