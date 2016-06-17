@@ -23,6 +23,8 @@ class Controller {
 		$_SESSION['email'] = $instance['email'];
 		$_SESSION['facebook'] = $instance['id_facebook'];
 		$_SESSION['snapchat'] = $instance['id_snapchat'];
+
+		$_SESSION['token'] = $instance['password'];
 	}
 
 	public function generate($router)
@@ -39,14 +41,14 @@ class Controller {
 
 					if(count($result) > 0) {
 						$this->authentificator($result[0]);
-						return header('Location: ' . generateUrl("")); 
+						return header('Location: ' . getUrl("/")); 
 					}
 				}
 
 				if($_POST["action"] == "register") {
 					$user = $_POST['user'];
 					$result = $this->api->post("users", $user);
-					return header('Location: ' . generateUrl("connexion")); 
+					return header('Location: ' . getUrl("/connexion")); 
 				}
 			}
 
@@ -57,7 +59,8 @@ class Controller {
 			$user = getUser();
 
 			if(!$user) {
-				exit("not");
+				header('Referer: null');
+				return header('Location: ' . getUrl("/connexion"));
 			}
 
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -67,11 +70,16 @@ class Controller {
 				if($result) {
 					$updateUser = $this->api->get('users/' . $user['id']);
 					$this->authentificator($updateUser);
-					return header('Location: ' . generateUrl("profile")); 
+					
+					return header('Location: ' . getUrl("/profile")); 
 				}
 			}
 
 			require __DIR__ . '/../../views/profil.php';
+		});
+
+		$router->map('GET', '/deconnexion', function() {
+			session_destroy();
 		});
 
 		return $router;

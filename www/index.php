@@ -23,6 +23,12 @@
 		echo $creds->getBasePath() . "/" . $url;
 	}
 
+	function getUrl($url)
+	{
+		$creds = new App\Creds;
+		return $creds->getBasePath() . $url;
+	}
+
 	function getUser() 
 	{
 		//Todo: create an object

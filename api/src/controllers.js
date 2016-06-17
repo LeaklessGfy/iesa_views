@@ -48,7 +48,7 @@ var users = {
   },
 
   putItem: function(req, res, next) {
-    controllers.putItem(users.name, req, res);
+    controllers.authentification(users.name, req, res);
     return next();
   }
 };
@@ -143,6 +143,7 @@ var controllers = {
   header: {
     'Content-Type': 'application/json; charset=utf-8'
   },
+  name: null,
 
   init: function(req, res, type, status) {
       controllers.req = req;
@@ -165,6 +166,25 @@ var controllers = {
     return true;
   },
 
+  authentification: function(name, req, res) {
+    controllers.init(req, res, 2, 202);
+    controllers.name = name;
+
+    db.query("SELECT password FROM " + name + " WHERE id = ?", [req.params.id], controllers.checkAuthentification);
+  },
+
+  checkAuthentification: function(error, results) {
+    if(error) {
+      return controllers.handleError(error);
+    }
+
+    if(results[0].password === controllers.req.headers.token) {
+      return controllers.putItem();
+    } else {
+      return controllers.badRequest("Wrong value", "token");  
+    };
+  },
+
   getCollection: function(name, filters, req, res) {
     controllers.init(req, res, 0, 200);
     db.query("SELECT * FROM " + name + filters.where, filters.param, controllers.callback);
@@ -182,9 +202,8 @@ var controllers = {
     }
   },
 
-  putItem: function(name, req, res) {
-    controllers.init(req, res, 2, 202);
-    db.query("UPDATE users SET ? WHERE id = ?", [req.body, req.params.id], controllers.callback);
+  putItem: function() {
+    db.query("UPDATE " + controllers.name + " SET ? WHERE id = ?", [controllers.req.body, controllers.req.params.id], controllers.callback);
   }, 
 
   badRequest: function(msg, fields) {
@@ -233,7 +252,7 @@ var controllers = {
       return controllers.handleError(error);
     }
 
-    controllers.handleReturn(results);
+    return controllers.handleReturn(results);
   }
 };
 

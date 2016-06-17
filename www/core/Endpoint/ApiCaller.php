@@ -67,7 +67,7 @@ class ApiCaller {
 		
 		$options = array(
 			'http' => array(
-				'header' => "Content-type: application/json\r\n",
+				'header' => "Content-type: application/json\r\nToken: " . $_SESSION['token'] . "\r\n",
 				'method' => "PUT",
 				'content' => json_encode($opts)
 			)
