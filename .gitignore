@@ -2,3 +2,4 @@ api/app/credentials.json
 api/node_modules/*
 www/vendor/*
 www/app/credentials.php
+.idea

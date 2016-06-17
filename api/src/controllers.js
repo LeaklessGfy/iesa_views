@@ -78,6 +78,26 @@ var swipes = {
   }
 };
 
+var scripts = {
+  name: "scripts",
+  constraints: [],
+
+  getCollection: function(req, res, next) {
+    controllers.getCollection(scripts.name, req, res);
+    return next();
+  },
+
+  getItem: function(req, res, next) {
+    controllers.getItem(scripts.name, req, res);
+    return next();
+  },
+
+  postItem: function(req, res, next) {
+    controllers.postItem(scripts.name, req, res, scripts.constraints);
+    return next();
+  }
+};
+
 var candidates = {
   name: "candidates",
   constraints: [
@@ -132,6 +152,7 @@ var payments = {
  */
 var controllers = {
   users: users,
+  scripts: scripts,
   swipes: swipes,
   candidates: candidates,
   payments: payments,
