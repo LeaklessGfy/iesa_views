@@ -23,6 +23,11 @@ class Controller {
 			exit(var_dump($results));
 		});
 
+		$router->map('GET', '/ranking', function() {
+			$results = $this->api->get("users");
+			require __DIR__ . '/../../views/ranking.php';
+		});
+
 		$router->map('GET|POST', '/connexion', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$user = $_POST['user'];
