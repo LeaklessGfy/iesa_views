@@ -15,8 +15,14 @@
     $router->setBasePath($creds->getBasePath());
 
     $router = $controller->generate($router);
-
 	$match = $router->match();
+	
+	function generateUrl($url)
+	{
+		$creds = new App\Creds;
+		echo $creds->getBasePath() . "/" . $url;
+	}
+	
 	if($match) {
 		call_user_func_array( $match['target'], $match['params'] );
 	} else {
