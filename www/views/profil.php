@@ -16,32 +16,32 @@
 			<form class="form" method="POST">
 				<div class="form-group">
 					<label for="name">Prénom: </label>
-					<input type="text" class="form-control" id="name" name="user[name]" value="<?php echo $user['name'] ?>">
+					<input type="text" class="form-control" id="name" name="user[name]" value="<?php echo $user->getName() ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="lastname">Nom: </label>
-					<input type="text" class="form-control" id="lastname" name="user[lastname]" value="<?php echo $user['lastname'] ?>">
+					<input type="text" class="form-control" id="lastname" name="user[lastname]" value="<?php echo $user->getLastname() ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="age">Age: </label>
-					<input type="text" class="form-control" id="age" name="user[age]" value="<?php echo $user['age'] ?>">
+					<input type="text" class="form-control" id="age" name="user[age]" value="<?php echo $user->getAge() ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="email">Email: </label>
-					<input type="text" class="form-control" id="email" name="user[email]" value="<?php echo $user['email'] ?>">
+					<input type="text" class="form-control" id="email" name="user[email]" value="<?php echo $user->getEmail() ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="facebook">Facebook: </label>
-					<input type="text" class="form-control" id="facebook" name="user[id_facebook]" value="<?php echo $user['facebook'] ?>">
+					<input type="text" class="form-control" id="facebook" name="user[id_facebook]" value="<?php echo $user->getFacebook() ?>">
 				</div>
 
 				<div class="form-group">
 					<label for="snapchat">Snapchat: </label>
-					<input type="text" class="form-control" id="snapchat" name="user[id_snapchat]" value="<?php echo $user['snapchat'] ?>">
+					<input type="text" class="form-control" id="snapchat" name="user[id_snapchat]" value="<?php echo $user->getSnapchat() ?>">
 				</div>
 
 				<div class="form-group">

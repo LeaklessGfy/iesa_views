@@ -9,46 +9,14 @@
 
     $creds = new App\Creds;
     $api = new Core\Endpoint\ApiCaller($creds);
-    $controller = new Core\Controller\Controller($api);
+    $utils = new Core\Utils\Utils($creds);
+    $controller = new Core\Controller\Controller($api, $utils);
 
     $router = new AltoRouter();
     $router->setBasePath($creds->getBasePath());
 
     $router = $controller->generate($router);
 	$match = $router->match();
-	
-	function generateUrl($url)
-	{
-		$creds = new App\Creds;
-		echo $creds->getBasePath() . "/" . $url;
-	}
-
-	function getUrl($url)
-	{
-		$creds = new App\Creds;
-		return $creds->getBasePath() . $url;
-	}
-
-	function getUser() 
-	{
-		//Todo: create an object
-		$user = array();
-
-		if(!isset($_SESSION['user_id'])) {
-			return false;
-		}
-
-		$user["id"] = $_SESSION['user_id'];
-		$user["login"] = $_SESSION['login'];
-		$user["name"] = $_SESSION['name'];
-		$user["lastname"] = $_SESSION['lastname'];
-		$user["age"] = $_SESSION['age'];
-		$user["facebook"] = $_SESSION['facebook'];
-		$user["snapchat"] = $_SESSION['snapchat'];
-		$user["email"] = $_SESSION['email'];
-
-		return $user; 
-	}
 	
 	if($match) {
 		call_user_func_array( $match['target'], $match['params'] );

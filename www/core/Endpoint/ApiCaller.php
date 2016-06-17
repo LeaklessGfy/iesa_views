@@ -63,11 +63,12 @@ class ApiCaller {
 
 	public function put($url, $opts)
 	{
+		$user = unserialize($_SESSION['user']);
 		$url = $this->generateUrl($url);
 		
 		$options = array(
 			'http' => array(
-				'header' => "Content-type: application/json\r\nToken: " . $_SESSION['token'] . "\r\n",
+				'header' => "Content-type: application/json\r\nToken: " . $user->getPassword() . "\r\n",
 				'method' => "PUT",
 				'content' => json_encode($opts)
 			)
