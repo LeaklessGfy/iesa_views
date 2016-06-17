@@ -6,7 +6,7 @@
 			<li><a href="#">Live Vidéo</a></li>
 			<li><a href="#">Replay</a></li>
 			<li><a href="#">Candidature</a></li>
-			<li><a href="#">Classement</a></li>
+			<li><a href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
 			<li><a href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
 			<li><a href="#">Contact</a></li>
 			<li class="connect"><a href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>

@@ -5,6 +5,8 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="res/css/style.css">
 </head>
 <body class="container">
 	<?php include("header.php"); ?>
