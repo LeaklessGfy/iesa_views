@@ -18,10 +18,6 @@ class Controller {
     		require __DIR__ . '/../../views/home.php';
 		});
 
-		$router->map('GET', '/paul', function() {
-
-		});
-
 		$router->map('GET', '/endpoint', function() {
 			$results = $this->api->get("users");
 			exit(var_dump($results));
@@ -31,7 +27,11 @@ class Controller {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$user = $_POST['user'];
 
-				$result = $this->api->post("users", $user);
+				$result = $this->api->get("users");
+
+				if($result) {
+					$_SESSION['username'] = $user['name'];
+				}
 			}
 
 			require __DIR__ . '/../../views/login.php';
