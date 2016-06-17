@@ -10,7 +10,11 @@ class Controller {
 	public function generate($router)
 	{
 		$router->map('GET', '/', function() {
-    		require __DIR__ . '/../../views/home.php';
+    		require __DIR__ . '/../../views/index.php';
+		});
+		
+		$router->map('GET', '/', function() {
+    		require __DIR__ . '/../../views/connexion.php';
 		});
 
 		$router->map('GET', '/paul', function() {

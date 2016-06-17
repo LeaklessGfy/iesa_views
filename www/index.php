@@ -10,7 +10,7 @@
     $controller = new Core\Controller\Controller();
 
     $router = new AltoRouter();
-    $router->setBasePath('/public/iesa_views/www');
+    $router->setBasePath('/iesa_views/www');
 
     $router = $controller->generate($router);
 
