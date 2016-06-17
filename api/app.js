@@ -11,6 +11,7 @@ var entryPoint = "/api/1/";
 server.get('/users', controllers.users.getCollection);
 server.get('/users/:id', controllers.users.getItem);
 server.post('/users', controllers.users.postItem);
+server.put('/users/:id', controllers.users.putItem);
 
 server.get('/swipes', controllers.swipes.getCollection);
 server.get('/swipes/:id', controllers.swipes.getItem);

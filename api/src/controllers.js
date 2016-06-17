@@ -45,6 +45,11 @@ var users = {
   postItem: function(req, res, next) {
     controllers.postItem(users.name, req, res, users.constraints);
     return next();
+  },
+
+  putItem: function(req, res, next) {
+    controllers.putItem(users.name, req, res);
+    return next();
   }
 };
 
@@ -176,6 +181,11 @@ var controllers = {
       db.query("INSERT INTO " + name + " SET ?", req.body, controllers.callback);
     }
   },
+
+  putItem: function(name, req, res) {
+    controllers.init(req, res, 2, 202);
+    db.query("UPDATE users SET ? WHERE id = ?", [req.body, req.params.id], controllers.callback);
+  }, 
 
   badRequest: function(msg, fields) {
     controllers.res.writeHead(400, controllers.header);

@@ -37,7 +37,7 @@ class ApiCaller {
 			return json_decode($results, true);
 		}
 		
-		return array("error" => true);
+		return false;
 	}
 
 	public function post($url, $opts)
@@ -58,13 +58,28 @@ class ApiCaller {
 			return json_decode($results, true);
 		}
 
-		return array("error" => true);
+		return false;
 	}
 
 	public function put($url, $opts)
 	{
 		$url = $this->generateUrl($url);
-		//Handle put logic
+		
+		$options = array(
+			'http' => array(
+				'header' => "Content-type: application/json\r\n",
+				'method' => "PUT",
+				'content' => json_encode($opts)
+			)
+		);
+
+		$context = stream_context_create($options);
+
+		if($results = file_get_contents($url, false, $context)) {
+			return json_decode($results, true);
+		}
+
+		return false;
 	}
 
 	public function delete($url, $opts)

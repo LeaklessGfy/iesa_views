@@ -13,8 +13,6 @@
 </head>
 
 <body class="container">
-
-
 	<?php include("header.php"); ?>
 
 	<section class="row intro-section">
@@ -30,7 +28,7 @@
 		</div>
 	</section>
 	
-		<div class="row intro-section">
+	<div class="row intro-section">
 		<div class="img col-md-7"><img src="res/img/statue.png"/></div>
 		<div class="col-md-5">
 			<h2>Téléchargez notre application</h2>
@@ -42,7 +40,6 @@
 		</div>
 	</div>
 
-		<?php include("footer.php"); ?>
-
+	<?php include("footer.php"); ?>
 </body>
 </html>
