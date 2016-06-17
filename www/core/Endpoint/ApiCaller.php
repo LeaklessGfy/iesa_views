@@ -12,28 +12,53 @@ class ApiCaller {
 		$this->port = $creds->getApiPort();
 	}
 
-	public function generateUrl($url)
+	public function generateUrl($url, $opts = array())
 	{
-		return $this->baseUrl . ":" . $this->port . "/" . $url;
+		$param = "";
+		$length = count($opts);
+		$i = 1;
+
+		foreach ($opts as $key => $value) {
+			$param = $param . $key . "=" . $value;
+
+			if($i < $length) {
+				$param = $param . "&";
+			}
+		}
+
+		return $this->baseUrl . ":" . $this->port . "/" . $url . "?" . $param;
 	}
 
 	public function get($url, $opts = array())
 	{
-		$url = $this->generateUrl($url);
+		$url = $this->generateUrl($url, $opts);
 
-		try {
-			$results = file_get_contents($url);
-		} catch(Exception $e) {
-			$results = $e;
+		if($results = file_get_contents($url)) {
+			return json_decode($results, true);
 		}
 		
-		return json_decode($results, true);
+		return array("error" => true);
 	}
 
 	public function post($url, $opts)
 	{
 		$url = $this->generateUrl($url);
-		//Handle post logic
+
+		$options = array(
+			'http' => array(
+				'header' => "Content-type: application/json\r\n",
+				'method' => "POST",
+				'content' => json_encode($opts)
+			)
+		);
+
+		$context = stream_context_create($options);
+
+		if($results = file_get_contents($url, false, $context)) {
+			return json_decode($results, true);
+		}
+
+		return array("error" => true);
 	}
 
 	public function put($url, $opts)

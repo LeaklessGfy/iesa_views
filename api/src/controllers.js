@@ -9,17 +9,31 @@ var credentials = require('./../app/credentials'),
     }),
     validator = require('./validator');
 
+var filters = {where: "", param: []};
+
 var users = {
   name: "users",
   constraints: [
     {
       validator: validator.notBlank, 
-      fields: ["name", "lastname", "age", "status"]
+      fields: ["login", "email", "password"]
     }
   ],
 
   getCollection: function(req, res, next) {
-    controllers.getCollection(users.name, req, res);
+    filters = {where: " WHERE users.id = users.id ", param: []};
+
+    if(typeof req.query.login != "undefined") {
+      filters.where = filters.where + " AND users.login = ? "; 
+      filters.param.push(req.query.login);
+    }
+
+    if(typeof req.query.password != "undefined") {
+      filters.where = filters.where + " AND users.password = ?";
+      filters.param.push(req.query.password); 
+    }
+	
+    controllers.getCollection(users.name, filters, req, res);
     return next();
   },
 
@@ -44,7 +58,7 @@ var swipes = {
   ],
 
   getCollection: function(req, res, next) {
-    controllers.getCollection(swipes.name, req, res);
+    controllers.getCollection(swipes.name, filters, req, res);
     return next();
   },
 
@@ -73,7 +87,7 @@ var candidates = {
   ],
 
   getCollection: function(req, res, next) {
-    controllers.getCollection(candidates.name, req, res);
+    controllers.getCollection(candidates.name, filters, req, res);
     return next();
   },
 
@@ -93,7 +107,7 @@ var payments = {
   constraints: [],
 
   getCollection: function(req, res, next) {
-    controllers.getCollection(payments.name, req, res);
+    controllers.getCollection(payments.name, filters, req, res);
     return next();
   },
 
@@ -146,9 +160,9 @@ var controllers = {
     return true;
   },
 
-  getCollection: function(name, req, res) {
+  getCollection: function(name, filters, req, res) {
     controllers.init(req, res, 0, 200);
-    db.query("SELECT * FROM " + name, controllers.callback);
+    db.query("SELECT * FROM " + name + filters.where, filters.param, controllers.callback);
   },
 
   getItem: function(name, req, res) {
