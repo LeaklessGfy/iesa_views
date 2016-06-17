@@ -1,5 +1,5 @@
 <?php
-    $rankingValue = 0;
+    $rankingValue = 1;
 ?>
 	<!doctype html>
 
@@ -34,31 +34,21 @@
 					</div>
 
 					<table class="table">
-						<thead>
-							<tr>
-								<th>Classement</th>
-								<th>Photo profil</th>
-								<th>Nom complet</th>
-								<th>Vote</th>
-							</tr>
-						</thead>
-						<!--<tbody>
-
-								<tr>
-									<th><?php echo $rankingValue++ ?></th>
-									<td><img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $result['name'].' '. $result['lastname']; ?>" width="50px" height="auto"></td>
-                                    <td><?php echo $result['name'].' '. $result['lastname']; ?></td>
-									<td>N/A</td>
-								</tr>
-
-						</tbody>-->
+						<thead><tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th> </tr></thead>
 						<tbody>
+						<?php foreach ($results as $result) { ?>
+							<tr>
+								<th><?php echo $rankingValue++ ?></th>
+								<td><img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $result['name'].' '. $result['lastname']; ?>" width="50px" height="auto"></td>
+								<td><?php echo $result['name'].' '. $result['lastname']; ?></td>
+								<td>N/A</td>
+							</tr>
+						<?php } ?>
 						</tbody>
 					</table>
 				</div>
 			</section>
 		</main>
-
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script>
@@ -75,18 +65,31 @@
 							data: {data: data},
 							success: function(result) {
 
-								var json = JSON.parse(result);
-								var html = "";
+								var json = JSON.parse(result),
+									html = "";
 
-								for (var i = 0; i < json.length; i++) {
-									if (data === 'users') {
+
+								if (data === 'users') {
+									var htmlHead = "<tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th> </tr>";
+
+									for (var i = 0; i < json.length; i++) {
+
 										var ligne = "<tr><td>" + (i + 1) + "</td><td><img width='50px' height='auto' src='res/avatar/" + json[i].avatar + "'></td><td>" + json[i].name + " " + json[i].lastname + "</td><td>N/A</td></tr>";
-									} else {
-										var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>N/A</td></tr>";
+
+										html += ligne;
 									}
-									html += ligne;
+								} else {
+									var htmlHead = "<tr><th>Classement</th><th>Titre scénario</th><th>Description</th><th>Vote</th> </tr>";
+
+									for (var i = 0; i < json.length; i++) {
+
+										var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>N/A</td></tr>";
+
+										html += ligne;
+									}
 								}
 
+								$('.table thead').html(htmlHead);
 								$('.table tbody').html(html);
 							},
 							error: function() {
