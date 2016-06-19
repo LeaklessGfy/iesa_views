@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top">
+<header class="navbar">
     <div class="container">
         <div class="navbar-header">
             <h1><a class="navbar-brand" href="<?php $this->utils->generateUrl("/"); ?>">Fame on</a></h1>
@@ -14,7 +14,7 @@
                 <li><a href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
-                <li><a href="#">Inscription</a></li>
+                <li><a href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
             </ul>
         </nav>
     </div>
