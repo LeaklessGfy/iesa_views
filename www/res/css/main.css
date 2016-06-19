@@ -14,8 +14,8 @@ body {
   font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1;
-  color: #f1f2f2;
-  background: #000;
+  color: #000;
+  background: #f1f2f2;
 }
 
 h1 {
@@ -38,13 +38,13 @@ h1 a:hover {
 h2 {
   font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
   font-size: 1.571rem;
-  color: #f1f2f2;
+  color: #000;
 }
 
 h3 {
   font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
   font-size: 1.429rem;
-  color: #f1f2f2;
+  color: #000;
 }
 
 a {
@@ -64,6 +64,18 @@ a:focus {
     margin-top: 0;
   }
 }*/
+.navbar {
+  margin-top: 1em;
+}
+
+.navbar-header h1 a {
+  font-size: 7.429rem;
+}
+
+.navbar-nav {
+  margin-top: 1.5em;
+}
+
 /*#logo-area {
   background: url('../img/bg-behind-logo.jpg') center center / cover;
   height: 423px;

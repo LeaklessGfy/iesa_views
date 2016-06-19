@@ -6,3 +6,18 @@
     margin-top: 0;
   }
 }*/
+
+.navbar {
+    margin-top: 1em;
+}
+.navbar-header {
+    h1 {
+        a {
+            font-size: $font-size-h1;
+        }
+    }
+}
+
+.navbar-nav {
+    margin-top: 1.5em;
+}
