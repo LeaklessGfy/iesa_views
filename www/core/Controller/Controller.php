@@ -70,7 +70,7 @@ class Controller {
 				}
 			}
 
-			require __DIR__ . '/../../views/profil.php';
+			require __DIR__ . '/../../views/profile.php';
 		});
 
 		$router->map('GET', '/deconnexion', function() {

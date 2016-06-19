@@ -14,8 +14,8 @@ body {
   font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1;
-  color: #000;
-  background: #f1f2f2;
+  color: #f1f2f2;
+  background: #000;
 }
 
 h1 {
@@ -38,13 +38,13 @@ h1 a:hover {
 h2 {
   font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
   font-size: 1.571rem;
-  color: #000;
+  color: #f1f2f2;
 }
 
 h3 {
   font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
   font-size: 1.429rem;
-  color: #000;
+  color: #f1f2f2;
 }
 
 a {
@@ -74,6 +74,17 @@ a:focus {
 
 .navbar-nav {
   margin-top: 1.5em;
+}
+
+.navbar-nav .active a {
+  color: #000;
+  background-color: white;
+}
+
+.navbar-nav .active a:hover,
+.navbar-nav .active a:focus {
+  color: #000;
+  background-color: white;
 }
 
 /*#logo-area {
@@ -117,10 +128,12 @@ a:focus {
     padding-right: 0;
   }
 }*/
-/*footer {
-  border-top: 1px solid darken($secondary-color, 50%);;
+footer {
+  position: absolute;
+  bottom: 0;
   padding: 22px 0;
-  color: $secondary-color;
+  color: #f1f2f2;
+  border-top: 1px solid #6e7676;
 }
 
 .copyright,
@@ -131,25 +144,28 @@ a:focus {
 .contact-us {
   display: inline-block;
   float: right;
-  a {
-    margin-left: 10px;
-  }
+}
+
+.contact-us a {
+  margin-left: 10px;
 }
 
 @media (max-width: 767px) {
   .copyright {
-    text-align: center;
     display: block;
-}
+    text-align: center;
+  }
+
   .contact-us {
     display: block;
-    text-align: center;
     float: none;
     margin: 15px 0;
-    a {
-      margin: 10px;
-    }
+    text-align: center;
   }
-}*/
+
+  .contact-us a {
+    margin: 10px;
+  }
+}
 
 /*# sourceMappingURL=maps/main.css.map */

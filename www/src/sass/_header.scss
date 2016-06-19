@@ -20,4 +20,15 @@
 
 .navbar-nav {
     margin-top: 1.5em;
+    .active {
+        a {
+            background-color: lighten($secondary-color, 70%);
+            color: $tertiary-color;
+            &:hover,
+            &:focus {
+                background-color: lighten($secondary-color, 70%);
+                color: $tertiary-color;
+            }
+        }
+    }
 }

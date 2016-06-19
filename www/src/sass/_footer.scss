@@ -1,7 +1,9 @@
-/*footer {
+footer {
   border-top: 1px solid darken($secondary-color, 50%);;
   padding: 22px 0;
   color: $secondary-color;
+  position:absolute;
+  bottom: 0;
 }
 
 .copyright,
@@ -31,4 +33,4 @@
       margin: 10px;
     }
   }
-}*/
+}

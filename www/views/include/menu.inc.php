@@ -1,3 +1,7 @@
+<?php
+    $page = explode('/', $_SERVER['REQUEST_URI']);
+    $url = $page[count($page)-1];
+?>
 <header class="navbar">
     <div class="container">
         <div class="navbar-header">
@@ -10,11 +14,11 @@
                 <li><a href="#">Live</a></li>
                 <li><a href="#">Replay</a></li>
                 <li><a href="#">Candidature</a></li>
-                <li><a href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
-                <li><a href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
+                <li <?php if($url == 'ranking') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
+                <li <?php if($url == 'profile') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
-                <li><a href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
+                <li <?php if($url == 'connexion') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
+                <li <?php if($url == 'inscription') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
             </ul>
         </nav>
     </div>
