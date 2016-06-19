@@ -72,7 +72,7 @@ $rankingValue = 1;
                 var data = $(this).data('rank');
 
                 $.ajax({
-                  url: "<?php $this->utils->generateUrl(" / api / ranking "); ?>",
+                  url: "<?php $this->utils->generateUrl("/api/ranking"); ?>",
                   data: {
                     data: data
                   },
