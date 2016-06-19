@@ -21,5 +21,5 @@
 	if($match) {
 		call_user_func_array( $match['target'], $match['params'] );
 	} else {
-		header("Location: views/404.php");
+		header("Location: /mvp/views/404.php");
 	}
