@@ -14,19 +14,19 @@
         <?php include("/include/menu.inc.php"); ?>
 
         <div class="row">
-            <div class="img col-md-5">
-                <h2>Inscription</h2>
+            <div class="img col-md-4 col-md-offset-4">
+                <h2 class="text-center">Inscription</h2>
                 <form method="POST">
                     <div class="form-group input-group">
-                        <label class="input-group-addon" id="user-login">Pseudo</label>
+                        <label class="input-group-addon" for="user-login">Pseudo</label>
                         <input type="text" name="user[login]" class="form-control" aria-describedby="basic-addon1" id="user-login">
                     </div>
                     <div class="form-group input-group">
-                        <label class="input-group-addon" id="user-email">Adresse mail</label>
+                        <label class="input-group-addon" for="user-email">Adresse mail</label>
                         <input type="email" name="user[email]" class="form-control" aria-describedby="basic-addon1" id="user-email">
                     </div>
                     <div class="form-group input-group">
-                        <label class="input-group-addon" id="user-password">Mot de passe</label>
+                        <label class="input-group-addon" for="user-password">Mot de passe</label>
                         <input type="password" name="user[password]" class="form-control" aria-describedby="basic-addon1" id="user-password">
                     </div>
                     <input class="btn btn-success" type="submit" value="Valider votre inscription" name="action" />

@@ -1,6 +1,3 @@
-<?php
-?>
-
 <meta charset="UTF-8">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Views IESA">

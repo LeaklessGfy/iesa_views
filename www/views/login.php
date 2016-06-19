@@ -14,17 +14,21 @@
         <?php include("/include/menu.inc.php"); ?>
 
             <div class="row">
-                <div class="col-md-5">
-                    <h2>Connexion</h2>
-                    <form method="POST">
-                        <label>Votre pseudo</label> :
-                        <input type="text" name="user[login]" />
-                        <label>Votre mot de passe</label> :
-                        <input type="text" name="user[password]" />
-                        <input type="submit" value="login" name="action" />
-                    </form>
-                </div>
+            <div class="img col-md-4 col-md-offset-4">
+                <h2 class="text-center">Connexion</h2>
+                <form method="POST">
+                    <div class="form-group input-group">
+                        <label class="input-group-addon" for="user-login">Pseudo</label>
+                        <input type="text" name="user[login]" class="form-control" aria-describedby="basic-addon1" id="user-login">
+                    </div>
+                    <div class="form-group input-group">
+                        <label class="input-group-addon" for="user-password">Mot de passe</label>
+                        <input type="password" name="user[password]" class="form-control" aria-describedby="basic-addon1" id="user-password">
+                    </div>
+                    <input class="btn btn-success" type="submit" value="Valider" name="action" />
+                </form>
             </div>
+        </div>
 
         <?php include("/include/footer.inc.php"); ?>
     </body>

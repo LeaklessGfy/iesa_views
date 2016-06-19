@@ -39,7 +39,7 @@ class Controller {
 				}
 			}
 
-			require __DIR__ . '/../../views/connexion.php';
+			require __DIR__ . '/../../views/login.php';
 		});
 
 		$router->map('GET', '/inscription', function() {
