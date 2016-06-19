@@ -53,7 +53,7 @@ $rankingValue = 1;
                     <td>
                       <?php echo $result['name'].' '. $result['lastname']; ?>
                     </td>
-                    <td>N/A</td>
+                    <td><?php echo $result['hype']; ?></td>
                   </tr>
                   <?php } ?>
               </tbody>
