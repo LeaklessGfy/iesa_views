@@ -1,0 +1,24 @@
+#logo-area {
+  background: url('../img/bg-behind-logo.jpg') center center / cover;
+  height: auto;
+  width: 100%;
+  .logo {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    img {
+    }
+  }
+}
+
+#first-presentation {
+  margin-top: 10%;
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

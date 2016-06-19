@@ -16,6 +16,10 @@ class Controller {
 		$router->map('GET', '/', function() {
     		require __DIR__ . '/../../views/index.php';
 		});
+     
+     	$router->map('GET', '/mentions-legales', function() {
+    		require __DIR__ . '/../../views/legal_notice.php';
+		});
 
 		$router->map('GET', '/ranking', function() {
 			$results = $this->api->get("users");
@@ -39,10 +43,10 @@ class Controller {
 				}
 			}
 
-			require __DIR__ . '/../../views/connexion.php';
+			require __DIR__ . '/../../views/login.php';
 		});
 
-		$router->map('GET', '/inscription', function() {
+		$router->map('GET|POST', '/inscription', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$result = $this->api->post("users", $_POST['user']);
 
@@ -70,7 +74,7 @@ class Controller {
 				}
 			}
 
-			require __DIR__ . '/../../views/profil.php';
+			require __DIR__ . '/../../views/profile.php';
 		});
 
 		$router->map('GET', '/deconnexion', function() {

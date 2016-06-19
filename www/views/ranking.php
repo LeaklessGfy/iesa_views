@@ -1,105 +1,118 @@
 <?php
-    $rankingValue = 1;
+$rankingValue = 1;
 ?>
-	<!doctype html>
+  <!DOCTYPE html>
+  <html lang="fr">
 
-	<html lang="fr">
+  <head>
+    <?php include "include/head.inc.php" ?>
+      <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu - Classement candidats et scénarios</title>
+      <meta name="description" content="">
+      <style>
+        .table > tbody > tr > td,
+        .table > tbody > tr > th {
+          vertical-align: middle;
+          text-align: center;
+        }
+        
+        th {
+          text-align: center;
+        }
+      </style>
+  </head>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Classement candidats</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<style>
-			.table > tbody > tr > td,
-			.table > tbody > tr > th {
-				vertical-align: middle;
-				text-align: center;
-			}
-			th {
-				text-align: center;
-			}
-		</style>
-	</head>
+  <body>
+    <?php include("include/menu.inc.php"); ?>
 
-	<body>
+      <main class="container">
+        <section class="row">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+            <h2 class="text-center">Classement</h2>
 
-		<main class="container">
-			<section class="row">
-				<div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                    <h1 class="text-center">Classement</h1>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-default btn-rank btn-success" data-rank="users">Candidats</button>
+              <button type="button" class="btn btn-default btn-rank active-nok" data-rank="scripts">Scénarios</button>
+            </div>
 
-					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-default btn-rank btn-success" data-rank="users">Candidats</button>
-						<button type="button" class="btn btn-default btn-rank active-nok" data-rank="scripts">Scénarios</button>
-					</div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Classement</th>
+                  <th>Photo profil</th>
+                  <th>Nom complet</th>
+                  <th>Vote</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php foreach ($results as $result) { ?>
+                  <tr>
+                    <th>
+                      <?php echo $rankingValue++ ?>
+                    </th>
+                    <td><img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $result['name'].' '. $result['lastname']; ?>" width="50px" height="auto"></td>
+                    <td>
+                      <?php echo $result['name'].' '. $result['lastname']; ?>
+                    </td>
+                    <td>N/A</td>
+                  </tr>
+                  <?php } ?>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+      <?php include("include/footer.inc.php"); ?>
+        <script>
+          (function ($) {
+            $('.btn-rank').on('click', function () {
+              if ($(this).hasClass('active-nok')) {
+                $('.btn-rank').toggleClass('btn-success');
+                $('.btn-rank').toggleClass('active-nok');
 
-					<table class="table">
-						<thead><tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th> </tr></thead>
-						<tbody>
-						<?php foreach ($results as $result) { ?>
-							<tr>
-								<th><?php echo $rankingValue++ ?></th>
-								<td><img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $result['name'].' '. $result['lastname']; ?>" width="50px" height="auto"></td>
-								<td><?php echo $result['name'].' '. $result['lastname']; ?></td>
-								<td>N/A</td>
-							</tr>
-						<?php } ?>
-						</tbody>
-					</table>
-				</div>
-			</section>
-		</main>
+                var data = $(this).data('rank');
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script>
-			(function($) {
-				$('.btn-rank').on('click', function() {
-					if ($(this).hasClass('active-nok')) {
-						$('.btn-rank').toggleClass('btn-success');
-						$('.btn-rank').toggleClass('active-nok');
+                $.ajax({
+                  url: "<?php $this->utils->generateUrl("/api/ranking"); ?>",
+                  data: {
+                    data: data
+                  },
+                  success: function (result) {
 
-						var data = $(this).data('rank');
+                    var json = JSON.parse(result),
+                      html = "",
+                      htmlHead = "";
 
-						$.ajax({
-							url: "<?php generateUrl("api/ranking") ?>",
-							data: {data: data},
-							success: function(result) {
+                    if (data === 'users') {
+                      htmlHead = "<tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th></tr>";
 
-								var json = JSON.parse(result),
-									html = "";
+                      for (var i = 0; i < json.length; i++) {
 
+                        var ligne = "<tr><td>" + (i + 1) + "</td><td><img width='50px' height='auto' src='res/avatar/" + json[i].avatar + "'></td><td>" + json[i].name + " " + json[i].lastname + "</td><td>N/A</td></tr>";
 
-								if (data === 'users') {
-									var htmlHead = "<tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th> </tr>";
+                        html += ligne;
+                      }
+                    } else {
+                      htmlHead = "<tr><th>Classement</th><th>Titre scénario</th><th>Description</th><th>Vote</th></tr>";
 
-									for (var i = 0; i < json.length; i++) {
+                      for (var i = 0; i < json.length; i++) {
 
-										var ligne = "<tr><td>" + (i + 1) + "</td><td><img width='50px' height='auto' src='res/avatar/" + json[i].avatar + "'></td><td>" + json[i].name + " " + json[i].lastname + "</td><td>N/A</td></tr>";
+                        var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>N/A</td></tr>";
 
-										html += ligne;
-									}
-								} else {
-									var htmlHead = "<tr><th>Classement</th><th>Titre scénario</th><th>Description</th><th>Vote</th> </tr>";
+                        html += ligne;
+                      }
+                    }
 
-									for (var i = 0; i < json.length; i++) {
+                    $('.table thead').html(htmlHead);
+                    $('.table tbody').html(html);
+                  },
+                  error: function () {
+                    console.log("error");
+                  }
+                });
+              }
+            });
+          })(jQuery);
+        </script>
+  </body>
 
-										var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>N/A</td></tr>";
-
-										html += ligne;
-									}
-								}
-
-								$('.table thead').html(htmlHead);
-								$('.table tbody').html(html);
-							},
-							error: function() {
-								console.log("error");
-							}
-						});
-					}
-				});
-			})(jQuery);
-		</script>
-	</body>
-
-	</html>
+  </html>

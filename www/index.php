@@ -21,5 +21,5 @@
 	if($match) {
 		call_user_func_array( $match['target'], $match['params'] );
 	} else {
-		session_destroy();
+		
 	}
