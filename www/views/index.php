@@ -52,6 +52,7 @@
     </main>
 
     <?php include("include/footer.inc.php"); ?>
+    <script src='res/js/mailchimp.js'></script>
 </body>
 
 </html>
