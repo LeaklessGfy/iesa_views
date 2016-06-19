@@ -2,13 +2,13 @@
 <html lang="fr">
 
 <head>
-  <?php include "/include/head.inc.php" ?>
+  <?php include "include/head.inc.php" ?>
     <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu - Mentions légales</title>
     <meta name="description" content="">
 </head>
 
 <body>
-  <?php include("/include/menu.inc.php"); ?>
+  <?php include("include/menu.inc.php"); ?>
     <main class="container">
 
       <h2 class="text-center">Mentions légales</h2>
@@ -104,7 +104,7 @@
       
     </main>
 
-    <?php include("/include/footer.inc.php"); ?>
+    <?php include("include/footer.inc.php"); ?>
 </body>
 
 </html>

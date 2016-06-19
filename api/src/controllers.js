@@ -9,19 +9,17 @@ var credentials = require('./../app/credentials'),
     }),
     validator = require('./validator');
 
-var filters = {where: "", param: []};
-
 var users = {
   name: "users",
   constraints: [
     {
       validator: validator.notBlank, 
-      fields: ["login", "email", "password"]
+      fields: ["username", "email", "password"]
     }
   ],
 
   getCollection: function(req, res, next) {
-    filters = {where: " WHERE users.id = users.id ", param: []};
+    var filters = {where: " WHERE users.id = users.id ", param: []};
 
     if(typeof req.query.login != "undefined") {
       filters.where = filters.where + " AND users.login = ? "; 
@@ -83,7 +81,8 @@ var scripts = {
   constraints: [],
 
   getCollection: function(req, res, next) {
-    controllers.getCollection(scripts.name, req, res);
+    var filters = {where: "", param: []};
+    controllers.getCollection(scripts.name, filters, req, res);
     return next();
   },
 

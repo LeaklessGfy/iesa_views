@@ -5,7 +5,7 @@ $rankingValue = 1;
   <html lang="fr">
 
   <head>
-    <?php include "/include/head.inc.php" ?>
+    <?php include "include/head.inc.php" ?>
       <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu - Classement candidats et scénarios</title>
       <meta name="description" content="">
       <style>
@@ -22,7 +22,7 @@ $rankingValue = 1;
   </head>
 
   <body>
-    <?php include("/include/menu.inc.php"); ?>
+    <?php include("include/menu.inc.php"); ?>
 
       <main class="container">
         <section class="row">
@@ -61,7 +61,7 @@ $rankingValue = 1;
           </div>
         </section>
       </main>
-      <?php include("/include/footer.inc.php"); ?>
+      <?php include("include/footer.inc.php"); ?>
         <script>
           (function ($) {
             $('.btn-rank').on('click', function () {

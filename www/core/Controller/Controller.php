@@ -17,7 +17,7 @@ class Controller {
     		require __DIR__ . '/../../views/index.php';
 		});
      
-     $router->map('GET', '/mentions-legales', function() {
+     	$router->map('GET', '/mentions-legales', function() {
     		require __DIR__ . '/../../views/legal_notice.php';
 		});
 
@@ -46,7 +46,7 @@ class Controller {
 			require __DIR__ . '/../../views/login.php';
 		});
 
-		$router->map('GET', '/inscription', function() {
+		$router->map('GET|POST', '/inscription', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$result = $this->api->post("users", $_POST['user']);
 

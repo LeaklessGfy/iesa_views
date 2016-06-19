@@ -2,13 +2,13 @@
 <html lang="fr">
 
 <head>
-  <?php include "/include/head.inc.php" ?>
+  <?php include "include/head.inc.php" ?>
     <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu - Inscription</title>
     <meta name="description" content="">
 </head>
 
 <body>
-  <?php include("/include/menu.inc.php"); ?>
+  <?php include("include/menu.inc.php"); ?>
 
     <main class="container">
       <div class="row">
@@ -16,8 +16,8 @@
           <h2 class="text-center">Inscription</h2>
           <form method="POST">
             <div class="form-group input-group">
-              <label class="input-group-addon" for="user-login">Pseudo</label>
-              <input type="text" name="user[login]" class="form-control" id="user-login">
+              <label class="input-group-addon" for="user-username">Pseudo</label>
+              <input type="text" name="user[username]" class="form-control" id="user-username">
             </div>
             <div class="form-group input-group">
               <label class="input-group-addon" for="user-email">Adresse mail</label>
@@ -33,7 +33,7 @@
       </div>
     </main>
 
-    <?php include("/include/footer.inc.php"); ?>
+    <?php include("include/footer.inc.php"); ?>
 </body>
 
 </html>
