@@ -8,6 +8,11 @@ body {
   height: 100%;
 }
 
+main {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
 h1 {
   font-size: $font-size-h1;
   font-family: $fonts-logo;
@@ -33,6 +38,10 @@ h3 {
   font-size: $font-size-h3;
   font-family: $fonts-title;
   color: $secondary-color;
+}
+
+p {
+  line-height: 1.25;
 }
 
 a {

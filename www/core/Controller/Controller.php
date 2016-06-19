@@ -16,6 +16,10 @@ class Controller {
 		$router->map('GET', '/', function() {
     		require __DIR__ . '/../../views/index.php';
 		});
+     
+     $router->map('GET', '/mentions-legales', function() {
+    		require __DIR__ . '/../../views/legal_notice.php';
+		});
 
 		$router->map('GET', '/ranking', function() {
 			$results = $this->api->get("users");
