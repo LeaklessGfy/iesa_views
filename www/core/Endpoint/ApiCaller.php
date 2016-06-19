@@ -26,7 +26,7 @@ class ApiCaller {
 			}
 		}
 
-		return $this->baseUrl . ":" . $this->port . "/" . $url . "?" . $param;
+		return $this->baseUrl . $this->port . "/" . $url . "?" . $param;
 	}
 
 	public function get($url, $opts = array())
