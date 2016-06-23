@@ -1,3 +1,17 @@
+<?php
+  $paramYoutube = array ( // player Youtube embed parameters
+    
+    // https://developers.google.com/youtube/player_parameters?hl=fr#autohide
+
+    'showinfo' => '0',
+    'autohide' => '1',
+    'autoplay' => '0',
+    'color' => 'red',
+    'rel' => '0',
+    'controls' => '0',
+
+  );
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -18,7 +32,7 @@
         </div>
         <div class="col-xs-12 col-md-8">
           <div class='embed-container'>
-            <iframe src='http://www.youtube.com/embed/QHAm0Hpikzg' frameborder='0' allowfullscreen></iframe>
+            <iframe src='http://www.youtube.com/embed/qJ_Tw0w3lLA?autohide=<?php print $paramYoutube['autohide'] ?>&autoplay=<?php print $paramYoutube['autoplay'] ?>&color=<?php print $paramYoutube['color'] ?>&showinfo=<?php print $paramYoutube['showinfo'] ?>&rel=<?php print $paramYoutube['rel'] ?>&controls=<?php print $paramYoutube['controls'] ?>' frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
         <div class="col-xs-12 col-md-4">
