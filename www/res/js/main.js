@@ -41,4 +41,3 @@ $(function () {
   });
   var $mcj = jQuery.noConflict(true);
 });
-
