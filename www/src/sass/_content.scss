@@ -1,0 +1,25 @@
+.btn-activities {
+  display: block;
+  padding: 15px 0;
+  border: initial;
+  border-radius: initial;
+  background: none;
+  &:hover,
+  &.btn-success {
+    color: black;
+    background-color: #F1F1F1;
+  }
+  &.active-nok {
+    background-color: none;
+    color: black;
+  }
+}
+
+#vote-activities {
+  .row {
+    &:last-of-type {
+      background: #F1F1F1;
+      padding: 75px 0;
+    }
+  }
+}

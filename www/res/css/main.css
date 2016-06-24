@@ -7,6 +7,30 @@ body {
   margin-bottom: 0;
 }
 
+.btn-activities {
+  display: block;
+  padding: 15px 0;
+  border: initial;
+  border-radius: initial;
+  background: none;
+}
+
+.btn-activities:hover,
+.btn-activities.btn-success {
+  color: black;
+  background-color: #f1f1f1;
+}
+
+.btn-activities.active-nok {
+  color: black;
+  background-color: none;
+}
+
+#vote-activities .row:last-of-type {
+  padding: 75px 0;
+  background: #f1f1f1;
+}
+
 #block-player {
   width: 100%;
   height: 100%;
