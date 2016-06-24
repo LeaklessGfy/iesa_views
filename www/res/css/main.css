@@ -27,7 +27,17 @@ body {
 }
 
 #vote-activities .row:last-of-type {
-  padding: 75px 0;
+  padding: 50px 0;
+  background: #f1f1f1;
+}
+
+#candidates,
+#replay-playlist {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#replay-playlist {
   background: #f1f1f1;
 }
 

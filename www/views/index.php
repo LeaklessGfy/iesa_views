@@ -52,6 +52,8 @@
           <div class="col-xs-12 col-md-10 col-md-offset-1 text-center">
             <h2>Un titre</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
+            <button type="button">pouce en l'air</button>
+            <button type="button">pas content</button>
           </div>
         </div>
       </section>
@@ -59,25 +61,77 @@
       <section id="candidates" class="container-fluid text-center">
         <h1 class="text-center">Candidats</h1>
         <div class="col-xs-10 col-xs-offset-1">
-          <figure class="col-xs-12 col-md-3">
+          <figure class="col-xs-12 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-3">
+          <figure class="col-xs-12 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-3">
+          <figure class="col-xs-12 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-3">
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1">
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
+            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+            <figcaption>Nom candidat</figcaption>
+          </figure>
+          <figure class="col-xs-12 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
           <a class="btn btn-lg btn-primary" title="Page des candidats" href="<?php $this->utils->generateUrl(" /candidats "); ?>">Show more</a>
         </div>
-
+      </section>
+      
+      <section id="replay-playlist" class="container-fluid text-center">
+        <h1>Moments forts</h1>
+        <div class="col-xs-4">
+          <div class="embed-container">
+            <iframe src="https://www.youtube.com/embed/qJ_Tw0w3lLA" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="embed-container">
+            <iframe src="https://www.youtube.com/embed/qJ_Tw0w3lLA" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="embed-container">
+            <iframe src="https://www.youtube.com/embed/qJ_Tw0w3lLA" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
       </section>
 
 
