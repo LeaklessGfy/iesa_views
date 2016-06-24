@@ -8,7 +8,7 @@
     'autoplay' => '0',
     'color' => 'red',
     'rel' => '0',
-    'controls' => '0',
+    'controls' => '1',
 
   );
 ?>

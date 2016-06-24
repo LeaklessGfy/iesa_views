@@ -16,7 +16,7 @@ body {
   line-height: 1;
   height: 100%;
   color: #f1f2f2;
-  background: #595959;
+  background: #000;
 }
 
 main {
@@ -87,13 +87,13 @@ a:focus {
 }
 
 .navbar-nav .active a {
-  color: #595959;
+  color: #000;
   background-color: white;
 }
 
 .navbar-nav .active a:hover,
 .navbar-nav .active a:focus {
-  color: #595959;
+  color: #000;
   background-color: white;
 }
 
@@ -246,8 +246,8 @@ footer {
 #error-404 .bloc-404 a:hover,
 #error-404 .bloc-404 a:focus {
   text-decoration: none;
-  color: #595959;
-  border-color: #595959;
+  color: #000;
+  border-color: #000;
 }
 
 @media (min-width: 768px) {
