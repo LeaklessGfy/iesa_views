@@ -33,8 +33,6 @@ $(function () {
 
   $(window).on('resize', function () {
     resizePlayerBlock();
-  })
-
-  //resizeContent();
+  });
 
 });
