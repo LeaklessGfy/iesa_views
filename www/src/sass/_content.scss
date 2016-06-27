@@ -16,8 +16,43 @@
 }
 
 #vote-activities {
-  background: #F1F1F1;
+  background: #ffffff;
   padding: 50px 0;
+  .slider {
+    .slick-list {
+      .slick-track {
+        background: #F0F0F0;
+        .slick-slide {
+          padding: 30px 0;
+        }
+      }
+      padding-top: 50px;
+    }
+    .slick-dots {
+      padding-left: 0;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      display: block;
+      li {
+        width: 25%;
+        display: inline-block;
+        button {
+          width: 100%;
+          padding: 15px;
+          border: initial;
+          background: none;
+        }
+        &.slick-active,
+        &:hover,
+        &:focus {
+          button {
+            background: #F0F0F0;
+          }
+        }
+      }
+    }
+  }
 }
 
 #candidates,

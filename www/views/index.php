@@ -27,7 +27,7 @@
       <section id="block-player">
         <div id="player-youtube">
           <div class="embed-container">
-            <iframe src='http://www.youtube.com/embed/qJ_Tw0w3lLA?autohide=<?php print $paramYoutube[' autohide '] ?>&autoplay=<?php print $paramYoutube['autoplay '] ?>&color=<?php print $paramYoutube['color '] ?>&showinfo=<?php print $paramYoutube['showinfo '] ?>&rel=<?php print $paramYoutube['rel '] ?>&controls=<?php print $paramYoutube['controls '] ?>' frameborder='0' allowfullscreen></iframe>
+            <iframe src='http://www.youtube.com/embed/qJ_Tw0w3lLA?autohide=<?php print $paramYoutube['autohide'] ?>&autoplay=<?php print $paramYoutube['autoplay'] ?>&color=<?php print $paramYoutube['color'] ?>&showinfo=<?php print $paramYoutube['showinfo'] ?>&rel=<?php print $paramYoutube['rel'] ?>&controls=<?php print $paramYoutube['controls'] ?>' frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
         <aside id="chat">
@@ -37,6 +37,70 @@
 
       <section id="vote-activities" class="container-fluid text-center">
         <h1>Vote pour les activités de la maison</h1>
+        <div class="slider">
+          <!--<div class="row">
+          <button type="button" data-activity="1" class="col-xs-6 col-md-3 btn-activities btn-success">Activité 1</button>
+          <button type="button" data-activity="2" class="col-xs-6 col-md-3 btn-activities active-nok">Activité 2</button>
+          <button type="button" data-activity="3" class="col-xs-6 col-md-3 btn-activities active-nok">Activité 3</button>
+          <button type="button" data-activity="4" class="col-xs-6 col-md-3 btn-activities active-nok">Activité 4</button>
+        </div>-->
+
+          <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3">
+              <figure class="col-xs-12 col-md-2 col-md-offset-5">
+                <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+              </figure>
+            </div>
+            <div class="col-xs-12">
+              <h2>Activité 1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
+              <button type="button">pouce en l'air</button>
+              <button type="button">pas content</button>
+            </div>
+          </div>
+          
+          <div class="row">
+              <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <figure class="col-xs-12 col-md-2 col-md-offset-5">
+                  <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+                </figure>
+              </div>
+              <div class="col-xs-12">
+                <h2>Activité 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
+                <button type="button">pouce en l'air</button>
+                <button type="button">pas content</button>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <figure class="col-xs-12 col-md-2 col-md-offset-5">
+                  <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+                </figure>
+              </div>
+              <div class="col-xs-12">
+                <h2>Activité 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
+                <button type="button">pouce en l'air</button>
+                <button type="button">pas content</button>
+              </div>
+            </div>
+            
+            <div class="row">
+              <div class="col-xs-12 col-md-6 col-md-offset-3">
+                <figure class="col-xs-12 col-md-2 col-md-offset-5">
+                  <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
+                </figure>
+              </div>
+              <div class="col-xs-12">
+                <h2>Activité 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
+                <button type="button">pouce en l'air</button>
+                <button type="button">pas content</button>
+              </div>
+            </div>
+        </div>
       </section>
 
       <section id="candidates" class="container-fluid text-center">
@@ -92,7 +156,7 @@
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <a class="btn btn-lg btn-primary" title="Page des candidats" href="<?php $this->utils->generateUrl(" /candidats "); ?>">Show more</a>
+          <a class="btn btn-lg btn-primary" title="Page des candidats" href="<?php $this->utils->generateUrl("/candidats"); ?>">Show more</a>
         </div>
       </section>
 

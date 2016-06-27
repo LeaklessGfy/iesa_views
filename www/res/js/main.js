@@ -28,7 +28,13 @@ function resizePlayerBlock() {
 
 $(function () {
   'use strict';
-  $('.slider').slick();
+  
+  $(".slider").slick({
+    dots: true,
+    speed: 500,
+    autoplay: true,
+    arrows: false
+  });
   
   selectBtnActivities();
   resizePlayerBlock();
