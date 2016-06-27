@@ -1,10 +1,15 @@
-html,
+html {
+  background: $bg-color;
+  height: 100%;
+}
+
 body {
-  background: $bg-color url('../img/bg.jpg') center center / cover;
+  background: url('../img/bg.png') no-repeat center center / cover;
+  min-height: 100%;
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 35px;
   font-family: "Gotham Bold", $fonts-defaults;
   color: $secondary-color;
   margin-bottom: 0;
@@ -15,28 +20,11 @@ h1 {
   span {
     text-transform: uppercase;
     color: $tertiary-color;
-    font-size: 75px;
+    font-size: 50px;
     top: 9px;
     position: relative;
     text-decoration: underline;
   }
-}
-
-h2 {
-  margin-top: 0;
-  font-size: 22px;
-  font-family: "Montserrat Light", $fonts-defaults;
-  color: $secondary-color;
-  line-height: 1;
-}
-
-h3 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-family: "Montserrat Light", $fonts-defaults;
-  color: $primary-color;
-  line-height: 1;
 }
 
 a {
