@@ -1,21 +1,24 @@
 html,
 body {
-  background: $bg-color;
+  background: $bg-color url('../img/bg.jpg') center center / cover;
 }
 
 h1 {
-  font-size: 102px;
-  font-family: "Guld", $fonts-defaults;
-  color: $primary-color;
+  font-size: 60px;
+  font-family: "Gotham Bold", $fonts-defaults;
+  color: $secondary-color;
   margin-bottom: 0;
   line-height: 1;
-  a {
-    color: inherit;
-    &:focus,
-    &:hover {
-      color: inherit;
-      text-decoration: none;
-    }
+  font-style: italic;
+  transform-origin: center;
+  transform: rotate(-5deg);
+  span {
+    text-transform: uppercase;
+    color: $tertiary-color;
+    font-size: 75px;
+    top: 9px;
+    position: relative;
+    text-decoration: underline;
   }
 }
 
@@ -42,6 +45,11 @@ a {
   &:focus {
     color: $primary-color;
   }
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 p {
