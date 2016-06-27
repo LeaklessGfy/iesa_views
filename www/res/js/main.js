@@ -28,13 +28,13 @@ function resizePlayerBlock() {
 
 $(function () {
   'use strict';
+  $('.slider').slick();
+  
   selectBtnActivities();
   resizePlayerBlock();
 
   $(window).on('resize', function () {
     resizePlayerBlock();
-  })
-
-  //resizeContent();
+  });
 
 });

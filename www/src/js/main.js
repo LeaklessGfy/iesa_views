@@ -28,6 +28,8 @@ function resizePlayerBlock() {
 
 $(function () {
   'use strict';
+  $('.slider').slick();
+  
   selectBtnActivities();
   resizePlayerBlock();
 
