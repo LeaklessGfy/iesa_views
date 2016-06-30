@@ -16,10 +16,6 @@
           <h2 class="text-center">Inscription</h2>
           <form method="POST">
             <div class="form-group input-group">
-              <label class="input-group-addon" for="user-username">Pseudo</label>
-              <input type="text" name="user[username]" class="form-control" id="user-username">
-            </div>
-            <div class="form-group input-group">
               <label class="input-group-addon" for="user-email">Adresse mail</label>
               <input type="email" name="user[email]" class="form-control" id="user-email">
             </div>
