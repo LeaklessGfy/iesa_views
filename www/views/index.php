@@ -34,7 +34,7 @@
           <div class="slider-live-tweet-candidates">
             <div class="row">
               <div class="col-xs-12">
-                <p>abcd</p>
+                <h2>Liste des candidats</h2>
               </div>
             </div>
             <div class="row">
