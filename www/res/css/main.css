@@ -81,6 +81,26 @@ body {
   text-align: center;
 }
 
+.add-border-before:before {
+  position: relative;
+  display: block;
+  width: 61px;
+  height: 3px;
+  margin-bottom: 1em;
+  content: '';
+  background: #2c2c2c;
+}
+
+.add-arrow-after:after {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 24px;
+  margin-top: 1em;
+  content: '';
+  background: url('../img/arrow.png') no-repeat center center;
+}
+
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
@@ -141,7 +161,24 @@ body {
 }
 
 #concept .what-is-it {
-  background: #f5f5f5;
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  height: 585px;
+  padding-top: 9em;
+  color: #999;
+  border-image-source: url('../img/border-background-what-is-it.png');
+  border-image-slice: 40;
+  border-image-width: 36px;
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+}
+
+#concept .what-is-it p {
+  line-height: 2;
+}
+
+#concept video {
+  width: 100%;
+  height: auto;
 }
 
 .btn-activities {

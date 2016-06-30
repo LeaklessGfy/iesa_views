@@ -51,6 +51,32 @@ body {
   }
 }
 
+// Other
+
 .text-center {
   text-align: center;
+}
+
+.add-border-before {
+  &:before {
+    content: '';
+    position: relative;
+    display: block;
+    background: $quaternary-color;
+    margin-bottom: 1em;
+    width: 61px;
+    height: 3px;
+  }
+}
+
+.add-arrow-after {
+  &:after {
+    content: '';
+    position: relative;
+    display: block;
+    background: url('../img/arrow.png') no-repeat center center;
+    margin-top: 1em;
+    width: 16px;
+    height: 24px;
+  }
 }

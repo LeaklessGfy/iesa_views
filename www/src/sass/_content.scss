@@ -9,7 +9,22 @@
     height: 585px;
   }
   .what-is-it {
-    background: $secondary-color-dark;
+    padding-top: 9em;
+    color: $tertiary-color-light;
+    font-family: $montserrat-regular;
+    height: 585px;
+    border-image-source: url("../img/border-background-what-is-it.png");
+    border-image-slice: 40;
+    border-image-width: 36px;
+    border-image-outset: 0;
+    border-image-repeat: stretch;
+    p {
+      line-height: 2;
+    }
+  }
+  video {
+    width: 100%;
+    height: auto;
   }
 }
 
