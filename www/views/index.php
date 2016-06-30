@@ -39,7 +39,8 @@
             </div>
             <div class="row">
               <div class="slide-twitter-timeline col-xs-12">
-                <a class="twitter-timeline" href="https://twitter.com/hashtag/vivatech?f=tweets&vertical=default" data-widget-id="748484102437933057">Tweets sur #vivatech</a>
+                <!--<a class="twitter-timeline" href="https://twitter.com/hashtag/vivatech?f=tweets&vertical=default" data-widget-id="748484102437933057">Tweets sur #vivatech</a>-->
+                <a class="twitter-timeline" href="https://twitter.com/Alize_FameOnTV">Tweets by Alize_FameOnTV</a>
               </div>
             </div>
           </div>
@@ -116,54 +117,54 @@
 
       <section id="candidates" class="container-fluid text-center">
         <h1 class="text-center">Candidats</h1>
-        <div class="col-xs-10 col-xs-offset-1">
-          <figure class="col-xs-12 col-md-2">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
         </div>
-        <div class="col-xs-10 col-xs-offset-1">
-          <figure class="col-xs-12 col-md-2">
+        <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <figure class="col-xs-12 col-md-2">
+          <figure class="col-xs-6 col-sm-4 col-md-2">
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
