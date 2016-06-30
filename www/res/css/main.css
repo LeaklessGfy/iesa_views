@@ -31,19 +31,19 @@ body {
   background: #fff;
 }
 
-#vote-activities .slider .slick-list {
+#vote-activities .slider-activities .slick-list {
   padding-top: 50px;
 }
 
-#vote-activities .slider .slick-list .slick-track {
+#vote-activities .slider-activities .slick-list .slick-track {
   background: #f0f0f0;
 }
 
-#vote-activities .slider .slick-list .slick-track .slick-slide {
+#vote-activities .slider-activities .slick-list .slick-track .slick-slide {
   padding: 30px 0;
 }
 
-#vote-activities .slider .slick-dots {
+#vote-activities .slider-activities .slick-dots {
   position: absolute;
   top: 0;
   display: block;
@@ -51,21 +51,21 @@ body {
   padding-left: 0;
 }
 
-#vote-activities .slider .slick-dots li {
+#vote-activities .slider-activities .slick-dots li {
   display: inline-block;
   width: 25%;
 }
 
-#vote-activities .slider .slick-dots li button {
+#vote-activities .slider-activities .slick-dots li button {
   width: 100%;
   padding: 15px;
   border: initial;
   background: none;
 }
 
-#vote-activities .slider .slick-dots li.slick-active button,
-#vote-activities .slider .slick-dots li:hover button,
-#vote-activities .slider .slick-dots li:focus button {
+#vote-activities .slider-activities .slick-dots li.slick-active button,
+#vote-activities .slider-activities .slick-dots li:hover button,
+#vote-activities .slider-activities .slick-dots li:focus button {
   background: #f0f0f0;
 }
 
@@ -92,21 +92,55 @@ body {
   height: 100%;
 }
 
-#block-player #chat {
+#block-player #aside-player {
   position: relative;
   float: left;
   width: 30%;
   min-height: 100%;
+    /*iframe {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }*/
 }
 
-#block-player #chat iframe {
+#block-player #aside-player .slider-live-tweet-candidates .slick-list {
+  padding-top: 50px;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots {
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  display: block;
   width: 100%;
-  height: 100%;
+  padding-left: 0;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li {
+  display: inline-block;
+  width: 50%;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li button {
+  width: 100%;
+  padding: 15px;
+  border: initial;
+  background: none;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li.slick-active button,
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li:hover button,
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li:focus button {
+  background: yellow;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slide-twitter-timeline iframe {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .embed-container {

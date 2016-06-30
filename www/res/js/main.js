@@ -18,24 +18,49 @@ function selectBtnActivities() {
   });
 }
 
+function liveTweet() {
+  ! function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+      js = d.createElement(s);
+      js.id = id;
+      js.src = p + "://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }
+  }(document, "script", "twitter-wjs");
+}
+
 function resizePlayerBlock() {
   var getHeightPlayer = $('#player-youtube iframe').height(),
-    setHeightPlayerToChat = $('#block-player #chat iframe');
+    setHeightPlayerToAside = $('#block-player #aside-player .slider-live-tweet-candidates'),
+    getHeightAsideWithoutDots = getHeightPlayer - 50;
 
-  $(setHeightPlayerToChat).height(getHeightPlayer);
+  $(setHeightPlayerToAside).height(getHeightPlayer);
   $('#block-player').height(getHeightPlayer);
+  $('#block-player #aside-player .slide-twitter-timeline').height(getHeightAsideWithoutDots);
 }
 
 $(function () {
   'use strict';
-  
-  $(".slider").slick({
+
+  $(".slider-live-tweet-candidates").slick({
+    dots: true,
+    speed: 500,
+    autoplay: false,
+    arrows: false
+  });
+
+  /*  $('.slider-live-tweet')*/
+
+  $(".slider-activities").slick({
     dots: true,
     speed: 500,
     autoplay: true,
     arrows: false
   });
   
+  liveTweet();
   selectBtnActivities();
   resizePlayerBlock();
 
