@@ -1,6 +1,60 @@
+@font-face {
+  font-family: 'Montserrat Regular';
+  src: url('../fonts/montserrat-regular-webfont.woff') format('woff'), url('../fonts/montserrat-regular-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat Bold';
+
+    src: url('../fonts/montserrat-bold-webfont.woff') format('woff'), url('../fonts/montserrat-bold-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans Regular';
+
+    src: url('../fonts/opensans-regular-webfont.woff') format('woff'), url('../fonts/opensans-regular-webfont.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans Bold';
+
+    src: url('../fonts/opensans-bold-webfont.woff') format('woff'), url('../fonts/opensans-bold-webfont.ttf') format('truetype');
+}
+
 html,
 body {
   height: 100%;
+  background: #2c2c2c;
+}
+
+/*********** Buttons ***********/
+.btn {
+  font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
+  font-size: 1.571rem;
+  line-height: 1;
+  padding: 1em 3em;
+  text-transform: uppercase;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 100em;
+}
+
+.btn-default {
+  color: #fff;
+  border-color: #fff;
+  background-color: none;
+}
+
+.btn-white {
+  color: #2c2c2c;
+  border-color: #fff;
+  background-color: #fff;
+}
+
+.btn-gold {
+  color: #fff;
+  border-color: #d1aa03;
+  background-color: #d1aa03;
 }
 
 .navbar {
@@ -171,30 +225,30 @@ body {
 
 #error-404 .bloc-404 {
   padding: 1em;
-  background-color: #a08308;
+  background-color: #d1aa03;
 }
 
 #error-404 .bloc-404 h1 {
-  font-family: 'Montserrat Light', Helvetica, Arial, sans-serif;
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
   font-size: 1rem;
   margin: 0;
   margin-bottom: 1em;
-  color: #f1f2f2;
+  color: #fff;
 }
 
 #error-404 .bloc-404 a {
   font-size: 1rem;
   position: relative;
   padding: .5em;
-  color: #f1f2f2;
-  border: 3px solid #f1f2f2;
+  color: #fff;
+  border: 3px solid #fff;
 }
 
 #error-404 .bloc-404 a:hover,
 #error-404 .bloc-404 a:focus {
   text-decoration: none;
-  color: #000;
-  border-color: #000;
+  color: #999;
+  border-color: #999;
 }
 
 @media (min-width: 768px) {
@@ -210,7 +264,7 @@ body {
   #error-404 .bloc-404 a {
     font-size: 2rem;
     padding: .5em;
-    border: 3px solid #f1f2f2;
+    border: 3px solid #fff;
   }
 }
 

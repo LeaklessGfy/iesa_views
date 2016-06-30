@@ -168,7 +168,7 @@
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <a class="btn btn-lg btn-primary" title="Page des candidats" href="<?php $this->utils->generateUrl(" /candidats "); ?>">Show more</a>
+          <a class="btn btn-default" title="Page des candidats" href="<?php $this->utils->generateUrl(" /candidats "); ?>">Show more</a>
         </div>
       </section>
 

@@ -1,4 +1,36 @@
 html,
 body {
   height: 100%;
+  background: $bg-content-color;
+}
+
+/*********** Buttons ***********/
+
+.btn {
+  padding: 1em 3em;
+  border-style: solid;
+  border-width: 1px;
+  font-family: $montserrat-bold;
+  border-radius: 100em;
+  font-size: $font-size-btn;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.btn-default {
+  border-color: $secondary-color-light;
+  background-color: none;
+  color: $secondary-color-light;
+}
+
+.btn-white {
+  border-color: $secondary-color-light;
+  background-color: $secondary-color-light;
+  color: $quaternary-color;
+}
+
+.btn-gold {
+  border-color: $primary-color;
+  background-color: $primary-color;
+  color: $secondary-color-light;
 }
