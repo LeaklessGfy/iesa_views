@@ -4,6 +4,7 @@ body {
   background: $bg-content-color;
 }
 
+
 /*********** Buttons ***********/
 
 .btn {
@@ -51,8 +52,53 @@ body {
   }
 }
 
-// Other
+.btn-shine {
+  background: linear-gradient(120deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
+  -ms-filter: unquote("progid: DXImageTransform.Microsoft.gradient( startColorstr='#d1aa03', endColorstr='#d1aa03', GradientType=1)");
+  position: relative;
+  box-shadow: 0 0 0 0 transparent;
+  transition: all 0.2s ease-in;
+  border: none;
+  &:hover {
+    color: $secondary-color-light;
+    transition: all 0.2s ease-out;
+  }
+  &:hover:before {
+    animation: shine 0.5s 0s linear;
+  }
+  &:active {
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: $secondary-color-light;
+    box-shadow: 0 0 15px 3px $secondary-color-light;
+    transform: skewX(-20deg);
+  }
+  @keyframes shine {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+}
 
+// Other
 .text-center {
   text-align: center;
 }

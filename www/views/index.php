@@ -7,7 +7,7 @@
     <meta name="description" content="">
 </head>
 
-<body>
+<body class="index-subscribe">
   <?php include("include/menu.inc.php"); ?>
 
     <section id="concept" class="container">
@@ -20,6 +20,12 @@
       </div>
       <div class="row">
         <video controls src="res/videos/concept.mp4">Vidéo motion descriptive du concept de l'émission Fame On.</video>
+      </div>
+    </section>
+    
+    <section class="container text-center add-margin-bottom">
+      <div class="row">
+        <a href="" class="btn btn-gold btn-shine">Participer</a>
       </div>
     </section>
 
