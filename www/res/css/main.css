@@ -33,10 +33,15 @@ body {
   font-size: 1.571rem;
   line-height: 1;
   padding: 1em 3em;
+  cursor: pointer;
   text-transform: uppercase;
   border-width: 1px;
   border-style: solid;
   border-radius: 100em;
+}
+
+.btn:hover {
+  text-decoration: none;
 }
 
 .btn-default {
@@ -45,16 +50,31 @@ body {
   background-color: none;
 }
 
+.btn-default:hover,
+.btn-default:focus {
+  color: #fff;
+}
+
 .btn-white {
   color: #2c2c2c;
   border-color: #fff;
   background-color: #fff;
 }
 
+.btn-white:hover,
+.btn-white:focus {
+  color: #2c2c2c;
+}
+
 .btn-gold {
   color: #fff;
   border-color: #d1aa03;
   background-color: #d1aa03;
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  color: #fff;
 }
 
 .navbar {

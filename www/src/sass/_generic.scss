@@ -15,22 +15,38 @@ body {
   font-size: $font-size-btn;
   line-height: 1;
   text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .btn-default {
   border-color: $secondary-color-light;
   background-color: none;
   color: $secondary-color-light;
+  &:hover,
+  &:focus {
+    color: $secondary-color-light;
+  }
 }
 
 .btn-white {
   border-color: $secondary-color-light;
   background-color: $secondary-color-light;
   color: $quaternary-color;
+  &:hover,
+  &:focus {
+    color: $quaternary-color;
+  }
 }
 
 .btn-gold {
   border-color: $primary-color;
   background-color: $primary-color;
   color: $secondary-color-light;
+  &:hover,
+  &:focus {
+    color: $secondary-color-light;
+  }
 }
