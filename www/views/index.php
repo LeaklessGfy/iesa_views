@@ -25,7 +25,7 @@
     
     <section class="container text-center add-margin-bottom">
       <div class="row">
-        <a href="" class="btn btn-gold btn-shine">Participer</a>
+        <a href="<?php $this->utils->generateUrl("/connexion"); ?>" title="S'enregistrer pour participer à l'émission" class="btn btn-gold btn-shine">Participer</a>
       </div>
     </section>
 

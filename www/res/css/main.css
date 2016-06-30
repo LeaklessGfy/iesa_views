@@ -27,6 +27,17 @@ body {
   background: #fff;
 }
 
+a {
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  color: #d1aa03;
+}
+
+a:hover,
+a:focus {
+  color: #d1aa03;
+}
+
 /*********** Buttons ***********/
 .btn {
   font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
@@ -84,7 +95,7 @@ body {
   border: none;
   background: -webkit-linear-gradient(330deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
   background: linear-gradient(120deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 84px 0 rgba(0, 0, 0, .15);
   -ms-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#d1aa03', endColorstr='#d1aa03', GradientType=1);
 }
 
@@ -102,7 +113,6 @@ body {
 .btn-shine:active {
   -webkit-transition: box-shadow .2s ease-in;
   transition: box-shadow .2s ease-in;
-  box-shadow: 0 0 0 0 transparent;
 }
 
 .btn-shine:before {
@@ -211,8 +221,6 @@ body {
 }
 
 .navbar .navbar-nav li a {
-  -webkit-transition: all .5s;
-  transition: all .5s;
   color: #fff;
   background: none;
 }
@@ -413,6 +421,44 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+footer {
+  padding: 22px 0;
+  color: #2c2c2c;
+  border-top: 1px solid #2c2c2c;
+}
+
+.copyright,
+.logo-agency {
+  display: inline-block;
+}
+
+.contact-us {
+  display: inline-block;
+  float: right;
+}
+
+.contact-us a {
+  margin-left: 10px;
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    display: block;
+    text-align: center;
+  }
+
+  .contact-us {
+    display: block;
+    float: none;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .contact-us a {
+    margin: 10px;
+  }
 }
 
 #error-404 {
