@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width">
 <!-- ************** STYLESHEET ************** -->
 <link rel="stylesheet" href="res/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
 <link rel="stylesheet" href="res/css/main.css">
 <!-- ************ END STYLESHEET ************ -->
 <?php include __DIR__.'/analyticstracking.inc.php' ?>

@@ -6,15 +6,17 @@ input[type="submit"] {
   border-radius: 50px;
   border-style: none;
   margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 #mc_embed_signup {
-  position: relative;
-  top: -80px;
   div.mce_inline_error {
     margin-top: 15px !important;
     background-color: $primary-color !important;
   }
+}
+#mc-embedded-subscribe-form {
+  margin-top: 30px;
 }
 
 .mc-field-group input {
@@ -22,7 +24,7 @@ input[type="submit"] {
   border-bottom: 1px solid $primary-color;
   background: none !important;
   width: 250px;
-  color: darken($secondary-color, 50%);
+  color: $secondary-color;
   font-family: "Montserrat Light", $fonts-defaults;
   padding: .5em 1em;
   &:focus {

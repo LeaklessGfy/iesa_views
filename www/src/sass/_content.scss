@@ -1,24 +1,66 @@
-#logo-area {
-  background: url('../img/bg-behind-logo.jpg') center center / cover;
-  height: auto;
-  width: 100%;
-  .logo {
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    img {
+.btn-activities {
+  display: block;
+  padding: 15px 0;
+  border: initial;
+  border-radius: initial;
+  background: none;
+  &:hover,
+  &.btn-success {
+    color: black;
+    background-color: #F1F1F1;
+  }
+  &.active-nok {
+    background-color: none;
+    color: black;
+  }
+}
+
+#vote-activities {
+  background: #ffffff;
+  padding: 50px 0;
+  .slider {
+    .slick-list {
+      .slick-track {
+        background: #F0F0F0;
+        .slick-slide {
+          padding: 30px 0;
+        }
+      }
+      padding-top: 50px;
+    }
+    .slick-dots {
+      padding-left: 0;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      display: block;
+      li {
+        width: 25%;
+        display: inline-block;
+        button {
+          width: 100%;
+          padding: 15px;
+          border: initial;
+          background: none;
+        }
+        &.slick-active,
+        &:hover,
+        &:focus {
+          button {
+            background: #F0F0F0;
+          }
+        }
+      }
     }
   }
 }
 
-#first-presentation {
-  margin-top: 10%;
+#candidates,
+#replay-playlist {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-@media (max-width: 767px) {
-  .container {
-    padding-left: 0;
-    padding-right: 0;
-  }
+#replay-playlist {
+  background: #F1F1F1;
 }
