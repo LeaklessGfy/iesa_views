@@ -16,8 +16,8 @@
           <h2 class="text-center">Connexion</h2>
           <form method="POST">
             <div class="form-group input-group">
-              <label class="input-group-addon" for="user-username">Pseudo</label>
-              <input type="text" name="user[username]" class="form-control" id="user-username">
+              <label class="input-group-addon" for="user-email">Email</label>
+              <input type="text" name="user[email]" class="form-control" id="user-email">
             </div>
             <div class="form-group input-group">
               <label class="input-group-addon" for="user-password">Mot de passe</label>
