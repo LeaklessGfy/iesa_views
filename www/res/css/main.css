@@ -24,7 +24,7 @@
 html,
 body {
   height: 100%;
-  background: #2c2c2c;
+  background: #fff;
 }
 
 /*********** Buttons ***********/
@@ -52,7 +52,7 @@ body {
 
 .btn-default:hover,
 .btn-default:focus {
-  color: #fff;
+  color: #d1aa03;
 }
 
 .btn-white {
@@ -77,8 +77,71 @@ body {
   color: #fff;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .navbar {
   margin-bottom: 0;
+  border-radius: 0;
+  background: #d1aa03;
+}
+
+.navbar .navbar-brand {
+  height: auto;
+}
+
+.navbar .navbar-nav {
+  height: 96px;
+}
+
+.navbar .navbar-nav li {
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  margin-top: 23px;
+  text-transform: uppercase;
+}
+
+.navbar .navbar-nav li:last-of-type {
+  font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
+  border-left: 1px solid #2c2c2c;
+}
+
+.navbar .navbar-nav li:last-of-type a {
+  padding-right: 56px;
+  background: url('../img/login.png') no-repeat right;
+}
+
+.navbar .navbar-nav li:last-of-type a:hover {
+  background: url('../img/login-hover.png') no-repeat right;
+}
+
+.navbar .navbar-nav li a {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  color: #fff;
+  background: none;
+}
+
+.navbar .navbar-nav li a:hover,
+.navbar .navbar-nav li a:focus {
+  color: #2c2c2c;
+  background: none;
+}
+
+#concept {
+  margin-top: 5em;
+  background: #f5f5f5;
+}
+
+#concept .block-logo {
+  height: 585px;
+  background-image: url('../img/logo-lg.png'), url('../img/background-logo-index.jpg');
+  background-repeat: no-repeat;
+  background-position: center center, center center;
+}
+
+#concept .what-is-it {
+  background: #f5f5f5;
 }
 
 .btn-activities {

@@ -1,3 +1,18 @@
+// Index 1 Concept
+#concept {
+  margin-top: 5em;
+  background: $secondary-color-dark;
+  .block-logo {
+    background-image:  url("../img/logo-lg.png"), url("../img/background-logo-index.jpg");
+    background-position: center center, center center;
+    background-repeat: no-repeat;
+    height: 585px;
+  }
+  .what-is-it {
+    background: $secondary-color-dark;
+  }
+}
+
 .btn-activities {
   display: block;
   padding: 15px 0;

@@ -1,3 +1,37 @@
 .navbar {
   margin-bottom: 0;
+  border-radius: 0;
+  background: $bg-header-color;
+  .navbar-brand {
+    height: auto;
+  }
+  .navbar-nav {
+    height: 96px;
+    li {
+      margin-top: 23px;
+      font-family: $montserrat-regular;
+      text-transform: uppercase;
+      &:last-of-type {
+        border-left: 1px solid $quaternary-color;
+        font-family: $montserrat-bold;
+        a {
+          padding-right: 56px;
+          background: url('../img/login.png') no-repeat right;
+          &:hover {
+            background: url('../img/login-hover.png') no-repeat right;
+          }
+        }
+      }
+      a {
+        transition: all .5s ;
+        background: none;
+        color: $secondary-color-light;
+        &:hover,
+        &:focus {
+          background: none;
+          color: $quaternary-color;
+        }
+      }
+    }
+  }
 }

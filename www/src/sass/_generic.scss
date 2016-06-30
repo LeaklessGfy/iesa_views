@@ -27,7 +27,7 @@ body {
   color: $secondary-color-light;
   &:hover,
   &:focus {
-    color: $secondary-color-light;
+    color: $primary-color;
   }
 }
 
@@ -49,4 +49,8 @@ body {
   &:focus {
     color: $secondary-color-light;
   }
+}
+
+.text-center {
+  text-align: center;
 }
