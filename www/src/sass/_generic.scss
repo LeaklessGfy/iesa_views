@@ -1,7 +1,7 @@
 html,
 body {
   height: 100%;
-  background: $bg-content-color;
+  background: $quaternary-color;
 }
 
 a {
@@ -62,6 +62,51 @@ a {
 }
 
 .btn-shine {
+  border-color: $primary-color;
+  background-color: none;
+  color: $primary-color;
+  position: relative;
+  &:after {
+    content: '';
+    width: 59px;
+    height: 83px;
+    background: url('../img/bling.png') center center / cover;
+    display: inline-block;
+    position: absolute;
+    top: -34px;
+    right: -21px;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: all ease .25s;
+  }
+  &:hover {
+    background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+    background-size: 100% 1000%;
+    animation: Shine .75s linear;
+    color: $secondary-color-light;
+    background-position: 0% -75%;
+    border: none;
+    &:after {
+      opacity: 1;
+      transition: all ease .5s;
+      transform: scale(1) rotate(360deg);
+    }
+  }
+  @keyframes Shine {
+    0% {
+      background-position: 0% 100%
+    }
+    25% {
+      background-position: 0% 0%
+    }
+    50% {
+      background-position: 0% -75%;
+    }
+  }
+}
+
+
+/*.btn-shine {
   background: linear-gradient(120deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
   -ms-filter: unquote("progid: DXImageTransform.Microsoft.gradient( startColorstr='#d1aa03', endColorstr='#d1aa03', GradientType=1)");
   position: relative;
@@ -106,7 +151,7 @@ a {
       left: 100%;
     }
   }
-}
+}*/
 
 // Other
 .text-center {

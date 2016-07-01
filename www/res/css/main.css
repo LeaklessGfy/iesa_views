@@ -24,7 +24,7 @@
 html,
 body {
   height: 100%;
-  background: #fff;
+  background: #2c2c2c;
 }
 
 a {
@@ -90,78 +90,120 @@ a:focus {
 
 .btn-shine {
   position: relative;
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in;
-  border: none;
-  background: -webkit-linear-gradient(330deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
-  background: linear-gradient(120deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
-  box-shadow: 0 0 84px 0 rgba(0, 0, 0, .15);
-  -ms-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#d1aa03', endColorstr='#d1aa03', GradientType=1);
+  color: #d1aa03;
+  border-color: #d1aa03;
+  background-color: none;
+}
+
+.btn-shine:after {
+  position: absolute;
+  top: -34px;
+  right: -21px;
+  display: inline-block;
+  width: 59px;
+  height: 83px;
+  content: '';
+  -webkit-transition: all ease .25s;
+  transition: all ease .25s;
+  -webkit-transform: scale(0) rotate(0deg);
+          transform: scale(0) rotate(0deg);
+  opacity: 0;
+  background: url('../img/bling.png') center center/cover;
 }
 
 .btn-shine:hover {
-  -webkit-transition: all .2s ease-out;
-  transition: all .2s ease-out;
+  -webkit-animation: Shine .75s linear;
+          animation: Shine .75s linear;
   color: #fff;
+  border: none;
+  background: -webkit-linear-gradient(330deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  background-position: 0 -75%;
+  background-size: 100% 1000%;
 }
 
-.btn-shine:hover:before {
-  -webkit-animation: shine .5s 0s linear;
-          animation: shine .5s 0s linear;
+.btn-shine:hover:after {
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+  -webkit-transform: scale(1) rotate(360deg);
+          transform: scale(1) rotate(360deg);
+  opacity: 1;
 }
 
-.btn-shine:active {
-  -webkit-transition: box-shadow .2s ease-in;
-  transition: box-shadow .2s ease-in;
-}
+@-webkit-keyframes Shine {
+  0% {
+    background-position: 0 100%;
+  }
 
-.btn-shine:before {
-  position: absolute;
-  top: 7%;
-  left: 0;
-  display: block;
-  width: 0;
-  height: 86%;
-  content: '';
-  -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg);
-  opacity: 0;
-  background: #fff;
-  box-shadow: 0 0 15px 3px #fff;
-}
-
-@-webkit-keyframes shine {
-  from {
-    left: 0;
-    opacity: 0;
+  25% {
+    background-position: 0 0;
   }
 
   50% {
-    opacity: 1;
-  }
-
-  to {
-    left: 100%;
-    opacity: 0;
+    background-position: 0 -75%;
   }
 }
 
-@keyframes shine {
-  from {
-    left: 0;
-    opacity: 0;
+@keyframes Shine {
+  0% {
+    background-position: 0 100%;
+  }
+
+  25% {
+    background-position: 0 0;
   }
 
   50% {
-    opacity: 1;
-  }
-
-  to {
-    left: 100%;
-    opacity: 0;
+    background-position: 0 -75%;
   }
 }
 
+/*.btn-shine {
+  background: linear-gradient(120deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
+  -ms-filter: unquote("progid: DXImageTransform.Microsoft.gradient( startColorstr='#d1aa03', endColorstr='#d1aa03', GradientType=1)");
+  position: relative;
+  //box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in;
+  border: none;
+  &:hover {
+    color: $secondary-color-light;
+    transition: all 0.2s ease-out;
+  }
+  &:hover:before {
+    animation: shine 0.5s 0s linear;
+  }
+  &:active {
+    //box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: $secondary-color-light;
+    box-shadow: 0 0 15px 3px $secondary-color-light;
+    transform: skewX(-20deg);
+  }
+  @keyframes shine {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+}*/
 .text-center {
   text-align: center;
 }
@@ -473,6 +515,10 @@ a:focus {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+video {
+  background: #2c2c2c;
 }
 
 footer {
