@@ -11,6 +11,15 @@
   <?php include("include/menu.inc.php"); ?>
     <main class="container">
       <div class="row">
+        <div class="col-sm-6">
+          <a href="http://twitter.com/intent/tweet/?url=http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>&text=&via=AntoineBarilt #AntoineBarilt #FabLab">Partager sur Twitter</a>
+          <a onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://<?php echo $_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']; ?>', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');">Partager sur Facebook</a>
+        </div>
+        <div class="col-sm-6">
+          
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-12">
           <form class="form" method="POST">
             <div class="form-group">

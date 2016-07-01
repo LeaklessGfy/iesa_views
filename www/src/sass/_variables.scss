@@ -1,23 +1,39 @@
+// Boostrap Breakpoints
+$screen-sm-min: 768px;
+$screen-md-min: 992px;
+$screen-lg-min: 1200px;
 
 // Colors
+$primary-color: #d1aa03;
+$secondary-color-light: #ffffff;
+$secondary-color-dark: #f5f5f5;
+$tertiary-color-light: #999999;
+$tertiary-color-dark: #777777;
+$quaternary-color: #2c2c2c;
 
-$primary-color: #a08308;
-$secondary-color: #f1f2f2;
-$tertiary-color: #000000;
+$bg-header-color: $primary-color;
+$bg-content-color: $secondary-color-light;
+//$bg-footer-color: $tertiary-color;
 
-$bg-color: $tertiary-color;
+// Fonts Family
+$font-default: Helvetica, Arial, sans-serif;
 
-// Buttons
-$btn-bg-color: $secondary-color;
-$btn-txt-color: $primary-color;
+$montserrat-regular: 'Montserrat Regular', $font-default;
+$montserrat-bold: 'Montserrat Bold', $font-default;
+$opensans-regular: 'Open Sans Regular', $font-default;
+$opensans-bold: 'Open Sans Bold', $font-default;
 
-// Fonts
-$fonts-logo: "Guld", Helvetica, Arial, sans-serif;
-$fonts-title: "Montserrat Light", Helvetica, Arial, sans-serif;
-$fonts-content: "Montserrat Light", Helvetica, Arial, sans-serif;
+$fonts-content: $montserrat-regular;
 
+// Fonts Size
 $font-size: 14px;
 
-$font-size-h1: 7.429rem;
-$font-size-h2: 1.571rem;
-$font-size-h3: 1.429rem;
+$font-size-h1: 7.429rem; // 104px
+$font-size-h2: 1.571rem; // 22px
+$font-size-h3: 1.429rem; // 20px
+
+$font-size-btn: 1.571rem; // 22px
+$font-size-menu: 1.571rem; // 22px
+
+// Background Sprite
+$sprite-img: '../img/sprite.png';

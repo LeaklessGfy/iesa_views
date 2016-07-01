@@ -1,0 +1,34 @@
+footer {
+  border-top: 1px solid $quaternary-color;
+  padding: 22px 0;
+  color: $quaternary-color;
+}
+
+.copyright,
+.logo-agency {
+  display: inline-block;
+}
+
+.contact-us {
+  display: inline-block;
+  float: right;
+  a {
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    text-align: center;
+    display: block;
+}
+  .contact-us {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: 15px 0;
+    a {
+      margin: 10px;
+    }
+  }
+}

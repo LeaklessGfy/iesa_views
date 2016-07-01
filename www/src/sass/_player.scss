@@ -8,12 +8,47 @@
     float: left;
     height: 100%;
   }
-  #chat {
+  #aside-player {
     min-height: 100%;
     width: 30%;
     float: left;
     position: relative;
-    iframe {
+    .slider-live-tweet-candidates {
+      .slick-list {
+        padding-top: 50px;
+      }
+      .slick-dots {
+        padding-left: 0;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        display: block;
+        li {
+          width: 50%;
+          display: inline-block;
+          button {
+            width: 100%;
+            padding: 15px;
+            border: initial;
+            background: none;
+          }
+          &.slick-active,
+          &:hover,
+          &:focus {
+            button {
+              background: yellow;
+            }
+          }
+        }
+      }
+      .slide-twitter-timeline {
+        iframe {
+          height: 100% !important;
+          width: 100% !important;
+        }
+      }
+    }
+    /*iframe {
       position: absolute;
       top: 0;
       bottom: 0;
@@ -21,7 +56,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-    }
+    }*/
   }
 }
 

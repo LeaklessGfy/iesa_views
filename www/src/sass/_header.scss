@@ -1,3 +1,65 @@
 .navbar {
-  margin-bottom: 0;
+  background: $bg-header-color;
+  .navbar-brand {
+    height: auto;
+  }
+  .navbar-collapse {
+    display: none;
+  }
+  .navbar-nav {
+    li {
+      font-family: $montserrat-regular;
+      text-transform: uppercase;
+      &:last-of-type {
+        font-family: $montserrat-bold;
+      }
+      a {
+        background: none;
+        color: $secondary-color-light;
+        &:hover,
+        &:focus,
+        &.active {
+          background: none;
+          color: $quaternary-color;
+        }
+      }
+    }
+  }
+  .navbar-toggle {
+    border-color: $quaternary-color;
+    padding: 14px 10px;
+    border-radius: 100%;
+    position: absolute;
+    margin: 26px 0;
+    right: 15px;
+    .icon-bar {
+      background: $quaternary-color;
+    }
+  }
+}
+
+@media (min-width: $screen-sm-min) {
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    .navbar-collapse {
+      display: block;
+    }
+    .navbar-nav {
+      height: 96px;
+      li {
+        margin-top: 23px;
+        &:last-of-type {
+          border-left: 1px solid $quaternary-color;
+          a {
+            padding-right: 56px;
+            background: url('../img/login.png') no-repeat right;
+            &:hover {
+              background: url('../img/login-hover.png') no-repeat right;
+            }
+          }
+        }
+      }
+    }
+  }
 }

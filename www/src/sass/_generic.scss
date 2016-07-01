@@ -1,4 +1,183 @@
 html,
 body {
   height: 100%;
+  background: $quaternary-color;
+}
+
+a {
+  color: $primary-color;
+  transition: all .2s ease-in;
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+
+/*********** Buttons ***********/
+
+.btn {
+  padding: 1em 3em;
+  border-style: solid;
+  border-width: 1px;
+  font-family: $montserrat-bold;
+  border-radius: 100em;
+  font-size: $font-size-btn;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.btn-default {
+  border-color: $secondary-color-light;
+  background-color: none;
+  color: $secondary-color-light;
+  &:hover,
+  &:focus {
+    color: $primary-color;
+  }
+}
+
+.btn-white {
+  border-color: $secondary-color-light;
+  background-color: $secondary-color-light;
+  color: $quaternary-color;
+  &:hover,
+  &:focus {
+    color: $quaternary-color;
+  }
+}
+
+.btn-gold {
+  border-color: $primary-color;
+  background-color: $primary-color;
+  color: $secondary-color-light;
+  &:hover,
+  &:focus {
+    color: $secondary-color-light;
+  }
+}
+
+.btn-shine {
+  border-color: $primary-color;
+  background-color: none;
+  color: $primary-color;
+  position: relative;
+  &:after {
+    content: '';
+    width: 59px;
+    height: 83px;
+    background: url('../img/bling.png') center center / cover;
+    display: inline-block;
+    position: absolute;
+    top: -34px;
+    right: -21px;
+    opacity: 0;
+    transform: scale(0) rotate(0deg);
+    transition: all ease .25s;
+  }
+  &:hover {
+    background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+    background-size: 100% 1000%;
+    animation: Shine .75s linear;
+    color: $secondary-color-light;
+    background-position: 0% -75%;
+    border: none;
+    &:after {
+      opacity: 1;
+      transition: all ease .5s;
+      transform: scale(1) rotate(360deg);
+    }
+  }
+  @keyframes Shine {
+    0% {
+      background-position: 0% 100%
+    }
+    25% {
+      background-position: 0% 0%
+    }
+    50% {
+      background-position: 0% -75%;
+    }
+  }
+}
+
+
+/*.btn-shine {
+  background: linear-gradient(120deg, #d1aa03 0%, #a88900 18%, #d1ab03 30%, #ffeb94 46%, #d1ab03 55%, #a88900 69%, #d1aa03 100%);
+  -ms-filter: unquote("progid: DXImageTransform.Microsoft.gradient( startColorstr='#d1aa03', endColorstr='#d1aa03', GradientType=1)");
+  position: relative;
+  //box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0px 0px 84px 0px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-in;
+  border: none;
+  &:hover {
+    color: $secondary-color-light;
+    transition: all 0.2s ease-out;
+  }
+  &:hover:before {
+    animation: shine 0.5s 0s linear;
+  }
+  &:active {
+    //box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow 0.2s ease-in;
+  }
+  &:before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: $secondary-color-light;
+    box-shadow: 0 0 15px 3px $secondary-color-light;
+    transform: skewX(-20deg);
+  }
+  @keyframes shine {
+    from {
+      opacity: 0;
+      left: 0%;
+    }
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      left: 100%;
+    }
+  }
+}*/
+
+// Other
+.text-center {
+  text-align: center;
+}
+
+.add-border-before {
+  &:before {
+    content: '';
+    position: relative;
+    display: block;
+    background: $quaternary-color;
+    margin-bottom: 1em;
+    width: 61px;
+    height: 3px;
+  }
+}
+
+.add-arrow-after {
+  &:after {
+    content: '';
+    position: relative;
+    display: block;
+    background: url('../img/arrow.png') no-repeat center center;
+    margin-top: 1em;
+    width: 16px;
+    height: 24px;
+  }
 }

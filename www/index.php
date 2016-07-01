@@ -1,5 +1,5 @@
 <?php
-	session_start();
+    session_start();
     header('content-type: text/html; charset=utf-8');
     ini_set('display_errors', 1);
     ini_set('error_reporting', E_ALL);
@@ -16,10 +16,10 @@
     $router->setBasePath($creds->getBasePath());
 
     $router = $controller->generate($router);
-	$match = $router->match();
-	
-	if($match) {
-		call_user_func_array( $match['target'], $match['params'] );
-	} else {
-		header("Location: /mvp/views/404.php");
-	}
+    $match = $router->match();
+
+    if($match) {
+        call_user_func_array( $match['target'], $match['params'] );
+    } else {
+        header("Location: " . $creds->getBasePath() . "/views/404.php");
+    }

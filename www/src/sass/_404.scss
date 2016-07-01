@@ -11,19 +11,19 @@
       margin: 0;
       margin-bottom: 1em;
       font-size: 1rem;
-      font-family: $fonts-title;
-      color: $secondary-color;
+      font-family: $montserrat-regular;
+      color: $secondary-color-light;
     }
     a {
       position: relative;
-      border: 3px solid $secondary-color;
-      color: $secondary-color;
+      border: 3px solid $secondary-color-light;
+      color: $secondary-color-light;
       font-size: 1rem;
       padding: .5em;
       &:hover,
       &:focus {
-        border-color: $tertiary-color;
-        color: $tertiary-color;
+        border-color: $tertiary-color-light;
+        color: $tertiary-color-light;
         text-decoration: none;
       }
     }
@@ -36,7 +36,7 @@
       font-size: 3rem;
     }
     a {
-      border: 3px solid $secondary-color;
+      border: 3px solid $secondary-color-light;
       font-size: 2rem;
       padding: .5em;
     }
