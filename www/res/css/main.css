@@ -274,10 +274,7 @@ a:focus {
 }
 
 #concept .block-logo {
-  height: 585px;
-  background-image: url('../img/logo-lg.png'), url('../img/background-logo-index.jpg');
-  background-repeat: no-repeat;
-  background-position: center center, center center;
+  display: none;
 }
 
 #concept .what-is-it {
@@ -299,6 +296,28 @@ a:focus {
 #concept video {
   width: 100%;
   height: auto;
+}
+
+@media (min-width: 768px) {
+  #concept .what-is-it {
+    height: 400px;
+    padding-top: 5em;
+  }
+}
+
+@media (min-width: 992px) {
+  #concept .block-logo {
+    display: block;
+    height: 585px;
+    background-image: url('../img/logo-lg.png'), url('../img/background-logo-index.jpg');
+    background-repeat: no-repeat;
+    background-position: center center, center center;
+  }
+
+  #concept .what-is-it {
+    height: 585px;
+    padding-top: 9em;
+  }
 }
 
 .btn-activities {
