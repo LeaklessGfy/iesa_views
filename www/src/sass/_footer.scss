@@ -1,17 +1,20 @@
 footer {
-  border-top: 1px solid $quaternary-color;
-  padding: 22px 0;
-  color: $quaternary-color;
-}
-
-.copyright,
-.logo-agency {
-  display: inline-block;
+  //border-top: 1px solid $quaternary-color;
+  padding: 25px 0;
+  color: $secondary-color-dark;
+  background: $primary-color;
+  a {
+    color: $secondary-color-dark;
+    &:hover,
+    &:focus {
+      color: $quinary-color;
+      text-decoration: none;
+    }
+  }
 }
 
 .contact-us {
-  display: inline-block;
-  float: right;
+  text-align: right;
   a {
     margin-left: 10px;
   }

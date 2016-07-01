@@ -1,18 +1,40 @@
 html,
 body {
   height: 100%;
-  background: $quaternary-color;
+  background: $bg-content-color;
+  color: $secondary-color-dark;
+}
+
+body {
+  min-height: 100%;
+}
+
+main {
+  padding: 5em 15px;
+}
+
+section {
+  margin: 3em auto;
 }
 
 a {
   color: $primary-color;
   transition: all .2s ease-in;
+  text-transform: uppercase;
   &:hover,
   &:focus {
     color: $primary-color;
   }
 }
 
+img.w100 {
+  width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 1em 0 2em;
+}
 
 /*********** Buttons ***********/
 
@@ -38,6 +60,7 @@ a {
   &:hover,
   &:focus {
     color: $primary-color;
+    border-color: $primary-color;
   }
 }
 
@@ -62,9 +85,9 @@ a {
 }
 
 .btn-shine {
-  border-color: $primary-color;
+  border-color: $secondary-color-light;
   background-color: none;
-  color: $primary-color;
+  color: $secondary-color-light;
   position: relative;
   &:after {
     content: '';
@@ -163,9 +186,10 @@ a {
     content: '';
     position: relative;
     display: block;
-    background: $quaternary-color;
-    margin-bottom: 1em;
-    width: 61px;
+    background: $secondary-color-dark;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 47px;
     height: 3px;
   }
 }
@@ -174,10 +198,10 @@ a {
   &:after {
     content: '';
     position: relative;
-    display: block;
-    background: url('../img/arrow.png') no-repeat center center;
-    margin-top: 1em;
-    width: 16px;
-    height: 24px;
+    display: inline-block;
+    margin-left: 20px;
+    background: url('../img/spritesheet.png') no-repeat -166px -5px;
+    width: 8px;
+    height: 12px;
   }
 }
