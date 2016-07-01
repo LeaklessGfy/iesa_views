@@ -24,6 +24,10 @@ class Controller {
         $router->map('GET', '/live', function() {
     		require __DIR__ . '/../../views/live.php';
 		});
+      
+        $router->map('GET', '/candidates', function() {
+            require __DIR__ . '/../../views/candidates.php';
+        });
 
 		$router->map('GET', '/ranking', function() {
 			$results = $this->api->get("users");

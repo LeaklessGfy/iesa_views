@@ -17,7 +17,7 @@
     <div class="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a <?php if($url=='ranking') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
-        <li><a <?php if($url=='candidats') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/candidats"); ?>">Candidats</a></li>
+        <li><a <?php if($url=='candidates') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/candidates"); ?>">Candidats</a></li>
         <li><a <?php if($url=='profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
         <li><a <?php if($url=='inscription') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
         <li><a <?php if($url=='connexion') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
