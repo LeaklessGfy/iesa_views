@@ -17,7 +17,8 @@
         background: none;
         color: $secondary-color-light;
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
           background: none;
           color: $quaternary-color;
         }

@@ -213,7 +213,8 @@ a:focus {
 }
 
 .navbar .navbar-nav li a:hover,
-.navbar .navbar-nav li a:focus {
+.navbar .navbar-nav li a:focus,
+.navbar .navbar-nav li a.active {
   color: #2c2c2c;
   background: none;
 }

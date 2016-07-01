@@ -16,11 +16,11 @@
 
     <div class="navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li <?php if($url=='ranking') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
-        <li <?php if($url=='candidats') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/candidats"); ?>">Candidats</a></li>
-        <li <?php if($url=='profile') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
-        <li <?php if($url=='inscription') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
-        <li <?php if($url=='connexion') echo 'class="active"'; ?>><a href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
+        <li><a <?php if($url=='ranking') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
+        <li><a <?php if($url=='candidats') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/candidats"); ?>">Candidats</a></li>
+        <li><a <?php if($url=='profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
+        <li><a <?php if($url=='inscription') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
+        <li><a <?php if($url=='connexion') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
         <!--<li><a href="#">Replay</a></li>-->
         <!--<li><a href="#">Candidature</a></li>-->
       </ul>
