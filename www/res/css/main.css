@@ -187,8 +187,6 @@ a:focus {
 }
 
 .navbar {
-  margin-bottom: 0;
-  border-radius: 0;
   background: #d1aa03;
 }
 
@@ -196,28 +194,17 @@ a:focus {
   height: auto;
 }
 
-.navbar .navbar-nav {
-  height: 96px;
+.navbar .navbar-collapse {
+  display: none;
 }
 
 .navbar .navbar-nav li {
   font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
-  margin-top: 23px;
   text-transform: uppercase;
 }
 
 .navbar .navbar-nav li:last-of-type {
   font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
-  border-left: 1px solid #2c2c2c;
-}
-
-.navbar .navbar-nav li:last-of-type a {
-  padding-right: 56px;
-  background: url('../img/login.png') no-repeat right;
-}
-
-.navbar .navbar-nav li:last-of-type a:hover {
-  background: url('../img/login-hover.png') no-repeat right;
 }
 
 .navbar .navbar-nav li a {
@@ -229,6 +216,51 @@ a:focus {
 .navbar .navbar-nav li a:focus {
   color: #2c2c2c;
   background: none;
+}
+
+.navbar .navbar-toggle {
+  position: absolute;
+  right: 15px;
+  margin: 26px 0;
+  padding: 14px 10px;
+  border-color: #2c2c2c;
+  border-radius: 100%;
+}
+
+.navbar .navbar-toggle .icon-bar {
+  background: #2c2c2c;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .navbar .navbar-collapse {
+    display: block;
+  }
+
+  .navbar .navbar-nav {
+    height: 96px;
+  }
+
+  .navbar .navbar-nav li {
+    margin-top: 23px;
+  }
+
+  .navbar .navbar-nav li:last-of-type {
+    border-left: 1px solid #2c2c2c;
+  }
+
+  .navbar .navbar-nav li:last-of-type a {
+    padding-right: 56px;
+    background: url('../img/login.png') no-repeat right;
+  }
+
+  .navbar .navbar-nav li:last-of-type a:hover {
+    background: url('../img/login-hover.png') no-repeat right;
+  }
 }
 
 .index-subscribe section:last-of-type {
