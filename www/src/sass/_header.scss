@@ -53,9 +53,6 @@
         margin-top: 23px;
       }
       &.navbar-center {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
         li {
           position: relative;
           &:not(:last-child) {
@@ -76,24 +73,36 @@
       &.navbar-right {
         li {
           &:last-of-type {
-          border-left: 1px solid $quaternary-color;
-          a {
-            padding-right: 60px;
-            padding-left: 35px;
-            position: relative;
-            &:after {
-              content: '';
-              display: block;
-              position: absolute;
-              width: 41px;
-              height: 41px;
-              top: 5px;
-              right: 0;
-              background: url('../img/spritesheet.png') no-repeat -5px -5px;
+            border-left: 1px solid $quaternary-color;
+            a {
+              padding-right: 75px;
+              padding-left: 35px;
+              position: relative;
+              &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 41px;
+                height: 41px;
+                top: 5px;
+                right: 15px;
+                background: url('../img/spritesheet.png') no-repeat -5px -5px;
+              }
             }
           }
         }
-        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .navbar {
+    .navbar-nav {
+      &.navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
