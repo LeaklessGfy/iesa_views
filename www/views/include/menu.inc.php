@@ -3,7 +3,7 @@
     $url = $page[count($page)-1];
 ?>
 <nav class="navbar">
-  <div class="container-fluid">
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle">
         <span class="sr-only">Toggle navigation</span>
