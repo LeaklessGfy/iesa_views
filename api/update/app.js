@@ -44,6 +44,8 @@ Users.hasMany(Swipes);
 Swipes.belongsTo(Users);
 Candidates.hasMany(Swipes);
 Swipes.belongsTo(Candidates);
+
+Candidates.belongsTo(Users);
 Seq.sync;
 
 
@@ -125,6 +127,22 @@ server.post(entry + '/swipes', function(req, res, next) {
   Controller.authAction(function() {
     Controller.create(Swipes, req, res);
   });
+
+  return next();
+});
+
+
+/* CANDIDATES */
+server.get(entry + '/candidates', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Candidates);
+
+  return next();
+});
+
+server.get(entry + '/candidates/:id', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findOne(Candidates);
 
   return next();
 });

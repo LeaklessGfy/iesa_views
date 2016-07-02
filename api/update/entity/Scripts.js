@@ -16,7 +16,7 @@ var Scripts = sequelize.define('scripts', {
 Scripts.api = {
   filters: null,
   includes: null,
-  excludFields: null
+  requirements: ["title", "description"]
 };
 
 module.exports = Scripts;

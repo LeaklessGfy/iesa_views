@@ -7,7 +7,6 @@ namespace Core\Entity;
  * User entity
  */
 class User {
-	private $login;
 	private $password;
 	private $name;
 	private $lastname;
@@ -25,7 +24,6 @@ class User {
 	public function update($obj)
 	{
 		$this->id = $obj['id'];
-		$this->login = $obj['login'];
 		$this->password = $obj['password'];
 		$this->name = $obj['name'];
 		$this->lastname = $obj['lastname'];
@@ -36,7 +34,6 @@ class User {
 	}
 
 	public function setId($id) { $this->id = $id; }
-	public function setLogin($login) { $this->login = $login; }
 	public function setPassword($password) { $this->password = $password; }
 	public function setName($name) { $this->name = $name; }
 	public function setLastName($lastname) { $this->lastname = $lastname; }
@@ -46,7 +43,6 @@ class User {
 	public function setEmail($email) { $this->email = $email; }
 
 	public function getId() { return $this->id; }
-	public function getLogin() { return $this->login; }
 	public function getPassword() { return $this->password; }
 	public function getName() { return $this->name; }
 	public function getLastName() { return $this->lastname; }

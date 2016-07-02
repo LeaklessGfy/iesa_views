@@ -15,7 +15,6 @@ var Swipes = sequelize.define('swipes', {
 Swipes.api = {
   filters: ["userId", "candidateId"],
   includes: ["users", "candidates"],
-  excludFields: null,
   requirements: ["userId", "candidateId"]
 };
 

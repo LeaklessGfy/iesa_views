@@ -19,7 +19,7 @@
     $match = $router->match();
 
     if($match) {
-        call_user_func_array( $match['target'], $match['params'] );
+        call_user_func_array($match['target'], $match['params']);
     } else {
         header("Location: " . $creds->getBasePath() . "/views/404.php");
     }

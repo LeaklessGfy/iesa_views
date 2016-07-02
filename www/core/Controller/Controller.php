@@ -7,7 +7,8 @@ namespace Core\Controller;
  * Controller for web server
  */
 class Controller {
-	private $creds;
+	private $api;
+	private $utils;
 
 	public function __construct($api, $utils) 
 	{

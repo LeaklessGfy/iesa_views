@@ -7,7 +7,7 @@ namespace Core\Endpoint;
  * Endpoint through API
  */
 class ApiCaller {
-	private $base_url;
+	private $baseUrl;
 	private $port;
 
 	public function __construct($creds)

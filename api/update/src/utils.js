@@ -56,8 +56,6 @@ Utils.prototype.getIncludes = function getIncludes(arr, query) {
 		}
 	}
 
-	console.log(includes);
-
 	return includes;
 }
 

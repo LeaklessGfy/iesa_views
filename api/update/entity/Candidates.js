@@ -2,8 +2,9 @@ var Sequelize = require('sequelize');
 var sequelize = require('./../src/sequelize');
 
 var Candidates = sequelize.define('candidates', {
-  user_id: {
-    type: Sequelize.STRING,
+  userId: {
+    type: Sequelize.INTEGER,
+    references: { model: "Users", key: "id" }
   },
   number: {
     type: Sequelize.INTEGER
@@ -15,5 +16,11 @@ var Candidates = sequelize.define('candidates', {
     type: Sequelize.TEXT
   }
 });
+
+Candidates.api = {
+  filters: null,
+  includes: ["users"],
+  requirements: ["description"]
+};
 
 module.exports = Candidates;
