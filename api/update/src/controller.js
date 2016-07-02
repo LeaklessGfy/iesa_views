@@ -1,6 +1,7 @@
 const 	Utils = require("./utils"),
 		Validator = require("./validator"),
-		Users = require('./../entity/Users');
+		Users = require('./../entity/Users'),
+		UsersUnprotected = require('./../entity/UsersUnprotected');
 
 var Controller = function(req, res) {
 	this._req = req;
@@ -44,11 +45,11 @@ Controller.prototype.authAction = function authAction(callback) {
 	var self = this;
 	var config = this.getAuthConfig();
 
-	if(config == false) {
+	if(config == false || config.where.id != this._req.params.id) {
 		return this.badRequest("Wrong tokens!");
 	}
 
-	Users.findAll(config).then(function(items) {
+	UsersUnprotected.findAll(config).then(function(items) {
 		if(items != null && items.length > 0) {
 	  		return callback();
 		}
@@ -57,7 +58,7 @@ Controller.prototype.authAction = function authAction(callback) {
 	});
 }
 
-Controller.prototype.tryAuth = function tryAuth(UsersUnprotected) {
+Controller.prototype.tryAuth = function tryAuth() {
 	var self = this;
 	var email = this._req.body.email;
 	var password = this._req.body.password;
@@ -97,7 +98,7 @@ Controller.prototype.findAll = function findAll(Obj) {
 	});
 }
 
-Controller.prototype.findOne = function findOne() {
+Controller.prototype.findOne = function findOne(Obj) {
 	var self = this;
 	var id = this._req.params.id;
 		
@@ -136,14 +137,11 @@ Controller.prototype.create = function create(Obj) {
 }
 
 Controller.prototype.edit = function edit(Obj) {
+	var self = this;
 	var id = this._req.params.id;
 
 	if(!Validator.validId(id)) {
 		return this.badRequest("Not valid id");
-	};
-
-	if(!Validator.isValid(Obj.api.requirements, this._req.body)) {
-		return this.badRequest("Missing requirements");		
 	};
 
 	var config = {
@@ -152,7 +150,9 @@ Controller.prototype.edit = function edit(Obj) {
 	    }
 	};
 
-	Obj.update(req.body, config).then().catch();
+	Obj.update(this._req.body, config).then(function(a) {
+		return self.send(a, 202);
+	}).catch();
 } 
 
 module.exports = Controller;

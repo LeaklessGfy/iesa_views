@@ -50,4 +50,6 @@ class User {
 	public function getFacebook() { return $this->facebook; }
 	public function getSnapchat() { return $this->snapchat; }
 	public function getEmail() { return $this->email; }
+
+	public function getTokens() { return array("id" => $this->id, "password" => $this->password); }
 }

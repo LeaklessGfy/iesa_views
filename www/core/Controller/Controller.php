@@ -106,7 +106,7 @@ class Controller {
 			}
 
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-				$result = $this->api->put("users/" . $user->getId(), $_POST['user']);
+				$result = $this->api->put("users/" . $user->getId(), $_POST['user'], $user->getTokens());
 
 				if($result) {
 					$updateUser = $this->api->get('users/' . $user->getId());

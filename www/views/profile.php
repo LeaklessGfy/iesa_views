@@ -34,7 +34,7 @@
 
             <div class="form-group">
               <label for="age">Age: </label>
-              <input type="text" class="form-control" id="age" name="user[age]" value="<?php htmlspecialchars(echo $user->getAge(), ENT_QUOTES, 'UTF-8') ?>">
+              <input type="text" class="form-control" id="age" name="user[age]" value="<?php echo htmlspecialchars($user->getAge(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">

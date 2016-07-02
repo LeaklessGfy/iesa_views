@@ -18,7 +18,7 @@ class ApiCaller {
 		$this->entry = $creds->getApiEntry();
 	}
 
-	public function generateUrl($url, $opts = array())
+	private function generateUrl($url, $opts = array())
 	{
 		$param = "";
 		$length = count($opts);
@@ -35,11 +35,21 @@ class ApiCaller {
 		return $this->baseUrl . $this->port . $this->entry . $url . "?" . $param;
 	}
 
+	private function getTokens($tokens) 
+	{
+		$tok = "";
+		if($tokens) {
+			$tok = "TokensId: " . $tokens['id'] . "\r\nTokens: " . $tokens['password'];
+		}
+
+		return $tok;
+	}
+
 	public function get($url, $opts = array())
 	{
 		$url = $this->generateUrl($url, $opts);
 
-		if($results = file_get_contents($url)) {
+		if($results = @file_get_contents($url)) {
 			return json_decode($results, true);
 		}
 		
@@ -49,15 +59,11 @@ class ApiCaller {
 	public function post($url, $opts, $tokens = null)
 	{
 		$url = $this->generateUrl($url);
-
-		$tok = "";
-		if($tokens) {
-			$tok = "TokenId: " . $tokens['id'] . "\r\nToken: " . $tokens['password'];
-		}
+		$tokens = $this->getTokens($tokens);
 
 		$options = array(
 			'http' => array(
-				'header' => "Content-type: application/json\r\n" . $tok,
+				'header' => "Content-type: application/json\r\n" . $tokens,
 				'method' => "POST",
 				'content' => json_encode($opts)
 			)
@@ -72,14 +78,14 @@ class ApiCaller {
 		return false;
 	}
 
-	public function put($url, $opts)
+	public function put($url, $opts, $tokens = null)
 	{
-		$user = unserialize($_SESSION['user']);
 		$url = $this->generateUrl($url);
+		$tokens = $this->getTokens($tokens);
 		
 		$options = array(
 			'http' => array(
-				'header' => "Content-type: application/json\r\nToken: " . $user->getPassword() . "\r\n",
+				'header' => "Content-type: application/json\r\n" . $tokens,
 				'method' => "PUT",
 				'content' => json_encode($opts)
 			)
@@ -87,7 +93,7 @@ class ApiCaller {
 
 		$context = stream_context_create($options);
 
-		if($results = file_get_contents($url, false, $context)) {
+		if($results = @file_get_contents($url, false, $context)) {
 			return json_decode($results, true);
 		}
 

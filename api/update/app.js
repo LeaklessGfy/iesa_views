@@ -56,7 +56,7 @@ Seq.sync;
 /* USERS */
 server.post(entry + '/users/auth', function(req, res, next) {
   var Controller = new ControllerInterface(req, res);
-  Controller.tryAuth(UsersUnprotected);
+  Controller.tryAuth();
 
   return next();
 });
