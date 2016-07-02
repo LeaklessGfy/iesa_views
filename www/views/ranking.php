@@ -1,9 +1,5 @@
-<?php
-$rankingValue = 1;
-?>
-  <!DOCTYPE html>
-  <html lang="fr">
-
+<!DOCTYPE html>
+<html lang="fr">
   <head>
     <?php include "include/head.inc.php" ?>
       <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu - Classement candidats et scénarios</title>
@@ -44,75 +40,37 @@ $rankingValue = 1;
                 </tr>
               </thead>
               <tbody>
-                <?php foreach ($results as $result) { ?>
+                <?php 
+                  if($results != null) {
+                    foreach ($results as $result) { 
+                ?>
                   <tr>
                     <th>
                       <?php echo $rankingValue++ ?>
                     </th>
-                    <td><img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $result['name'].' '. $result['lastname']; ?>" width="50px" height="auto"></td>
                     <td>
-                      <?php echo $result['name'].' '. $result['lastname']; ?>
+                      <?php $fullname = $result['name'] . ' ' . $result['lastname']; ?>
+                      <img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $fullname ?>" width="50px" height="auto">
                     </td>
-                    <td><?php echo $result['hype']; ?></td>
+                    <td>
+                      <?php echo $result['name'] .' '. $result['lastname']; ?>
+                    </td>
+                    <td>
+                      <?php echo $result['candidate']['hype']; ?>
+                    </td>
                   </tr>
-                  <?php } ?>
+                <?php
+                    } 
+                  } 
+                ?>
               </tbody>
             </table>
           </div>
         </section>
       </main>
+
       <?php include("include/footer.inc.php"); ?>
-        <script>
-          (function ($) {
-            $('.btn-rank').on('click', function () {
-              if ($(this).hasClass('active-nok')) {
-                $('.btn-rank').toggleClass('btn-success');
-                $('.btn-rank').toggleClass('active-nok');
-
-                var data = $(this).data('rank');
-
-                $.ajax({
-                  url: "<?php $this->utils->generateUrl("/api/ranking"); ?>",
-                  data: {
-                    data: data
-                  },
-                  success: function (result) {
-
-                    var json = JSON.parse(result),
-                      html = "",
-                      htmlHead = "";
-
-                    if (data === 'users') {
-                      htmlHead = "<tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th></tr>";
-
-                      for (var i = 0; i < json.length; i++) {
-
-                        var ligne = "<tr><td>" + (i + 1) + "</td><td><img width='50px' height='auto' src='res/avatar/" + json[i].avatar + "'></td><td>" + json[i].name + " " + json[i].lastname + "</td><td>" + json[i].hype + "</td></tr>";
-
-                        html += ligne;
-                      }
-                    } else {
-                      htmlHead = "<tr><th>Classement</th><th>Titre scénario</th><th>Description</th><th>Vote</th></tr>";
-
-                      for (var i = 0; i < json.length; i++) {
-
-                        var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>" + json[i].hype + "</td></tr>";
-
-                        html += ligne;
-                      }
-                    }
-
-                    $('.table thead').html(htmlHead);
-                    $('.table tbody').html(html);
-                  },
-                  error: function () {
-                    console.log("error");
-                  }
-                });
-              }
-            });
-          })(jQuery);
-        </script>
+      <script>var rankingUrl = "<?php $this->utils->generateUrl("/api/ranking"); ?>"</script>
+      <script src="res/js/main.js"></script>
   </body>
-
-  </html>
+</html>

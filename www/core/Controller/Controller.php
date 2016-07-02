@@ -31,16 +31,32 @@ class Controller {
 		});
       
         $router->map('GET', '/candidates', function() {
+        	$results = $this->api->get("candidates", array("join" => "users"));
+
             require __DIR__ . '/../../views/candidates.php';
         });
 
 		$router->map('GET', '/ranking', function() {
-			$results = $this->api->get("users");
+			$raw = $this->api->get("users", array("join" => "candidates"));
+			$rankingValue = 1;
+			$results = array();
+
+			foreach ($raw as $value) {
+				if($value['candidate'] != null) {
+					$results[] = $value;
+				}
+			}
+
 			require __DIR__ . '/../../views/ranking.php';
 		});
 
 		$router->map('GET', '/api/ranking', function() {
-			$results = $this->api->get($_GET['data']);
+			$opts = array();
+			if($_GET['data'] == "users") {
+				$opts = array("join" => "candidates");
+			}
+
+			$results = $this->api->get($_GET['data'], $opts);
 
 			echo json_encode($results);
 		});

@@ -9,11 +9,13 @@ namespace Core\Endpoint;
 class ApiCaller {
 	private $baseUrl;
 	private $port;
+	private $entry;
 
 	public function __construct($creds)
 	{
 		$this->baseUrl = $creds->getApiUrl();
 		$this->port = $creds->getApiPort();
+		$this->entry = $creds->getApiEntry();
 	}
 
 	public function generateUrl($url, $opts = array())
@@ -30,7 +32,7 @@ class ApiCaller {
 			}
 		}
 
-		return $this->baseUrl . $this->port . "/" . $url . "?" . $param;
+		return $this->baseUrl . $this->port . $this->entry . $url . "?" . $param;
 	}
 
 	public function get($url, $opts = array())

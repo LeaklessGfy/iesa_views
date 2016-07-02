@@ -34,7 +34,7 @@ var Users = sequelize.define('users',
 
 Users.api = {
   filters: ["email", "password"],
-  includes: ["swipes"],
+  includes: ["swipes", "candidates"],
   requirements: ["email", "password"]
 };
 

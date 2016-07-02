@@ -45,6 +45,7 @@ Swipes.belongsTo(Users);
 Candidates.hasMany(Swipes);
 Swipes.belongsTo(Candidates);
 
+Users.hasOne(Candidates);
 Candidates.belongsTo(Users);
 Seq.sync;
 
