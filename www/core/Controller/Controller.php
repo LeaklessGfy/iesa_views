@@ -72,7 +72,6 @@ class Controller {
 			echo($result);
 		});
 
-		//TODO: Reviews and debug
 		$router->map('GET|POST', '/connexion', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
 				$result = $this->api->post('users/auth', $_POST['user']);
@@ -99,7 +98,6 @@ class Controller {
 			require __DIR__ . '/../../views/register.php';
 		});
 
-		//TODO: Reviews and debug
 		$router->map('GET|POST', '/profile', function() {
 			$user = $this->utils->getUser();
 
