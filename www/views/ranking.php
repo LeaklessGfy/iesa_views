@@ -49,11 +49,11 @@
                       <?php echo $rankingValue++ ?>
                     </th>
                     <td>
-                      <?php $fullname = $result['name'] . ' ' . $result['lastname']; ?>
-                      <img src="res/avatar/<?php echo $result['avatar']; ?>" alt="Photo de profil de <?php echo $fullname ?>" width="50px" height="auto">
+                      <?php $fullname = htmlspecialchars($result['name'], ENT_QUOTES, 'UTF-8') . ' ' . htmlspecialchars($result['lastname'], ENT_QUOTES, 'UTF-8'); ?>
+                      <img src="res/avatar/<?php echo htmlspecialchars($result['avatar'], ENT_QUOTES, 'UTF-8'); ?>" alt="Photo de profil de <?php echo $fullname ?>" width="50px" height="auto">
                     </td>
                     <td>
-                      <?php echo $result['name'] .' '. $result['lastname']; ?>
+                      <?php echo htmlspecialchars($result['name'], ENT_QUOTES, 'UTF-8') .' '. htmlspecialchars($result['lastname'], ENT_QUOTES, 'UTF-8'); ?>
                     </td>
                     <td>
                       <?php echo $result['candidate']['hype']; ?>

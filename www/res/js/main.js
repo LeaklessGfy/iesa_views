@@ -98,14 +98,28 @@ function updateRanking(result) {
         hype = json[i].candidate.hype;
       }
 
-      var ligne = "<tr><td>" + (i + 1) + "</td><td><img width='50px' height='auto' src='res/avatar/" + json[i].avatar + "'></td><td>" + json[i].name + " " + json[i].lastname + "</td><td>" + hype + "</td></tr>";
+      var img = $("<img />");
+      img.attr("src", "res/avatar/" + json[i].avatar);
+      img.attr("width", "50px");
+      img.attr("height", "auto");
+
+      var name = $("<p />");
+      name.text(json[i].name + " " + json[i].lastname);
+
+      var ligne = "<tr><td>" + (i + 1) + "</td><td>" + img.html() + "</td><td>" + name.html() + "</td><td>" + hype + "</td></tr>";
       html += ligne;
     }
   } else {
     htmlHead = "<tr><th>Classement</th><th>Titre scénario</th><th>Description</th><th>Vote</th></tr>";
 
     for (var i = 0; i < json.length; i++) {
-      var ligne = "<tr><td>" + (i + 1) + "</td><td>" + json[i].title + "</td><td>" + json[i].description + "</td><td>" + json[i].hype + "</td></tr>";
+      var title = $("<p />");
+      title.text(json[i].title);
+
+      var description = $("<p />");
+      description.text(json[i].description);
+
+      var ligne = "<tr><td>" + (i + 1) + "</td><td>" + title.html() + "</td><td>" + description.html() + "</td><td>" + json[i].hype + "</td></tr>";
       html += ligne;
     }
   }

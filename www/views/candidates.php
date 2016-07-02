@@ -19,12 +19,12 @@
                 $img = '<img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">';
 
                 if($value['user']['avatar'] != null) {
-                  $img = '<img src="res/img/'.$value['user']['avatar'].'" alt="" class="img-thumbnail">';
+                  $img = '<img src="res/img/'.  htmlspecialchars($value['user']['avatar'], ENT_QUOTES, 'UTF-8') .'" alt="" class="img-thumbnail">';
                 }
 
                 echo '<figure class="col-xs-6 col-sm-4 col-md-2">' .
                 $img .
-                '<figcaption>' . $value['user']['name'] . ' ' . $value['user']['lastname'] . '</figcaption>' .
+                '<figcaption>' .  htmlspecialchars($value['user']['name'], ENT_QUOTES, 'UTF-8') . ' ' .  htmlspecialchars($value['user']['lastname'], ENT_QUOTES, 'UTF-8') . '</figcaption>' .
                 '</figure>';
               }
             }
