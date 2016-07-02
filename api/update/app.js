@@ -38,7 +38,10 @@ const entry = "/api/1",
 const Candidates = require('./entity/Candidates'),
       Users = require('./entity/Users'),
       Scripts = require('./entity/Scripts'),
-      Swipes = require('./entity/Swipes');
+      Swipes = require('./entity/Swipes'),
+      Homepages = require('./entity/Homepages');
+
+const UsersUnprotected = require('./entity/UsersUnprotected');
 
 Users.hasMany(Swipes);
 Swipes.belongsTo(Users);
@@ -53,10 +56,7 @@ Seq.sync;
 /* USERS */
 server.post(entry + '/users/auth', function(req, res, next) {
   var Controller = new ControllerInterface(req, res);
-  Controller.authAction(function() {
-    res.writeHead(200);
-    res.end(1);
-  });
+  Controller.tryAuth(UsersUnprotected);
 
   return next();
 });
@@ -77,7 +77,7 @@ server.get(entry + '/users/:id', function(req, res, next) {
 
 server.post(entry + '/users', function(req, res, next) {
   var Controller = new ControllerInterface(req, res);
-  Controller.create(Users);
+  Controller.create(UsersUnprotected);
 
   return next();
 });
@@ -144,6 +144,22 @@ server.get(entry + '/candidates', function(req, res, next) {
 server.get(entry + '/candidates/:id', function(req, res, next) {
   var Controller = new ControllerInterface(req, res);
   Controller.findOne(Candidates);
+
+  return next();
+});
+
+
+/* HOMEPAGES */
+server.get(entry + '/homepages', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Homepages);
+
+  return next();
+});
+
+server.get(entry + '/homepages/:id', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findOne(Homepages);
 
   return next();
 });

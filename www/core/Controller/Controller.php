@@ -31,13 +31,13 @@ class Controller {
 		});
       
         $router->map('GET', '/candidates', function() {
-        	$results = $this->api->get("candidates", array("join" => "users"));
+        	$results = $this->api->get('candidates', array("join" => "users"));
 
             require __DIR__ . '/../../views/candidates.php';
         });
 
 		$router->map('GET', '/ranking', function() {
-			$raw = $this->api->get("users", array("join" => "candidates"));
+			$raw = $this->api->get('users', array("join" => "candidates"));
 			$rankingValue = 1;
 			$results = array();
 
@@ -58,17 +58,31 @@ class Controller {
 
 			$results = $this->api->get($_GET['data'], $opts);
 
-			echo json_encode($results);
+			echo(json_encode($results));
 		});
 
+		$router->map('GET', '/api/swipes', function() {
+			$user = $this->utils->getUser();
+
+			if(!$user) {
+				echo(false);
+			}
+
+			$result = $this->api->post('swipes');
+			echo($result);
+		});
+
+		//TODO: Reviews and debug
 		$router->map('GET|POST', '/connexion', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-				$result = $this->api->get("users/auth", $_POST['user']);
+				$result = $this->api->post('users/auth', $_POST['user']);
 
-				if(count($result) > 0) {
+				if($result && count($result) > 0) {
 					$this->utils->authentificator($result[0]);
 
 					return header('Location: ' . $this->utils->getUrl("/")); 
+				} else {
+					echo "Wrong values";die;
 				}
 			}
 
@@ -85,6 +99,7 @@ class Controller {
 			require __DIR__ . '/../../views/register.php';
 		});
 
+		//TODO: Reviews and debug
 		$router->map('GET|POST', '/profile', function() {
 			$user = $this->utils->getUser();
 
@@ -108,19 +123,18 @@ class Controller {
 
 		$router->map('GET|POST', '/admin/login', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-				$username = $_POST['username'];
+				$username = $_POST['login'];
 				$password = $_POST['password'];
 
 				$admin = $this->utils->getAdmin();
 
 				if($username === $admin['username'] && $password === $admin['password']) {
 					$_SESSION['admin'] = 1;
+					return header('Location: ' . $this->utils->getUrl("/"));
 				}
-
-				return header('Location: ' . $this->utils->getUrl("/"));
 			}
 
-			return __DIR__ . '/../../views/backoffice/login.php';
+			require __DIR__ . '/../../views/backoffice/login.php';
 		});
 
 		$router->map('GET', '/admin', function() {
@@ -128,7 +142,9 @@ class Controller {
 				return header('Location: ' . $this->utils->getUrl("/"));
 			}
 
-			return __DIR__ . '/../../views/backoffice/index.php';
+			$results = $this->api->get('homepage');
+
+			require __DIR__ . '/../../views/backoffice/index.php';
 		});
 
 		$router->map('GET', '/deconnexion', function() {

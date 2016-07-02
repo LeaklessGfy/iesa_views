@@ -14,10 +14,12 @@ Controller.prototype.send = function send(obj, status) {
 
 	this._res.writeHead(status, {'Content-Type': 'application/json; charset=utf-8'});
 	this._res.end(JSON.stringify(obj));
+
+	return;
 }
 
 Controller.prototype.badRequest = function badRequest(msg) {
-	this.send(400, {error: msg});
+	return this.send({error: msg}, 400);
 }
 
 Controller.prototype.getAuthConfig = function getAuthConfig() {
@@ -51,7 +53,32 @@ Controller.prototype.authAction = function authAction(callback) {
 	  		return callback();
 		}
 
-		self.badRequest("Bad request!");
+		return self.badRequest("Bad request!");
+	});
+}
+
+Controller.prototype.tryAuth = function tryAuth(UsersUnprotected) {
+	var self = this;
+	var email = this._req.body.email;
+	var password = this._req.body.password;
+
+	if(typeof email == "undefined" || email == null || email == "" || typeof password == "undefined" || password == null || password == "") {
+		return this.badRequest("Bad request!");
+	}
+
+	var config = {
+		where: {
+			email: email,
+			password: password
+		}
+	}
+
+	UsersUnprotected.findAll(config).then(function(items) {
+		if(items.length > 0) {
+			return self.send(items, 200);
+		}
+
+		return self.badRequest("Wrong values");
 	});
 }
 
@@ -66,7 +93,7 @@ Controller.prototype.findAll = function findAll(Obj) {
 	};
 
 	Obj.findAll(config).then(function(items) {
-		self.send(items, 200);
+		return self.send(items, 200);
 	});
 }
 
@@ -87,7 +114,7 @@ Controller.prototype.findOne = function findOne() {
 	};
 
 	Obj.findOne(config).then(function(item) {
-		self.send(item, 200);
+		return self.send(item, 200);
 	});
 }
 
@@ -102,9 +129,9 @@ Controller.prototype.create = function create(Obj) {
 		.build(this._req.body)
 		.save()
 		.then(function(item) {
-			self.send(item, 201);
+			return self.send(item, 201);
 		}).catch(function(error) {
-			self.send(error, 500);
+			return self.send(error, 500);
 		});
 }
 

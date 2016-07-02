@@ -46,13 +46,18 @@ class ApiCaller {
 		return false;
 	}
 
-	public function post($url, $opts)
+	public function post($url, $opts, $tokens = null)
 	{
 		$url = $this->generateUrl($url);
 
+		$tok = "";
+		if($tokens) {
+			$tok = "TokenId: " . $tokens['id'] . "\r\nToken: " . $tokens['password'];
+		}
+
 		$options = array(
 			'http' => array(
-				'header' => "Content-type: application/json\r\n",
+				'header' => "Content-type: application/json\r\n" . $tok,
 				'method' => "POST",
 				'content' => json_encode($opts)
 			)
@@ -60,7 +65,7 @@ class ApiCaller {
 
 		$context = stream_context_create($options);
 
-		if($results = file_get_contents($url, false, $context)) {
+		if($results = @file_get_contents($url, false, $context)) {
 			return json_decode($results, true);
 		}
 
