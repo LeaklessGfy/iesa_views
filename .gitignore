@@ -2,6 +2,8 @@ api/former/app/credentials.json
 api/update/app/credentials.json
 api/former/node_modules/*
 api/update/node_modules/*
+api/node_modules
+api/app/credentials.json
 www/vendor/*
 www/app/credentials.php
 .idea

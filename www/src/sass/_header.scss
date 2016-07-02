@@ -2,6 +2,7 @@
   background: $bg-header-color;
   .navbar-brand {
     height: auto;
+    margin-top: 23px;
   }
   .navbar-collapse {
     display: none;
@@ -16,11 +17,12 @@
       a {
         background: none;
         color: $secondary-color-light;
+        padding: 15px 20px;
         &:hover,
         &:focus,
         &.active {
           background: none;
-          color: $quaternary-color;
+          color: $primary-color;
         }
       }
     }
@@ -49,16 +51,58 @@
       height: 96px;
       li {
         margin-top: 23px;
-        &:last-of-type {
-          border-left: 1px solid $quaternary-color;
-          a {
-            padding-right: 56px;
-            background: url('../img/login.png') no-repeat right;
-            &:hover {
-              background: url('../img/login-hover.png') no-repeat right;
+      }
+      &.navbar-center {
+        li {
+          position: relative;
+          &:not(:last-child) {
+            &:after {
+              content: '';
+              background: url('../img/spritesheet.png') no-repeat -56px -5px;
+              position: absolute;
+              width: 4px;
+              height: 4px;
+              display: block;
+              top: 50%;
+              transform: translateY(-50%);
+              right: 0;
             }
           }
         }
+      }
+      &.navbar-right {
+        li {
+          &:last-of-type {
+            border-left: 1px solid $quaternary-color;
+            a {
+              padding-right: 75px;
+              padding-left: 35px;
+              position: relative;
+              &:after {
+                content: '';
+                display: block;
+                position: absolute;
+                width: 41px;
+                height: 41px;
+                top: 5px;
+                right: 15px;
+                background: url('../img/spritesheet.png') no-repeat -5px -5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .navbar {
+    .navbar-nav {
+      &.navbar-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
   }
