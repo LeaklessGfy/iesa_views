@@ -2,6 +2,10 @@
 
 namespace Core\Controller;
 
+/**
+ * @author Vincent Rasquier
+ * Controller for web server
+ */
 class Controller {
 	private $creds;
 
@@ -42,7 +46,7 @@ class Controller {
 
 		$router->map('GET|POST', '/connexion', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-				$result = $this->api->get("users", $_POST['user']);
+				$result = $this->api->get("users/auth", $_POST['user']);
 
 				if(count($result) > 0) {
 					$this->utils->authentificator($result[0]);
@@ -83,6 +87,31 @@ class Controller {
 			}
 
 			require __DIR__ . '/../../views/profile.php';
+		});
+
+		$router->map('GET|POST', '/admin/login', function() {
+			if($_SERVER['REQUEST_METHOD'] === 'POST') {
+				$username = $_POST['username'];
+				$password = $_POST['password'];
+
+				$admin = $this->utils->getAdmin();
+
+				if($username === $admin['username'] && $password === $admin['password']) {
+					$_SESSION['admin'] = 1;
+				}
+
+				return header('Location: ' . $this->utils->getUrl("/"));
+			}
+
+			return __DIR__ . '/../../views/backoffice/login.php';
+		});
+
+		$router->map('GET', '/admin', function() {
+			if(!isset($_SESSION['admin'])) {
+				return header('Location: ' . $this->utils->getUrl("/"));
+			}
+
+			return __DIR__ . '/../../views/backoffice/index.php';
 		});
 
 		$router->map('GET', '/deconnexion', function() {

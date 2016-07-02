@@ -2,6 +2,10 @@
 
 namespace Core\Entity;
 
+/**
+ * @author Vincent Rasquier
+ * User entity
+ */
 class User {
 	private $login;
 	private $password;

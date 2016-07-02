@@ -2,6 +2,10 @@
 
 namespace Core\Endpoint;
 
+/**
+ * @author Vincent Rasquier
+ * Endpoint through API
+ */
 class ApiCaller {
 	private $base_url;
 	private $port;

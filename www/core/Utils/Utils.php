@@ -4,7 +4,8 @@ namespace Core\Utils;
 
 use Core\Entity\User;
 
-/*
+/**
+ * @author Vincent Rasquier
  * Class to handle common task (to refacto if front becomes more complicated)
  */
 class Utils {
@@ -44,5 +45,9 @@ class Utils {
 		return unserialize($_SESSION['user']); 
 	}
 
+	public function getAdmin()
+	{
+		return $this->creds->getAdmin();
+	}
 
 }
