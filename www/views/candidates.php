@@ -13,30 +13,22 @@
       <section id="candidates" class="container-fluid text-center">
         <h1 class="text-center">Candidats</h1>
         <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
-          <figure class="col-xs-6 col-sm-4 col-md-2">
-            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
-            <figcaption>Nom candidat</figcaption>
-          </figure>
-          <figure class="col-xs-6 col-sm-4 col-md-2">
-            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
-            <figcaption>Nom candidat</figcaption>
-          </figure>
-          <figure class="col-xs-6 col-sm-4 col-md-2">
-            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
-            <figcaption>Nom candidat</figcaption>
-          </figure>
-          <figure class="col-xs-6 col-sm-4 col-md-2">
-            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
-            <figcaption>Nom candidat</figcaption>
-          </figure>
-          <figure class="col-xs-6 col-sm-4 col-md-2">
-            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
-            <figcaption>Nom candidat</figcaption>
-          </figure>
-          <figure class="col-xs-6 col-sm-4 col-md-2">
-            <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
-            <figcaption>Nom candidat</figcaption>
-          </figure>
+          <?php 
+            if($results != false) {
+              foreach ($results as $value) {
+                $img = '<img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">';
+
+                if($value['user']['avatar'] != null) {
+                  $img = '<img src="res/img/'.  htmlspecialchars($value['user']['avatar'], ENT_QUOTES, 'UTF-8') .'" alt="" class="img-thumbnail">';
+                }
+
+                echo '<figure class="col-xs-6 col-sm-4 col-md-2">' .
+                $img .
+                '<figcaption>' .  htmlspecialchars($value['user']['name'], ENT_QUOTES, 'UTF-8') . ' ' .  htmlspecialchars($value['user']['lastname'], ENT_QUOTES, 'UTF-8') . '</figcaption>' .
+                '</figure>';
+              }
+            }
+          ?>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
           <figure class="col-xs-6 col-sm-4 col-md-2">
@@ -63,7 +55,12 @@
             <img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">
             <figcaption>Nom candidat</figcaption>
           </figure>
-          <a class="btn btn-default" title="Page des candidats" href="<?php $this->utils->generateUrl(" /candidats "); ?>">Show more</a>
+          
+          <a  class="btn btn-default" 
+              title="Page des candidats" 
+              href="<?php $this->utils->generateUrl(" /candidats "); ?>">
+              Show more
+          </a>
         </div>
       </section>
 

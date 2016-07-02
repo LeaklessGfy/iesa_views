@@ -24,32 +24,32 @@
           <form class="form" method="POST">
             <div class="form-group">
               <label for="name">Prénom: </label>
-              <input type="text" class="form-control" id="name" name="user[name]" value="<?php echo $user->getName() ?>">
+              <input type="text" class="form-control" id="name" name="user[name]" value="<?php echo htmlspecialchars($user->getName(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">
               <label for="lastname">Nom: </label>
-              <input type="text" class="form-control" id="lastname" name="user[lastname]" value="<?php echo $user->getLastname() ?>">
+              <input type="text" class="form-control" id="lastname" name="user[lastname]" value="<?php echo htmlspecialchars($user->getLastname(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">
               <label for="age">Age: </label>
-              <input type="text" class="form-control" id="age" name="user[age]" value="<?php echo $user->getAge() ?>">
+              <input type="text" class="form-control" id="age" name="user[age]" value="<?php echo htmlspecialchars($user->getAge(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">
               <label for="email">Email: </label>
-              <input type="text" class="form-control" id="email" name="user[email]" value="<?php echo $user->getEmail() ?>">
+              <input type="text" class="form-control" id="email" name="user[email]" value="<?php echo htmlspecialchars($user->getEmail(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">
               <label for="facebook">Facebook: </label>
-              <input type="text" class="form-control" id="facebook" name="user[id_facebook]" value="<?php echo $user->getFacebook() ?>">
+              <input type="text" class="form-control" id="facebook" name="user[id_facebook]" value="<?php echo htmlspecialchars($user->getFacebook(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">
               <label for="snapchat">Snapchat: </label>
-              <input type="text" class="form-control" id="snapchat" name="user[id_snapchat]" value="<?php echo $user->getSnapchat() ?>">
+              <input type="text" class="form-control" id="snapchat" name="user[id_snapchat]" value="<?php echo htmlspecialchars($user->getSnapchat(), ENT_QUOTES, 'UTF-8') ?>">
             </div>
 
             <div class="form-group">
@@ -62,5 +62,4 @@
 
     <?php include("include/footer.inc.php"); ?>
 </body>
-
 </html>

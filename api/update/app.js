@@ -5,15 +5,16 @@ const http         = require('http'),
       sysInfo      = require('./utils/sys-info'),
       env          = process.env;
 
-var restify = require('restify');
-var Seq = require('sequelize');
+const restify = require('restify'),
+      Seq = require('sequelize'),
+      server = restify.createServer();
 
-var server = restify.createServer();
+/* Config */
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.queryParser());
 server.use(restify.bodyParser());
 
-//DEFAULT ROUTE
+/* Default */
 server.get('/health', function(req, res, next) {
   res.writeHead(200);
   res.end();
@@ -28,172 +29,139 @@ server.get('/info/gen', function(req, res, next) {
 
   return next();
 });
-//
 
-//API
-var entry = "/api/1";
-var controllers = require('./src/controllers');
-var sequelize = require('./src/sequelize');
-var utils = require('./src/utils');
+/* API */
+const entry = "/api/1",
+      ControllerInterface = require('./src/controller');
 
-//ENTITY
-var Candidates = require('./entity/Candidates');
-var Users = require('./entity/Users');
-var Scripts = require('./entity/Scripts');
-var Swipes = require('./entity/Swipes');
+/* Entities */
+const Candidates = require('./entity/Candidates'),
+      Users = require('./entity/Users'),
+      Scripts = require('./entity/Scripts'),
+      Swipes = require('./entity/Swipes'),
+      Homepages = require('./entity/Homepages');
+
+const UsersUnprotected = require('./entity/UsersUnprotected');
 
 Users.hasMany(Swipes);
 Swipes.belongsTo(Users);
+Candidates.hasMany(Swipes);
+Swipes.belongsTo(Candidates);
+
+Users.hasOne(Candidates);
+Candidates.belongsTo(Users);
 Seq.sync;
 
-function badRequest(res, msg) {
-  res.writeHead(400, {'Content-Type': 'application/json; charset=utf-8'});
-  res.end(JSON.stringify({error: msg}));
-};
 
-function checkId(res, id) {
-  if(typeof id == "undefined" || isNaN(id)) {
-    return false;
-  }
+/* USERS */
+server.post(entry + '/users/auth', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.tryAuth();
 
-  return true;
-};
+  return next();
+});
 
-//ROUTES
-//USERS
 server.get(entry + '/users', function(req, res, next) {
-  var config = utils.getFilters(["email", "password"], req.query);
-  config.include = [{model: Swipes}];
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Users);
 
-  Users.findAll(config).then(function(users) {
-    for(var i = 0; i < users.length; i++) {
-      delete users[i]["dataValues"]["password"];
-    }
-
-    res.end(JSON.stringify(users));
-  });
+  return next();
 });
 
 server.get(entry + '/users/:id', function(req, res, next) {
-  if(!checkId(res, req.params.id)) {
-    badRequest(res, "bad request");
-    return next();
-  };
+  var Controller = new ControllerInterface(req, res);
+  Controller.findOne(Users);
 
-  var config = {
-    where: {
-      id: req.params.id
-    }
-  };
-  config.include = [{model: Swipes}];
-
-  Users.findOne(config).then(function(user) {
-    delete user["dataValues"]["password"];
-    console.log(user.getSwipes());
-    res.end(JSON.stringify(user));
-  });
+  return next();
 });
 
 server.post(entry + '/users', function(req, res, next) {
-  var isValid = utils.notBlank(["password", "email"], req.body);
+  var Controller = new ControllerInterface(req, res);
+  Controller.create(UsersUnprotected);
 
-  if(isValid.status == false) {
-    res.end(JSON.stringify(isValid));
-  }
-
-  Users
-  .build(req.body)
-  .save()
-  .then(function(anotherTask) {
-    res.end(JSON.stringify(anotherTask));
-  }).catch(function(error) {
-    res.end(JSON.stringify(error));
-  })
+  return next();
 });
 
 server.put(entry + '/users/:id', function(req, res, next) {
-  if(!checkId(res, req.params.id)) {
-    badRequest(res, "bad request");
-    return next();
-  };
+  var Controller = new ControllerInterface(req, res);
+  Controller.authAction(function() {
+    Controller.edit(Users);
+  });
 
-  var isValid = utils.notBlank(["password", "email"], req.body);
-
-  if(isValid.status == false) {
-    badRequest(res, isValid);
-    return next();
-  };
-
-  Post.update(
-    req.body
-  , {
-    where: {
-      id: req.params.id
-    }
-  }).then().catch();
+  return next();
 });
 
 
-//SCRIPTS
+/* SCRIPTS */
 server.get(entry + '/scripts', function(req, res, next) {
-  var config = {};
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Scripts);
 
-  Scripts.findAll(config).then(function(scripts) {
-    res.end(JSON.stringify(scripts));
-  });
+  return next();
 });
 
 server.get(entry + '/scripts/:id', function(req, res, next) {
-  if(!checkId(res, req.params.id)) {
-    badRequest(res, "bad request");
-    return next();
-  };
-
-  var config = {
-    where: {
-      id: req.params.id
-    }
-  };
-
-  Scripts.findOne(config).then(function(scripts) {
-    res.end(JSON.stringify(scripts));
-  });
+  var Controller = new ControllerInterface(req, res);
+  Controller.findOne(Scripts);
+  
+  return next();
 });
 
 server.post(entry + '/scripts', function(req, res, next) {
-  var isValid = utils.notBlank(["title", "description"], req.body);
+  var Controller = new ControllerInterface(req, res);
+  Controller.create(Scripts);
 
-  if(isValid.status == false) {
-    res.end(JSON.stringify(isValid));
-  };
-
-  Scripts
-  .build(req.body)
-  .save()
-  .then(function(anotherTask) {
-    res.end(JSON.stringify(anotherTask));
-  }).catch(function(error) {
-    res.end(JSON.stringify(error));
-  })
+  return next();
 });
 
 
-//SWIPES
+/* SWIPES */
 server.get(entry + '/swipes', function(req, res, next) {
-  //var config = utils.getFilters(["email", "username", "password"], req.query);
-  var config = {
-    include: [{
-        model: Users,
-        where: { state: sequelize.col('swipes') }
-    }]
-  };
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Swipes);
 
-  config = {};
-  config.include = [{model: Users}];
+  return next();
+});
 
-  Swipes.findAll(config).then(function(swipes) {
-    res.end(JSON.stringify(swipes));
+server.post(entry + '/swipes', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.authAction(function() {
+    Controller.create(Swipes, req, res);
   });
+
+  return next();
+});
+
+
+/* CANDIDATES */
+server.get(entry + '/candidates', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Candidates);
+
+  return next();
+});
+
+server.get(entry + '/candidates/:id', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findOne(Candidates);
+
+  return next();
+});
+
+
+/* HOMEPAGES */
+server.get(entry + '/homepages', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findAll(Homepages);
+
+  return next();
+});
+
+server.get(entry + '/homepages/:id', function(req, res, next) {
+  var Controller = new ControllerInterface(req, res);
+  Controller.findOne(Homepages);
+
+  return next();
 });
 
 server.listen(env.NODE_PORT || 3000, env.NODE_IP || 'localhost', function () {

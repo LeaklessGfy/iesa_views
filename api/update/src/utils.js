@@ -1,39 +1,62 @@
-var Utils = {
-	getFilters: function(arr, query) {
-	  var filters = {where: {}};
-	  
-	  if(typeof arr == "undefined") {
-	    return filters;
-	  }
-	  
-	  var lgt = arr.length;
-	  for(var i = 0; i < lgt; i++) {
-	    var field = arr[i];
+const Candidates = require('./../entity/Candidates'),
+      Users = require('./../entity/Users'),
+      Scripts = require('./../entity/Scripts'),
+      Swipes = require('./../entity/Swipes');
 
-	    if(typeof query[field] != "undefined") {
-	      filters.where[field] = query[field]
-	    }
-	  }
+const Entities = {
+	candidates: Candidates,
+	users: Users,
+	scripts: Scripts,
+	swipes: Swipes
+};
 
-	  return filters;
-	},
+var Utils = function() {}
 
-	notBlank: function(fields, body) {
-    var errors = [];
+Utils.prototype.getFilters = function getFilters(arr, query) {
+	var filters = {};
 
-    for(var i = 0; i < fields.length; i++) {
-      if(body[fields[i]] == undefined) {
-        errors.push(fields[i]);
-      }
-    }
+	if(typeof arr == "undefined" || arr == null) {
+		return filters;
+	}
 
-    if(errors.length) {
-      var msg = "Field(s) missing";
-      return {status: false, msg: msg, fields: errors};
-    }
+	var lgt = arr.length;
+	for(var i = 0; i < lgt; i++) {
+		var field = arr[i];
 
-    return {status: true};
-  }
+		if(typeof query[field] != "undefined") {
+	  		filters[field] = query[field]
+		}
+	}
+
+	return filters;
 }
 
-module.exports = Utils;
+Utils.prototype.getIncludes = function getIncludes(arr, query) {
+	var includes = [];
+
+	if(typeof arr == "undefined" || arr == null || typeof query['join'] == "undefined") {
+		return includes;
+	}
+
+	var joins = query['join'].split(',');
+
+	var lgt = arr.length;
+	var lgtJoins = joins.length;
+	for(var i = 0; i < lgt; i++) {
+		var field = arr[i];
+
+		for(var x = 0; x < lgtJoins; x++) {
+			if(joins[x] === field) {
+				var include = {
+					model: Entities[field]
+				};
+
+				includes.push(include);
+			}
+		}
+	}
+
+	return includes;
+}
+
+module.exports = new Utils();

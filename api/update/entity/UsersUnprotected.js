@@ -1,8 +1,14 @@
 var Sequelize = require('sequelize'); 
 var sequelize = require('./../src/sequelize');
 
-var Users = sequelize.define('users', 
+var UsersUnprotected = sequelize.define('users', 
 {
+  email: {
+    type: Sequelize.STRING
+  },
+  password: {
+    type: Sequelize.STRING
+  },
   name: {
     type: Sequelize.STRING
   },
@@ -24,18 +30,15 @@ var Users = sequelize.define('users',
   id_snapchat: {
     type: Sequelize.STRING
   },
-  email: {
-    type: Sequelize.STRING
-  },
   avatar: {
     type: Sequelize.STRING
   }
 });
 
-Users.api = {
-  filters: ["email", "password"],
-  includes: ["swipes", "candidates"],
+UsersUnprotected.api = {
+  filters: null,
+  includes: null,
   requirements: ["email", "password"]
 };
 
-module.exports = Users;
+module.exports = UsersUnprotected;

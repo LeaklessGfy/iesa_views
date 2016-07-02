@@ -2,8 +2,13 @@
 
 namespace Core\Controller;
 
+/**
+ * @author Vincent Rasquier
+ * Controller for web server
+ */
 class Controller {
-	private $creds;
+	private $api;
+	private $utils;
 
 	public function __construct($api, $utils) 
 	{
@@ -24,26 +29,59 @@ class Controller {
         $router->map('GET', '/live', function() {
     		require __DIR__ . '/../../views/live.php';
 		});
+      
+        $router->map('GET', '/candidates', function() {
+        	$results = $this->api->get('candidates', array("join" => "users"));
+
+            require __DIR__ . '/../../views/candidates.php';
+        });
 
 		$router->map('GET', '/ranking', function() {
-			$results = $this->api->get("users");
+			$raw = $this->api->get('users', array("join" => "candidates"));
+			$rankingValue = 1;
+			$results = array();
+
+			foreach ($raw as $value) {
+				if($value['candidate'] != null) {
+					$results[] = $value;
+				}
+			}
+
 			require __DIR__ . '/../../views/ranking.php';
 		});
 
 		$router->map('GET', '/api/ranking', function() {
-			$results = $this->api->get($_GET['data']);
+			$opts = array();
+			if($_GET['data'] == "users") {
+				$opts = array("join" => "candidates");
+			}
 
-			echo json_encode($results);
+			$results = $this->api->get($_GET['data'], $opts);
+
+			echo(json_encode($results));
+		});
+
+		$router->map('GET', '/api/swipes', function() {
+			$user = $this->utils->getUser();
+
+			if(!$user) {
+				echo(false);
+			}
+
+			$result = $this->api->post('swipes');
+			echo($result);
 		});
 
 		$router->map('GET|POST', '/connexion', function() {
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-				$result = $this->api->get("users", $_POST['user']);
+				$result = $this->api->post('users/auth', $_POST['user']);
 
-				if(count($result) > 0) {
+				if($result && count($result) > 0) {
 					$this->utils->authentificator($result[0]);
 
 					return header('Location: ' . $this->utils->getUrl("/")); 
+				} else {
+					echo "Wrong values";die;
 				}
 			}
 
@@ -68,7 +106,7 @@ class Controller {
 			}
 
 			if($_SERVER['REQUEST_METHOD'] === 'POST') {
-				$result = $this->api->put("users/" . $user->getId(), $_POST['user']);
+				$result = $this->api->put("users/" . $user->getId(), $_POST['user'], $user->getTokens());
 
 				if($result) {
 					$updateUser = $this->api->get('users/' . $user->getId());
@@ -79,6 +117,32 @@ class Controller {
 			}
 
 			require __DIR__ . '/../../views/profile.php';
+		});
+
+		$router->map('GET|POST', '/admin/login', function() {
+			if($_SERVER['REQUEST_METHOD'] === 'POST') {
+				$username = $_POST['login'];
+				$password = $_POST['password'];
+
+				$admin = $this->utils->getAdmin();
+
+				if($username === $admin['username'] && $password === $admin['password']) {
+					$_SESSION['admin'] = 1;
+					return header('Location: ' . $this->utils->getUrl("/"));
+				}
+			}
+
+			require __DIR__ . '/../../views/backoffice/login.php';
+		});
+
+		$router->map('GET', '/admin', function() {
+			if(!isset($_SESSION['admin'])) {
+				return header('Location: ' . $this->utils->getUrl("/"));
+			}
+
+			$results = $this->api->get('homepage');
+
+			require __DIR__ . '/../../views/backoffice/index.php';
 		});
 
 		$router->map('GET', '/deconnexion', function() {
