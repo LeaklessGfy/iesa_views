@@ -33,19 +33,25 @@
         </div>
         <aside id="aside-player" class="col-md-4">
           <div class="slider-live-tweet-candidates">
-            <div class="row">
-              <div class="col-xs-12">
-                1
-              </div>
-              <div class="col-xs-12">
-                2
+            <div class="row slide-candidates">
+              <div class="col-xs-12 candidate king-of-fame">
+                <div class="col-xs-4 col-md-4">
+                  <img src="res/img/test.png" alt="">
+                </div>
+                <div class="col-xs-7 col-xs-offset-1 col-md-7">
+                  <a href="#"><span>Kaylee</span> Carlson</a>
+                  <p>
+                    <span class="like-me-a-lot">1723</span>
+                    <a href="" class="share-me-a-lot">Partager son profil</a>
+                  </p>
+                </div>
               </div>
             </div>
             <div class="row">
               <div class="slide-twitter-timeline col-xs-12">
                 <!--<a class="twitter-timeline" href="https://twitter.com/hashtag/vivatech?f=tweets&vertical=default" data-widget-id="748484102437933057">Tweets sur #vivatech</a>-->
 
-                <!--<a class="twitter-timeline" href="https://twitter.com/hashtag/competIESAmmd?f=tweets&vertical=default" data-widget-id="749622728680939520" data-chrome=" noheader nofooter noborders">Tweets sur #competIESAmmd</a>-->
+                <a class="twitter-timeline" href="https://twitter.com/hashtag/competIESAmmd?f=tweets&vertical=default" data-widget-id="749622728680939520" data-chrome=" noheader nofooter noborders">Tweets sur #competIESAmmd</a>
 
                 <!--<a class="twitter-timeline" href="https://twitter.com/Alize_FameOnTV">Tweets by Alize_FameOnTV</a>-->
               </div>
@@ -122,6 +128,10 @@
         </div>
       </section>
 
+      <section>
+        <h1 class="text-center"><img src="res/img/participe-toi-aussi.png" alt="Participe toi aussi"><br><span class="title-next text-center">à l'émission en <br>t'inscrivant sur le site</span></h1>
+      </section>
+     
       <section id="candidates" class="container-fluid text-center">
         <h1 class="text-center">Candidats</h1>
         <div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">

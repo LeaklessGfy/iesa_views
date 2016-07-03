@@ -13,6 +13,68 @@
     width: 30%;
     float: left;
     position: relative;
+    .slide-candidates {
+      .candidate {
+        img {
+          border: 4px solid $primary-color;
+          border-radius: 50%;
+        }
+        margin: 1em auto;
+        border-bottom: 1px solid $secondary-color-dark;
+        a {
+          span {
+            text-transform: capitalize;
+            color: $tertiary-color-dark;
+          }
+        }
+        .like-me-a-lot {
+          padding-left: 35px;
+          position: relative;
+          font-size: 1.5rem;
+          color: $tertiary-color-dark;
+          font-family: $montserrat-regular;
+          transition: all .3s;
+          &:before {
+            position: absolute;
+            left: 0;
+            content: '';
+            background: url(../img/like.png) no-repeat center center / cover;
+            width: 28px;
+            height: 25px;
+          }
+          &:hover {
+            &:before {
+              transform: scale(1.2);
+            }
+          }
+        }
+        .share-me-a-lot {
+          font-size: 0;
+          position: relative;
+          content: '';
+          position: absolute;
+          background: url('../img/share.png');
+          height: 24px;
+          width: 18px;
+          margin-left: 30px;
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
+      }
+      .king-of-fame {
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 34%;
+          width: 28px;
+          height: 21px;
+          background: url('../img/king-of-fame.png');
+        }
+      }
+    }
     .slider-live-tweet-candidates {
       background: $secondary-color-light;
       .slick-list {

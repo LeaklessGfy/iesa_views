@@ -113,8 +113,8 @@ $(function () {
 
 function updateRanking(result) {
   var json = JSON.parse(result),
-  html = "",
-  htmlHead = "";
+    html = "",
+    htmlHead = "";
 
   if (data === 'users') {
     htmlHead = "<tr><th>Classement</th><th>Photo profil</th><th>Nom complet</th><th>Vote</th></tr>";
@@ -136,7 +136,7 @@ function updateRanking(result) {
   $('.table tbody').html(html);
 }
 
-$(document).ready(function() {
+$(document).ready(function () {
   $('.btn-rank').on('click', function () {
     if (!$(this).hasClass('active-nok')) {
       return;
@@ -153,7 +153,7 @@ $(document).ready(function() {
         data: data
       },
       success: updateRanking,
-      error: function() {
+      error: function () {
         console.log("Error");
       }
     })

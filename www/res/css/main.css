@@ -148,6 +148,13 @@ p.link-initial a:focus {
   color: #d1aa03;
 }
 
+.title-next {
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  font-size: 1.857rem;
+  display: inline-block;
+  margin-top: -2rem;
+}
+
 /*********** Buttons ***********/
 .btn {
   font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
@@ -602,6 +609,75 @@ p.link-initial a:focus {
   float: left;
   width: 30%;
   min-height: 100%;
+}
+
+#block-player #aside-player .slide-candidates .candidate {
+  margin: 1em auto;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+#block-player #aside-player .slide-candidates .candidate img {
+  border: 4px solid #d1aa03;
+  border-radius: 50%;
+}
+
+#block-player #aside-player .slide-candidates .candidate a span {
+  text-transform: capitalize;
+  color: #777;
+}
+
+#block-player #aside-player .slide-candidates .candidate .like-me-a-lot {
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  position: relative;
+  padding-left: 35px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  color: #777;
+}
+
+#block-player #aside-player .slide-candidates .candidate .like-me-a-lot:before {
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 25px;
+  content: '';
+  background: url(../img/like.png) no-repeat center center/cover;
+}
+
+#block-player #aside-player .slide-candidates .candidate .like-me-a-lot:hover:before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#block-player #aside-player .slide-candidates .candidate .share-me-a-lot {
+  font-size: 0;
+  position: relative;
+  position: absolute;
+  width: 18px;
+  height: 24px;
+  margin-left: 30px;
+  content: '';
+  background: url('../img/share.png');
+}
+
+#block-player #aside-player .slide-candidates .candidate .share-me-a-lot:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+#block-player #aside-player .slide-candidates .king-of-fame {
+  position: relative;
+}
+
+#block-player #aside-player .slide-candidates .king-of-fame:after {
+  position: absolute;
+  top: 0;
+  left: 34%;
+  width: 28px;
+  height: 21px;
+  content: '';
+  background: url('../img/king-of-fame.png');
 }
 
 #block-player #aside-player .slider-live-tweet-candidates {
