@@ -88,6 +88,9 @@ $(function () {
     arrows: false
   });
 
+  $('#slick-slide00 button').text('Candidats');
+  $('#slick-slide01 button').text('Feed Twitter');
+
   loginPopInConnexion();
   resizeContent();
   changeImgHome();

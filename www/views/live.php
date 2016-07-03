@@ -24,23 +24,30 @@
   <body>
     <?php include("include/menu.inc.php"); ?>
 
-      <section id="block-player">
-        <div id="player-youtube">
+    <main id="homepage-live" class="container">
+      <section id="block-player" class="row">
+        <div id="player-youtube" class="col-md-8">
           <div class="embed-container">
-            <iframe src='http://www.youtube.com/embed/qJ_Tw0w3lLA?autohide=<?php print $paramYoutube['autohide'] ?>&autoplay=<?php print $paramYoutube['autoplay'] ?>&color=<?php print $paramYoutube['color'] ?>&showinfo=<?php print $paramYoutube['showinfo'] ?>&rel=<?php print $paramYoutube['rel'] ?>&controls=<?php print $paramYoutube['controls'] ?>' frameborder='0' allowfullscreen></iframe>
+            <iframe src='http://www.youtube.com/embed/QHAm0Hpikzg?autohide=<?php print $paramYoutube['autohide'] ?>&autoplay=<?php print $paramYoutube['autoplay'] ?>&color=<?php print $paramYoutube['color'] ?>&showinfo=<?php print $paramYoutube['showinfo'] ?>&rel=<?php print $paramYoutube['rel'] ?>&controls=<?php print $paramYoutube['controls'] ?>' frameborder='0' allowfullscreen></iframe>
           </div>
         </div>
-        <aside id="aside-player">
+        <aside id="aside-player" class="col-md-4">
           <div class="slider-live-tweet-candidates">
             <div class="row">
               <div class="col-xs-12">
-                <h2>Liste des candidats</h2>
+                1
+              </div>
+              <div class="col-xs-12">
+                2
               </div>
             </div>
             <div class="row">
               <div class="slide-twitter-timeline col-xs-12">
                 <!--<a class="twitter-timeline" href="https://twitter.com/hashtag/vivatech?f=tweets&vertical=default" data-widget-id="748484102437933057">Tweets sur #vivatech</a>-->
-                <a class="twitter-timeline" href="https://twitter.com/Alize_FameOnTV">Tweets by Alize_FameOnTV</a>
+
+                <!--<a class="twitter-timeline" href="https://twitter.com/hashtag/competIESAmmd?f=tweets&vertical=default" data-widget-id="749622728680939520" data-chrome=" noheader nofooter noborders">Tweets sur #competIESAmmd</a>-->
+
+                <!--<a class="twitter-timeline" href="https://twitter.com/Alize_FameOnTV">Tweets by Alize_FameOnTV</a>-->
               </div>
             </div>
           </div>
@@ -172,7 +179,7 @@
         </div>
       </section>
 
-      <section id="replay-playlist" class="container-fluid text-center">
+      <!--<section id="replay-playlist" class="container-fluid text-center">
         <h1>Moments forts</h1>
         <div class="col-xs-4">
           <div class="embed-container">
@@ -189,7 +196,8 @@
             <iframe src="https://www.youtube.com/embed/qJ_Tw0w3lLA" frameborder="0" allowfullscreen></iframe>
           </div>
         </div>
-      </section>
+      </section>-->
+    </main>
 
       <?php include("include/footer.inc.php"); ?>
   </body>

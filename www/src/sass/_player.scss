@@ -14,10 +14,12 @@
     float: left;
     position: relative;
     .slider-live-tweet-candidates {
+      background: $secondary-color-light;
       .slick-list {
         padding-top: 50px;
       }
       .slick-dots {
+        margin: 0;
         padding-left: 0;
         width: 100%;
         position: absolute;
@@ -30,13 +32,15 @@
             width: 100%;
             padding: 15px;
             border: initial;
-            background: none;
+            background: $quaternary-color;
+            &:hover,
+            &:focus {
+              background: $tertiary-color-dark;
+            }
           }
-          &.slick-active,
-          &:hover,
-          &:focus {
+          &.slick-active {
             button {
-              background: yellow;
+              background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);;
             }
           }
         }
@@ -45,18 +49,12 @@
         iframe {
           height: 100% !important;
           width: 100% !important;
+          .timeline-Footer {
+            display: none !important;
+          }
         }
       }
     }
-    /*iframe {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }*/
   }
 }
 

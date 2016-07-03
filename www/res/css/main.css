@@ -483,6 +483,10 @@ p.link-initial a:focus {
   line-height: 2;
 }
 
+#homepage-live {
+  padding-top: 0;
+}
+
 .rs-connect {
   display: block;
   width: 100%;
@@ -598,15 +602,10 @@ p.link-initial a:focus {
   float: left;
   width: 30%;
   min-height: 100%;
-    /*iframe {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }*/
+}
+
+#block-player #aside-player .slider-live-tweet-candidates {
+  background: #fff;
 }
 
 #block-player #aside-player .slider-live-tweet-candidates .slick-list {
@@ -618,6 +617,7 @@ p.link-initial a:focus {
   top: 0;
   display: block;
   width: 100%;
+  margin: 0;
   padding-left: 0;
 }
 
@@ -630,18 +630,26 @@ p.link-initial a:focus {
   width: 100%;
   padding: 15px;
   border: initial;
-  background: none;
+  background: #2c2c2c;
 }
 
-#block-player #aside-player .slider-live-tweet-candidates .slick-dots li.slick-active button,
-#block-player #aside-player .slider-live-tweet-candidates .slick-dots li:hover button,
-#block-player #aside-player .slider-live-tweet-candidates .slick-dots li:focus button {
-  background: yellow;
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li button:hover,
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li button:focus {
+  background: #777;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li.slick-active button {
+  background: -webkit-linear-gradient(330deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
 }
 
 #block-player #aside-player .slider-live-tweet-candidates .slide-twitter-timeline iframe {
   width: 100% !important;
   height: 100% !important;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slide-twitter-timeline iframe .timeline-Footer {
+  display: none !important;
 }
 
 .embed-container {
