@@ -4,6 +4,21 @@
 ?>
 <header class="container">
   <nav class="navbar">
+
+    <form id="login-pop-in" class="col-md-3" method="POST">
+      <div class="form-group input-group">
+        <label class="input-group-addon" for="user-email">Email</label>
+        <input type="text" name="user[email]" placeholder="Email" class="form-control" id="user-email">
+      </div>
+      <div class="form-group input-group">
+        <label class="input-group-addon" for="user-password">Mot de passe</label>
+        <input type="password" name="user[password]" placeholder="Mot de passe" class="form-control" id="user-password">
+      </div>
+      <a href="<?php $this->utils->generateUrl("/inscription"); ?>">Pas encore inscrit ?</a>
+      <input class="btn btn-dark" type="submit" value="On y va !" name="action" />
+    </form>
+    <!--<div class="shape"></div>-->
+
     <div class="col-xs-12">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle">
@@ -32,5 +47,6 @@
         </ul>
       </div>
     </div>
+
   </nav>
 </header>
