@@ -57,8 +57,22 @@ function resizePlayerBlock() {
   $('#block-player #aside-player .slide-twitter-timeline').height(getHeightAsideWithoutDots);
 }
 
+function loginPopInConnexion() {
+  $('.navbar-right').on('mouseover', function () {
+    $('#login-pop-in').fadeIn();
+    /*$('.shape').delay(120).fadeIn().animate({
+      top: '88px'
+    });*/
+  });
+  $('#login-pop-in').on('mouseleave', function () {
+    $('#login-pop-in').fadeOut();
+  });
+}
+
 $(function () {
   'use strict';
+
+  var windowWidth = $(window).width();
 
   $(".slider-live-tweet-candidates").slick({
     dots: true,
@@ -74,6 +88,7 @@ $(function () {
     arrows: false
   });
 
+  loginPopInConnexion();
   resizeContent();
   changeImgHome();
   liveTweet();
@@ -82,9 +97,12 @@ $(function () {
   resizePlayerBlock();
 
   $(window).on('resize', function () {
+    windowWidth = $(window).width();
+
+    loginPopInConnexion();
     resizeContent();
     resizePlayerBlock();
-    if ($(window).width() > 768) {
+    if (windowWidth > 768) {
       $(".navbar-collapse").show();
     }
   });
@@ -135,6 +153,6 @@ $(document).ready(function() {
       error: function() {
         console.log("Error");
       }
-    })    
+    })
   });
 });

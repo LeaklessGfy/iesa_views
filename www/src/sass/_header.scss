@@ -1,5 +1,6 @@
 .navbar {
-  background: $bg-header-color;
+  background: none;
+  position: relative;
   .navbar-brand {
     height: auto;
     margin-top: 23px;
@@ -28,17 +29,39 @@
     }
   }
   .navbar-toggle {
-    border-color: $quaternary-color;
+    border-color: $primary-color;
     padding: 14px 10px;
     border-radius: 100%;
     position: absolute;
     margin: 26px 0;
     right: 15px;
     .icon-bar {
-      background: $quaternary-color;
+      background: $primary-color;
     }
   }
 }
+
+#login-pop-in {
+  display: none;
+  visibility: hidden;
+  position: absolute;
+}
+
+/*.shape {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 100px;
+  right: 41px;
+  width: 17px;
+  height: 17px;
+  transform: rotate(45deg);
+  background: linear-gradient(120deg, #ab8b00, #bc9901 100%);
+  border: 1px solid transparent;
+  border-image: linear-gradient(120deg, #a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  border-image-slice: 1;
+  content: '';
+}*/
 
 @media (min-width: $screen-sm-min) {
   .navbar {
@@ -104,6 +127,22 @@
         left: 50%;
         transform: translateX(-50%);
       }
+    }
+  }
+  #login-pop-in {
+    visibility: visible;
+    padding: 20px 30px 20px 20px;
+    top: 96px;
+    z-index: 100;
+    right: 30px;
+    background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+    text-align: right;
+    font-family: $montserrat-regular;
+    border: 1px solid transparent;
+    border-image: linear-gradient(#a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+    border-image-slice: 1;
+    label {
+      display: none;
     }
   }
 }
