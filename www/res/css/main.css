@@ -555,6 +555,12 @@ p.link-initial a:focus {
   background: #fff;
 }
 
+#vote-activities .slider-activities .slick-list .slick-track .slick-slide button {
+  width: 10rem;
+  height: 10rem;
+  border: none;
+}
+
 #vote-activities .slider-activities .slick-dots {
   position: absolute;
   top: 0;
