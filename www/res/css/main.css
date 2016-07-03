@@ -299,6 +299,13 @@ p.link-initial a:focus {
   background: #f5f5f5;
 }
 
+.add-border-before.border-light:before {
+  left: 50%;
+  height: 1px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
 .add-arrow-after:after {
   position: relative;
   display: inline-block;
@@ -468,6 +475,31 @@ p.link-initial a:focus {
 
 #homepage-landing .right-column p {
   line-height: 2;
+}
+
+.rs-connect {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  border: none;
+}
+
+.rs-connect.rs-connect-fb {
+  background: #3a5897;
+}
+
+.rs-connect.rs-connect-fb:hover {
+  background: #2c4372;
+}
+
+.rs-connect.rs-connect-tw {
+  background: #00acec;
+}
+
+.rs-connect.rs-connect-tw:hover {
+  background: #0087b9;
 }
 
 .btn-activities {

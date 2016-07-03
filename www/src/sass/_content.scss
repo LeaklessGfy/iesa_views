@@ -7,19 +7,23 @@
   }
 }
 
-@media (min-width: $screen-sm-min) {
-  #homepage-landing {
-    .right-column {
-      //padding-top: 5em;
+// Register form RS Connect
+.rs-connect {
+  display: block;
+  width: 100%;
+  margin-bottom: 1em;
+  border: none;
+  transition: all .5s;
+  &.rs-connect-fb {
+    background: #3a5897;
+    &:hover {
+      background: darken(#3a5897, 10%);
     }
   }
-}
-
-@media (min-width: $screen-md-min) {
-  #homepage-landing {
-    .right-column {
-      //padding: 0;
-      //padding-top: 9em;
+  &.rs-connect-tw {
+    background: #00acec;
+    &:hover {
+      background: darken(#00acec, 10%);
     }
   }
 }

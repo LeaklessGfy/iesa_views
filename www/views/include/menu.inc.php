@@ -33,14 +33,8 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-center">
           <li><a <?php if($url=='profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Notre concept</a></li>
-          <li><a <?php if($url=='profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Participer</a></li>
-          <li><a <?php if($url=='inscription') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/inscription"); ?>">TV</a></li>
-          <!--<li><a <?php if($url=='ranking') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/ranking"); ?>">Classement</a></li>
-          <li><a <?php if($url=='profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Profil</a></li>
-          <li><a <?php if($url=='inscription') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/inscription"); ?>">Inscription</a></li>
-          <!--<li><a href="#">Candidats</a></li>-->
-          <!--<li><a href="#">Replay</a></li>-->
-          <!--<li><a href="#">Candidature</a></li>-->
+          <li><a <?php if($url=='participer') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/participer"); ?>">Participer</a></li>
+          <li><a <?php if($url=='live') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/live"); ?>">TV</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a <?php if($url=='connexion') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>

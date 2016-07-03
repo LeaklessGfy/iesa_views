@@ -170,6 +170,13 @@ p {
     width: 47px;
     height: 3px;
   }
+  &.border-light {
+    &:before {
+      height: 1px;
+      transform: translateX(-50%);
+      left: 50%;
+    }
+  }
 }
 
 .add-arrow-after {
