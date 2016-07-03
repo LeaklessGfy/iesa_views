@@ -42,6 +42,42 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon {
+  font-size: 0;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.icon:after {
+  position: absolute;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  content: '';
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.icon:before {
+  font-family: 'icomoon';
+  font-size: 5rem;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 90px;
+  display: block;
+  text-transform: none;
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+}
+
 .icon-twitter:before {
   content: '\e900';
 }
@@ -587,12 +623,39 @@ footer a:focus {
 
 .contact-us {
   text-align: right;
+    /*position: absolute;
+  right: 15px;
+  top: -9px;*/
 }
 
-.contact-us a {
-  font-size: 3.571rem;
-  display: inline-block;
-  margin-left: 10px;
+.contact-us .icon {
+  -webkit-transition: color .3s;
+  transition: color .3s;
+  color: #d1aa03;
+  box-shadow: 0 0 0 3px #f5f5f5;
+}
+
+.contact-us .icon:after {
+  z-index: -1;
+  top: -2px;
+  left: -2px;
+  padding: 2px;
+  -webkit-transition: opacity .2s, -webkit-transform .2s;
+  transition: opacity .2s, -webkit-transform .2s;
+  transition: transform .2s, opacity .2s;
+  transition: transform .2s, opacity .2s, -webkit-transform .2s;
+  background: #f5f5f5;
+}
+
+.contact-us .icon:hover,
+.contact-us .icon:focus {
+  color: #d1aa03;
+}
+
+.contact-us .icon:hover:after,
+.contact-us .icon:focus:after {
+  -webkit-transform: scale(.85);
+          transform: scale(.85);
 }
 
 @media (max-width: 767px) {

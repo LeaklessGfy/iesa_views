@@ -15,10 +15,31 @@ footer {
 
 .contact-us {
   text-align: right;
+  /*position: absolute;
+  right: 15px;
+  top: -9px;*/
   a {
-    margin-left: 10px;
-    display: inline-block;
-    font-size: 3.571rem
+    //line-height: 1;
+  }
+  .icon {
+    color: $primary-color;
+    box-shadow: 0 0 0 3px $secondary-color-dark;
+    transition: color 0.3s;
+    &:after {
+      top: -2px;
+      left: -2px;
+      padding: 2px;
+      z-index: -1;
+      background: $secondary-color-dark;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    &:hover,
+    &:focus {
+      color: $primary-color;
+      &:after {
+        transform: scale(0.85);
+      }
+    }
   }
 }
 
@@ -26,7 +47,7 @@ footer {
   .copyright {
     text-align: center;
     display: block;
-}
+  }
   .contact-us {
     display: block;
     text-align: center;

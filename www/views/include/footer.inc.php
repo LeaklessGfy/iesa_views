@@ -6,8 +6,8 @@
             <a href="<?php $this->utils->generateUrl("/mentions-legales"); ?>" title="Page des mentions légales">Mentions légales</a>
           </div>
           <div class="contact-us col-md-3">
-              <a href="https://www.facebook.com/FAMEONTV/" target="_blank" title="Se rendre sur le profil Facebook"><span class="icon-twitter"></span></a>
-              <a href="https://twitter.com/Alize_FameOnTV" target="_blank" title="Se rendre sur le profil Twitter"><span class="icon-facebook"></span></a>
+              <a href="https://www.facebook.com/FAMEONTV/" class="icon icon-facebook" target="_blank" title="Se rendre sur le profil Facebook">Facebook</a>
+              <a href="https://twitter.com/Alize_FameOnTV" class="icon icon-twitter" target="_blank" title="Se rendre sur le profil Twitter">Twitter</a>
               <!--<a class="ico-rs-instagram" href="https://www.instagram.com/FAMEON_TV/" target="_blank" title="Se rendre sur le profil Instagram"><img src="res/img/logo-rs-instagram.png" alt="Rejoignez-nous sur Instagram"></a>
               <a href="mailto:viewsagency@gmail.com" target="_blank" title="Envoyer un mail à l'agence Views"><img src="res/img/logo-rs-gmail.png" alt="Envoyez-nous un mail"></a>-->
               <!--<a href="FAMEON_OFF" target="_blank"><img src="res/img/logo-rs-snapchat.png" alt="Rejoignez-nous sur Snapchat"></a>-->

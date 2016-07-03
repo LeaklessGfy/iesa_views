@@ -4,7 +4,7 @@
 ?>
 <header class="container">
   <nav class="navbar">
-    <div class="col-md-10 col-md-offset-1">
+    <div class="col-xs-12">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle">
           <span class="sr-only">Toggle navigation</span>

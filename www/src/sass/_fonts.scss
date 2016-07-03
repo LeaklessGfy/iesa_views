@@ -43,6 +43,41 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  //margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  &:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content: '';
+    box-sizing: content-box;
+  }
+  &:before {
+    font-family: 'icomoon';
+    speak: none;
+    font-size: 5rem;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
 .icon-twitter:before {
     content: "\e900";
 }
