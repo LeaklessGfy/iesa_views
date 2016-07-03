@@ -15,16 +15,16 @@ footer {
 
 .contact-us {
   text-align: right;
-  /*position: absolute;
+  position: absolute;
   right: 15px;
-  top: -9px;*/
-  a {
-    //line-height: 1;
-  }
+  top: -9px;
   .icon {
     color: $primary-color;
     box-shadow: 0 0 0 3px $secondary-color-dark;
     transition: color 0.3s;
+    &:not(:first-of-type) {
+      margin-left: 10px;
+    }
     &:after {
       top: -2px;
       left: -2px;

@@ -18,39 +18,31 @@
             color: $tertiary-color-dark;
           }
         }
+        .icon-heart-like,
+        .icon-share-ico {
+          color: #F15C5C;
+          font-size: 1.7rem;
+          cursor: pointer;
+          &:hover,
+          &:focus {
+            font-size: 1.9rem;
+            transition: all .3s;
+          }
+        }
+        .icon-share-ico {
+          color: $quaternary-color;
+          margin-left: 15px;
+        }
         .like-me-a-lot {
-          padding-left: 35px;
+          padding-left: 1em;
           position: relative;
           font-size: 1.5rem;
           color: $tertiary-color-dark;
           font-family: $montserrat-regular;
           transition: all .3s;
-          &:before {
-            position: absolute;
-            left: 0;
-            content: '';
-            background: url(../img/like.png) no-repeat center center / cover;
-            width: 28px;
-            height: 25px;
-          }
-          &:hover {
-            &:before {
-              transform: scale(1.2);
-            }
-          }
         }
         .share-me-a-lot {
           font-size: 0;
-          position: relative;
-          content: '';
-          position: absolute;
-          background: url('../img/share.png');
-          height: 24px;
-          width: 18px;
-          margin-left: 30px;
-          &:hover {
-            transform: scale(1.2);
-          }
         }
       }
       .king-of-fame {

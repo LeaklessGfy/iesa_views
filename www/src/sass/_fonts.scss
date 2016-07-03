@@ -48,8 +48,8 @@
   font-size: 0px;
   cursor: pointer;
   //margin: 15px 30px;
-  width: 90px;
-  height: 90px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   text-align: center;
   position: relative;
@@ -67,8 +67,8 @@
   &:before {
     font-family: 'icomoon';
     speak: none;
-    font-size: 5rem;
-    line-height: 90px;
+    font-size: 35px;
+    line-height: 1;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -78,13 +78,13 @@
   }
 }
 
-.icon-king-of-fame:before {
+.icon-instagram:before {
     content: "\e900";
 }
-.icon-share-ico:before {
+.icon-king-of-fame:before {
     content: "\e901";
 }
-.icon-heart-like:before {
+.icon-share-ico:before {
     content: "\e902";
 }
 .icon-twitter:before {
@@ -92,6 +92,9 @@
 }
 .icon-facebook:before {
     content: "\e904";
+}
+.icon-heart-like:before {
+    content: "\e905";
 }
 
 /*@font-face {

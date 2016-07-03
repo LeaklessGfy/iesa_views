@@ -41,8 +41,8 @@
                 <div class="col-xs-7 col-xs-offset-1 col-md-7">
                   <a href="#"><span>Kaylee</span> Carlson</a>
                   <p>
-                    <span class="like-me-a-lot">1723</span>
-                    <a href="" class="share-me-a-lot">Partager son profil</a>
+                    <span class="icon-heart-like"></span><span class="like-me-a-lot">1723</span>
+                    <span class="icon-share-ico"></span><a href="" class="share-me-a-lot">Partager son profil</a>
                   </p>
                 </div>
               </div>
