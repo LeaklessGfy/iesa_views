@@ -84,7 +84,7 @@ $(function () {
   $(".slider-activities").slick({
     dots: true,
     speed: 500,
-    autoplay: true,
+    autoplay: false,
     arrows: false
   });
 

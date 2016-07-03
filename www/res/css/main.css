@@ -78,12 +78,24 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.icon-twitter:before {
+.icon-king-of-fame:before {
   content: '\e900';
 }
 
-.icon-facebook:before {
+.icon-share-ico:before {
   content: '\e901';
+}
+
+.icon-heart-like:before {
+  content: '\e902';
+}
+
+.icon-twitter:before {
+  content: '\e903';
+}
+
+.icon-facebook:before {
+  content: '\e904';
 }
 
 /*@font-face {
@@ -152,7 +164,7 @@ p.link-initial a:focus {
   font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
   font-size: 1.857rem;
   display: inline-block;
-  margin-top: -2rem;
+  margin: -2em 0 2em;
 }
 
 /*********** Buttons ***********/
@@ -519,6 +531,66 @@ p.link-initial a:focus {
   background: #0087b9;
 }
 
+#vote-activities .slider-activities .slick-list {
+  padding-top: 50px;
+}
+
+#vote-activities .slider-activities .slick-list .slick-track {
+  color: #2c2c2c;
+}
+
+#vote-activities .slider-activities .slick-list .slick-track .slick-slide {
+  margin: 0;
+  padding: 30px 15px;
+  border: 3px solid transparent;
+  border-top: none;
+  -o-border-image: linear-gradient(#a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+     border-image: -webkit-linear-gradient(#a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+     border-image: linear-gradient(#a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  border-image-slice: 1;
+  background: #fff;
+}
+
+#vote-activities .slider-activities .slick-dots {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  margin: 0;
+  margin-left: -15px;
+  padding: 0 15px;
+}
+
+#vote-activities .slider-activities .slick-dots li {
+  display: inline-block;
+  width: 25%;
+}
+
+#vote-activities .slider-activities .slick-dots li button {
+  width: 100%;
+  padding: 15px;
+  border: initial;
+  background: #2c2c2c;
+}
+
+#vote-activities .slider-activities .slick-dots li.slick-active button {
+  background: -webkit-linear-gradient(330deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+}
+
+#vote-activities .slider-activities .slick-dots li.slick-active button:hover,
+#vote-activities .slider-activities .slick-dots li.slick-active button:focus {
+  background: -webkit-linear-gradient(330deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+}
+
+#vote-activities .slider-activities .slick-dots li:hover button,
+#vote-activities .slider-activities .slick-dots li:focus button {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background: #777;
+}
+
 .btn-activities {
   display: block;
   padding: 15px 0;
@@ -538,76 +610,13 @@ p.link-initial a:focus {
   background-color: none;
 }
 
-#vote-activities {
-  padding: 50px 0;
-  background: #fff;
-}
-
-#vote-activities .slider-activities .slick-list {
-  padding-top: 50px;
-}
-
-#vote-activities .slider-activities .slick-list .slick-track {
-  background: #f0f0f0;
-}
-
-#vote-activities .slider-activities .slick-list .slick-track .slick-slide {
-  padding: 30px 0;
-}
-
-#vote-activities .slider-activities .slick-dots {
-  position: absolute;
-  top: 0;
-  display: block;
-  width: 100%;
-  padding-left: 0;
-}
-
-#vote-activities .slider-activities .slick-dots li {
-  display: inline-block;
-  width: 25%;
-}
-
-#vote-activities .slider-activities .slick-dots li button {
-  width: 100%;
-  padding: 15px;
-  border: initial;
-  background: none;
-}
-
-#vote-activities .slider-activities .slick-dots li.slick-active button,
-#vote-activities .slider-activities .slick-dots li:hover button,
-#vote-activities .slider-activities .slick-dots li:focus button {
-  background: #f0f0f0;
-}
-
-#candidates,
-#replay-playlist {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-#replay-playlist {
-  background: #f1f1f1;
-}
-
 #block-player {
-  width: 100%;
-  height: 100%;
   margin-top: -52px;
   padding-top: 52px;
 }
 
-#block-player #player-youtube {
-  float: left;
-  width: 70%;
-  height: 100%;
-}
-
 #block-player #aside-player {
   position: relative;
-  float: left;
-  width: 30%;
   min-height: 100%;
 }
 
@@ -700,6 +709,10 @@ p.link-initial a:focus {
 #block-player #aside-player .slider-live-tweet-candidates .slick-dots li {
   display: inline-block;
   width: 50%;
+}
+
+#block-player #aside-player .slider-live-tweet-candidates .slick-dots li:first-of-type {
+  border-right: 1px solid #f5f5f5;
 }
 
 #block-player #aside-player .slider-live-tweet-candidates .slick-dots li button {

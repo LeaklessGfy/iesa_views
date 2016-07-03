@@ -1,17 +1,8 @@
 #block-player {
-  height: 100%;
-  width: 100%;
   margin-top: -52px;
   padding-top: 52px;
-  #player-youtube {
-    width: 70%;
-    float: left;
-    height: 100%;
-  }
   #aside-player {
     min-height: 100%;
-    width: 30%;
-    float: left;
     position: relative;
     .slide-candidates {
       .candidate {
@@ -90,6 +81,9 @@
         li {
           width: 50%;
           display: inline-block;
+          &:first-of-type {
+            border-right: 1px solid $secondary-color-dark;
+          }
           button {
             width: 100%;
             padding: 15px;

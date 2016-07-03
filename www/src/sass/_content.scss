@@ -32,6 +32,63 @@
   }
 }
 
+// Activities Vote
+#vote-activities {
+  .slider-activities {
+    .slick-list {
+      padding-top: 50px;
+      .slick-track {
+        color: $quaternary-color;
+        .slick-slide {
+          background: $secondary-color-light;
+          border-top: none;
+          border: 3px solid transparent;
+          border-image: linear-gradient(#a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+          border-image-slice: 1;
+          padding: 30px 15px;
+          margin: 0;
+        }
+      }
+    }
+    .slick-dots {
+      margin: 0;
+      margin-left: -15px;
+      padding: 0 15px;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      display: block;
+      li {
+        width: 25%;
+        display: inline-block;
+        button {
+          width: 100%;
+          padding: 15px;
+          border: initial;
+          background: $quaternary-color;
+        }
+        &.slick-active {
+          button {
+            background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+            &:hover,
+            &:focus {
+              background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+            }
+          }
+        }
+        &:hover,
+        &:focus {
+          button {
+            transition: all .3s;
+            background: $tertiary-color-dark;
+          }
+        }
+      }
+    }
+  }
+}
+
+
 // Other styles
 .btn-activities {
   display: block;
@@ -48,54 +105,4 @@
     background-color: none;
     color: black;
   }
-}
-
-#vote-activities {
-  background: #ffffff;
-  padding: 50px 0;
-  .slider-activities {
-    .slick-list {
-      .slick-track {
-        background: #F0F0F0;
-        .slick-slide {
-          padding: 30px 0;
-        }
-      }
-      padding-top: 50px;
-    }
-    .slick-dots {
-      padding-left: 0;
-      width: 100%;
-      position: absolute;
-      top: 0;
-      display: block;
-      li {
-        width: 25%;
-        display: inline-block;
-        button {
-          width: 100%;
-          padding: 15px;
-          border: initial;
-          background: none;
-        }
-        &.slick-active,
-        &:hover,
-        &:focus {
-          button {
-            background: #F0F0F0;
-          }
-        }
-      }
-    }
-  }
-}
-
-#candidates,
-#replay-playlist {
-  padding-top: 50px;
-  padding-bottom: 50px;
-}
-
-#replay-playlist {
-  background: #F1F1F1;
 }
