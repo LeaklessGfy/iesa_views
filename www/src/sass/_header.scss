@@ -29,14 +29,14 @@
     }
   }
   .navbar-toggle {
-    border-color: $quaternary-color;
+    border-color: $primary-color;
     padding: 14px 10px;
     border-radius: 100%;
     position: absolute;
     margin: 26px 0;
     right: 15px;
     .icon-bar {
-      background: $quaternary-color;
+      background: $primary-color;
     }
   }
 }

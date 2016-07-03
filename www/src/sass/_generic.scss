@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  padding: 5em 15px;
+  padding: 1em 15px;
 }
 
 section {
@@ -188,5 +188,11 @@ p {
     background: url('../img/spritesheet.png') no-repeat -166px -5px;
     width: 8px;
     height: 12px;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  main {
+    padding: 5em 15px;
   }
 }

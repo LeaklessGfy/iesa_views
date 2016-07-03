@@ -104,7 +104,7 @@ body {
 }
 
 main {
-  padding: 5em 15px;
+  padding: 1em 15px;
 }
 
 section {
@@ -316,6 +316,12 @@ p.link-initial a:focus {
   background: url('../img/spritesheet.png') no-repeat -166px -5px;
 }
 
+@media (min-width: 992px) {
+  main {
+    padding: 5em 15px;
+  }
+}
+
 .navbar {
   position: relative;
   background: none;
@@ -357,12 +363,12 @@ p.link-initial a:focus {
   right: 15px;
   margin: 26px 0;
   padding: 14px 10px;
-  border-color: #2c2c2c;
+  border-color: #d1aa03;
   border-radius: 100%;
 }
 
 .navbar .navbar-toggle .icon-bar {
-  background: #2c2c2c;
+  background: #d1aa03;
 }
 
 #login-pop-in {
