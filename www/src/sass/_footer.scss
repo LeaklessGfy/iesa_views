@@ -14,17 +14,15 @@ footer {
 }
 
 .contact-us {
-  text-align: right;
-  /*position: absolute;
-  right: 15px;
-  top: -9px;*/
-  a {
-    //line-height: 1;
-  }
+  text-align: center;
+  margin-top: 1em;
   .icon {
     color: $primary-color;
     box-shadow: 0 0 0 3px $secondary-color-dark;
     transition: color 0.3s;
+    &:not(:first-of-type) {
+      margin-left: 10px;
+    }
     &:after {
       top: -2px;
       left: -2px;
@@ -43,18 +41,19 @@ footer {
   }
 }
 
+@media (min-width: $screen-md-min) {
+  .contact-us {
+    text-align: right;
+    position: absolute;
+    right: 15px;
+    top: -9px;
+    margin: 0;
+  }
+}
+
 @media (max-width: 767px) {
   .copyright {
     text-align: center;
     display: block;
-  }
-  .contact-us {
-    display: block;
-    text-align: center;
-    float: none;
-    margin: 15px 0;
-    a {
-      margin: 10px;
-    }
   }
 }

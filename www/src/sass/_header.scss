@@ -29,14 +29,13 @@
     }
   }
   .navbar-toggle {
-    border-color: $primary-color;
+    border: none;
     padding: 14px 10px;
-    border-radius: 100%;
     position: absolute;
     margin: 26px 0;
     right: 15px;
     .icon-bar {
-      background: $primary-color;
+      background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
     }
   }
 }
@@ -45,23 +44,20 @@
   display: none;
   visibility: hidden;
   position: absolute;
+  .form-control {
+    &:focus {
+      border: none;
+      box-shadow: none;
+      outline: initial;
+    }
+  }
+  a {
+    float: right;
+    color: $secondary-color-light;
+    font-size: 80%;
+    margin: -1em 0 1em;
+  }
 }
-
-/*.shape {
-  display: none;
-  z-index: 10;
-  position: absolute;
-  top: 100px;
-  right: 41px;
-  width: 17px;
-  height: 17px;
-  transform: rotate(45deg);
-  background: linear-gradient(120deg, #ab8b00, #bc9901 100%);
-  border: 1px solid transparent;
-  border-image: linear-gradient(120deg, #a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
-  border-image-slice: 1;
-  content: '';
-}*/
 
 @media (min-width: $screen-sm-min) {
   .navbar {

@@ -14,7 +14,6 @@ $quinary-color: #1c1c1c;
 
 $bg-header-color: $quinary-color;
 $bg-content-color: $quinary-color;
-//$bg-footer-color: $tertiary-color;
 
 // Fonts Family
 $font-default: Helvetica, Arial, sans-serif;
@@ -23,14 +22,12 @@ $montserrat-regular: 'Montserrat Regular', $font-default;
 $montserrat-bold: 'Montserrat Bold', $font-default;
 $opensans-regular: 'Open Sans Regular', $font-default;
 $opensans-bold: 'Open Sans Bold', $font-default;
-//$gotham-medium: 'Gotham Medium', $font-default;
 
 $fonts-content: $montserrat-regular;
 
 // Fonts Size
 $font-size: 14px;
 
-//$font-size-h1: 7.429rem; // 104px
 $font-size-h1: 3.143rem; // 44px
 $font-size-h2: 1.571rem; // 22px
 $font-size-h3: 1.429rem; // 20px

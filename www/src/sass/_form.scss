@@ -1,5 +1,6 @@
 #connexion,
-#register {
+#register,
+#participe-form {
   input[type="submit"] {
     margin: 1em;
   }
@@ -7,13 +8,14 @@
     position: relative;
     z-index: 1;
     display: inline-block;
-    //margin: 1em;
-    //max-width: 135px;
     width: 100%;
     vertical-align: top;
     overflow: hidden;
   }
   .input__field {
+    &[type="file"] {
+      padding: 3em 1em 1.7em;
+    }
     position: relative;
     display: block;
     float: right;
@@ -62,12 +64,9 @@
       border-bottom: 1px solid $tertiary-color-light;
     }
     &:after {
-      //margin-top: 0;
       border-bottom: 4px solid transparent;
       transform: translate3d(-100%, 0, 0);
       transition: transform 0.3s;
-      //border-color: hsl(200, 100%, 50%);
-      //border: 1px solid transparent;
       border-image: linear-gradient(#a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
       border-image-slice: 1;
     }

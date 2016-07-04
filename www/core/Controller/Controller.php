@@ -21,6 +21,10 @@ class Controller {
 		$router->map('GET', '/', function() {
     		require __DIR__ . '/../../views/index.php';
 		});
+     
+     $router->map('GET', '/participer', function() {
+    		require __DIR__ . '/../../views/participer.php';
+		});
 
      	$router->map('GET', '/mentions-legales', function() {
     		require __DIR__ . '/../../views/legal_notice.php';

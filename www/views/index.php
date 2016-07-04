@@ -15,7 +15,7 @@
         <div class="left-column col-xs-12 col-sm-6"><img class="w100" src="res/img/logo-lg.png" alt="Logo Fame On"></div>
         <div class="right-column col-xs-12 col-sm-6">
           <h1><img src="res/img/c-est-quoi.png" alt="C'est quoi ?"></h1>
-          <p class="add-border-before">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          <p class="add-border-before">La première émission de web‐télé‐réalité faites par et pour les internautes qui te permettra de devenir <span class="bold">LA</span> prochaine <span class="bold">STAR</span> de demain !</p>
           <p><a href="" class="add-arrow-after">Voir la vidéo</a></p>
           <p><a href="<?php $this->utils->generateUrl("/connexion"); ?>" title="S'enregistrer pour participer à l'émission" class="btn btn-shine">Participer</a></p>
         </div>
