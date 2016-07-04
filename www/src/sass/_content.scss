@@ -115,6 +115,13 @@
   }
 }
 
+#participe {
+  padding-top: 0;
+  img {
+    width: 100%;
+  }
+}
+
 #candidates {
   .name {
     font-size: 0;
@@ -204,7 +211,8 @@
       }
     }
   }
-  #candidates {
+  #candidates,
+  #participe {
     img {
       width: initial;
     }

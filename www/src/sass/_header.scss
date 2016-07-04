@@ -45,6 +45,19 @@
   display: none;
   visibility: hidden;
   position: absolute;
+  .form-control {
+    &:focus {
+      border: none;
+      box-shadow: none;
+      outline: initial;
+    }
+  }
+  a {
+    float: right;
+    color: $secondary-color-light;
+    font-size: 80%;
+    margin: -1em 0 1em;
+  }
 }
 
 /*.shape {

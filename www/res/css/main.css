@@ -409,6 +409,19 @@ p.link-initial a:focus {
   visibility: hidden;
 }
 
+#login-pop-in .form-control:focus {
+  border: none;
+  outline: initial;
+  box-shadow: none;
+}
+
+#login-pop-in a {
+  font-size: 80%;
+  float: right;
+  margin: -1em 0 1em;
+  color: #fff;
+}
+
 /*.shape {
   display: none;
   z-index: 10;
@@ -643,6 +656,14 @@ p.link-initial a:focus {
   background: #777;
 }
 
+#participe {
+  padding-top: 0;
+}
+
+#participe img {
+  width: 100%;
+}
+
 #candidates {
   padding: 0;
   padding-bottom: 5em;
@@ -757,7 +778,8 @@ p.link-initial a:focus {
     width: initial;
   }
 
-  #candidates img {
+  #candidates img,
+    #participe img {
     width: initial;
   }
 }
@@ -940,12 +962,14 @@ p.link-initial a:focus {
 }
 
 #connexion input[type='submit'],
-#register input[type='submit'] {
+#register input[type='submit'],
+#participe-form input[type='submit'] {
   margin: 1em;
 }
 
 #connexion .input,
-#register .input {
+#register .input,
+#participe-form .input {
   position: relative;
   z-index: 1;
   display: inline-block;
@@ -955,7 +979,8 @@ p.link-initial a:focus {
 }
 
 #connexion .input__field,
-#register .input__field {
+#register .input__field,
+#participe-form .input__field {
   font-family: 'Open Sans Regular', Helvetica, Arial, sans-serif;
   position: relative;
   display: block;
@@ -971,13 +996,21 @@ p.link-initial a:focus {
     /* for box shadows to show on iOS */
 }
 
+#connexion .input__field[type='file'],
+#register .input__field[type='file'],
+#participe-form .input__field[type='file'] {
+  padding: 3em 1em 1.7em;
+}
+
 #connexion .input__field:focus,
-#register .input__field:focus {
+#register .input__field:focus,
+#participe-form .input__field:focus {
   outline: none;
 }
 
 #connexion .input__label,
-#register .input__label {
+#register .input__label,
+#participe-form .input__label {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1002,7 +1035,9 @@ p.link-initial a:focus {
 #connexion .input__label:before,
 #connexion .input__label:after,
 #register .input__label:before,
-#register .input__label:after {
+#register .input__label:after,
+#participe-form .input__label:before,
+#participe-form .input__label:after {
   position: absolute;
   top: 0;
   left: 0;
@@ -1013,7 +1048,8 @@ p.link-initial a:focus {
 }
 
 #connexion .input__label:after,
-#register .input__label:after {
+#register .input__label:after,
+#participe-form .input__label:after {
   -webkit-transition: -webkit-transform .3s;
   transition: -webkit-transform .3s;
   transition: transform .3s;
@@ -1028,7 +1064,8 @@ p.link-initial a:focus {
 }
 
 #connexion .input__label-content,
-#register .input__label-content {
+#register .input__label-content,
+#participe-form .input__label-content {
   position: absolute;
   display: block;
   width: 100%;
@@ -1038,7 +1075,9 @@ p.link-initial a:focus {
 #connexion .input__field:focus + .input__label::after,
 #connexion .input--filled .input__label::after,
 #register .input__field:focus + .input__label::after,
-#register .input--filled .input__label::after {
+#register .input--filled .input__label::after,
+#participe-form .input__field:focus + .input__label::after,
+#participe-form .input--filled .input__label::after {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
 }
@@ -1046,7 +1085,9 @@ p.link-initial a:focus {
 #connexion .input__field:focus + .input__label .input__label-content,
 #connexion .input--filled .input__label-content,
 #register .input__field:focus + .input__label .input__label-content,
-#register .input--filled .input__label-content {
+#register .input--filled .input__label-content,
+#participe-form .input__field:focus + .input__label .input__label-content,
+#participe-form .input--filled .input__label-content {
   -webkit-animation: animInput .3s forwards;
           animation: animInput .3s forwards;
 }

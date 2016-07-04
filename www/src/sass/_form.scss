@@ -1,5 +1,6 @@
 #connexion,
-#register {
+#register,
+#participe-form {
   input[type="submit"] {
     margin: 1em;
   }
@@ -14,6 +15,9 @@
     overflow: hidden;
   }
   .input__field {
+    &[type="file"] {
+      padding: 3em 1em 1.7em;
+    }
     position: relative;
     display: block;
     float: right;

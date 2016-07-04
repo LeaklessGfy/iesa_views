@@ -20,13 +20,13 @@
               <input class="input__field" type="text" name="user[email]" id="user-email" autofocus>
               <label class="input__label" for="user-email">
                 <span class="input__label-content">Email</span>
-            </label>
+              </label>
             </span>
             <span class="input">
               <input class="input__field" type="password" name="user[password]" id="user-password">
               <label class="input__label" for="user-password">
                 <span class="input__label-content">Mot de passe</span>
-            </label>
+              </label>
             </span>
             <input class="btn btn-shine" type="submit" value="Connexion" name="action">
           </form>
