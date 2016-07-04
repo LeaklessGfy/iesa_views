@@ -48,13 +48,21 @@ function liveTweet() {
 }
 
 function resizePlayerBlock() {
-  var getHeightPlayer = $('#player-youtube iframe').height(),
-    setHeightPlayerToAside = $('#block-player #aside-player .slider-live-tweet-candidates'),
-    getHeightAsideWithoutDots = getHeightPlayer - 50;
+  if ($(window).width() > 991) {
+    var getHeightPlayer = $('#player-youtube iframe').height(),
+      setHeightPlayerToAside = $('#block-player #aside-player .slider-live-tweet-candidates'),
+      getHeightAsideWithoutDots = getHeightPlayer - 50;
 
-  $(setHeightPlayerToAside).height(getHeightPlayer);
-  $('#block-player').height(getHeightPlayer);
-  $('#block-player #aside-player .slide-twitter-timeline').height(getHeightAsideWithoutDots);
+    $(setHeightPlayerToAside).height(getHeightPlayer);
+    $('#block-player').height(getHeightPlayer);
+    $('#block-player #aside-player .slide-twitter-timeline').height(getHeightAsideWithoutDots);
+  } else if ($(window).width() > 767 && $(window).width() < 992) {
+    $('#block-player').height('auto');
+    $('#block-player #aside-player .slide-twitter-timeline').height(650);
+  } else {
+    $('#block-player').height('auto');
+    $('#block-player #aside-player .slide-twitter-timeline').height(350);
+  }
 }
 
 function loginPopInConnexion() {
@@ -105,7 +113,7 @@ $(function () {
     loginPopInConnexion();
     resizeContent();
     resizePlayerBlock();
-    if (windowWidth > 768) {
+    if (windowWidth > 767) {
       $(".navbar-collapse").show();
     }
   });

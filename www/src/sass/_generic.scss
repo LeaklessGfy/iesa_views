@@ -186,6 +186,11 @@ p {
   }
 }
 
+.bold {
+  font-family: $montserrat-bold;
+  font-size: 1.2rem;
+}
+
 .add-arrow-after {
   &:after {
     content: '';

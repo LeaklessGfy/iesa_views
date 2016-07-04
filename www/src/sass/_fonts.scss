@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'icomoon';
-    src: url('../fonts/icomoon.ttf?mu5ike') format('truetype'),
-         url('../fonts/icomoon.woff?mu5ike') format('woff');
+    src: url('../fonts/icomoon.ttf?mif2iq') format('truetype'),
+         url('../fonts/icomoon.woff?mif2iq') format('woff');
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -78,6 +78,9 @@
   }
 }
 
+.icon-vote:before {
+    content: "\e906";
+}
 .icon-instagram:before {
     content: "\e900";
 }

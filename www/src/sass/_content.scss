@@ -34,6 +34,12 @@
 
 // Activities Vote
 #vote-activities {
+  h1 {
+    margin-bottom: 2em;
+    img {
+      width: 80%;
+    }
+  }
   .slider-activities {
     .slick-list {
       padding-top: 50px;
@@ -51,6 +57,22 @@
             border: none;
             width: 10rem;
             height: 10rem;
+            font-size: 6rem;
+            background: none;
+            color: $tertiary-color-light;
+            transform: scale(.8);
+            transition: all .3s;
+            &:last-of-type {
+              transform: rotate(180deg) scale(.8);
+            }
+            &:hover,
+            &:focus {
+              color: $primary-color;
+              transform: scale(1);
+              &:last-of-type {
+                transform: rotate(180deg) scale(1);
+              }
+            }
           }
         }
       }
@@ -93,6 +115,15 @@
   }
 }
 
+@media (min-width: $screen-sm-min) {
+  #vote-activities {
+    h1 {
+      img {
+        width: initial;
+      }
+    }
+  }
+}
 
 // Other styles
 .btn-activities {

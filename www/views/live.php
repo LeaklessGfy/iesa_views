@@ -58,36 +58,47 @@
       </section>
 
       <section id="vote-activities" class="row text-center">
-        <h1>Vote pour les activités de la maison</h1>
+        <h1><img src="res/img/vote-pour-les-activites.png" alt="Vote pour les activités de la maison"></h1>
         <div class="slider-activities col-xs-12">
 
           <div class="col-xs-12">
             <h2>Activité 1</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
-            <button type="button">pouce en l'air</button>
-            <a href="#">Voir les résultats</a>
+            <button type="button" class="vote-yes icon-vote"></button>
+            <button type="button" class="vote-no icon-vote"></button>
+            <div class="row">
+              <a href="#" class="see-results">Voir les résultats</a>
+            </div>
           </div>
 
           <div class="col-xs-12">
             <h2>Activité 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
-            <button type="button">pouce en l'air</button>
-            <a href="#">Voir les résultats</a>
+            <button type="button" class="vote-yes icon-vote"></button>
+            <button type="button" class="vote-no icon-vote"></button>
+            <div class="row">
+              <a href="#" class="see-results">Voir les résultats</a>
+            </div>
           </div>
 
           <div class="col-xs-12">
             <h2>Activité 3</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
-            <button type="button">pouce en l'air</button>
-            <a href="#">Voir les résultats</a>
+            <button type="button" class="vote-yes icon-vote"></button>
+            <button type="button" class="vote-no icon-vote"></button>
+            <div class="row">
+              <a href="#" class="see-results">Voir les résultats</a>
+            </div>
           </div>
-
 
           <div class="col-xs-12">
             <h2>Activité 4</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget mi vel arcu accumsan molestie. Proin non facilisis massa, quis aliquam sem. Vivamus lobortis purus eros, placerat egestas felis varius non.</p>
-            <button type="button">pouce en l'air</button>
-            <a href="#">Voir les résultats</a>
+            <button type="button" class="vote-yes icon-vote"></button>
+            <button type="button" class="vote-no icon-vote"></button>
+            <div class="row">
+              <a href="#" class="see-results">Voir les résultats</a>
+            </div>
           </div>
         </div>
       </section>
