@@ -17,7 +17,6 @@
       <a href="<?php $this->utils->generateUrl("/inscription"); ?>">Pas encore inscrit ?</a>
       <input class="btn btn-dark" type="submit" value="On y va !" name="action" />
     </form>
-    <!--<div class="shape"></div>-->
 
     <div class="col-xs-12">
       <div class="navbar-header">
@@ -27,12 +26,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="<?php $this->utils->generateUrl("/"); ?>"><img src="res/img/home.png" alt="Retourner à l'accueil"></a>
+        <a class="navbar-brand" <?php if ($url=='participer' || $url=='live' || $url=='candidates' || $url=='candidat' || $url=='mentions-legales') echo 'style="margin-top:0;padding-top:0;"'; ?> href="<?php $this->utils->generateUrl("/"); ?>"><img src="<?php if ($url=='participer' || $url=='live' || $url=='candidates' || $url=='candidat' || $url=='mentions-legales') { echo 'res/img/logo-small.png'; } else { echo 'res/img/home.png'; } ?>" alt="Retourner à l'accueil"></a>
       </div>
 
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-center">
-          <li><a <?php if($url=='profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Notre concept</a></li>
+          <li><a <?php if($url=='candidates') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/candidates"); ?>">Candidats</a></li>
           <li><a <?php if($url=='participer') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/participer"); ?>">Participer</a></li>
           <li><a <?php if($url=='live') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/live"); ?>">TV</a></li>
         </ul>

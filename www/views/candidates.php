@@ -12,7 +12,6 @@
 
       <main id="candidates" class="container">
         <h1 class="text-center"><img src="res/img/decouvrez-et-votez.png" alt="Découvrez et votez pour les candidats"></h1>
-        <!--<div class="col-xs-12 col-sm-12 col-md-10 col-md-offset-1">
           <?php
             if($results != false) {
               foreach ($results as $value) {
@@ -29,7 +28,7 @@
               }
             }
           ?>
-        </div>-->
+
         <div class="row list-candidates">
           <div class="col-md-4 overflow-hidden no-padding">
             <figure class="col-sm-4 col-md-12">

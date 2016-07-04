@@ -106,11 +106,6 @@
   content: '\e905';
 }
 
-/*@font-face {
-    font-family: 'Gotham Medium';
-    src: url('../fonts/gotham-condensed-medium-webfont.woff') format('woff'),
-         url('../fonts/gotham-condensed-medium-webfont.ttf') format('truetype');
-}*/
 html,
 body {
   font-family: 'Open Sans Regular', Helvetica, Arial, sans-serif;
@@ -395,12 +390,12 @@ p.link-initial a:focus {
   right: 15px;
   margin: 26px 0;
   padding: 14px 10px;
-  border-color: #d1aa03;
-  border-radius: 100%;
+  border: none;
 }
 
 .navbar .navbar-toggle .icon-bar {
-  background: #d1aa03;
+  background: -webkit-linear-gradient(330deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
+  background: linear-gradient(120deg, #d1aa03, #a88800 14%, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
 }
 
 #login-pop-in {
@@ -422,21 +417,6 @@ p.link-initial a:focus {
   color: #fff;
 }
 
-/*.shape {
-  display: none;
-  z-index: 10;
-  position: absolute;
-  top: 100px;
-  right: 41px;
-  width: 17px;
-  height: 17px;
-  transform: rotate(45deg);
-  background: linear-gradient(120deg, #ab8b00, #bc9901 100%);
-  border: 1px solid transparent;
-  border-image: linear-gradient(120deg, #a88800, #d1aa03 26%, #ffeb94 42%, #d1aa03 51%, #a88800 65%, #d1aa03);
-  border-image-slice: 1;
-  content: '';
-}*/
 @media (min-width: 768px) {
   .navbar {
     margin-bottom: 0;

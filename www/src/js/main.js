@@ -7,15 +7,6 @@ function resizeContent() {
   $('main.container').css('min-height', $(window).height() - footerContainerHeight - headerContainerHeight + 'px');
 }
 
-function changeImgHome() {
-  $('.navbar-brand').on('mouseover', function () {
-    $('.navbar-brand img').attr('src', 'res/img/home-hover.png');
-  });
-  $('.navbar-brand').on('mouseout', function () {
-    $('.navbar-brand img').attr('src', 'res/img/home.png');
-  });
-}
-
 function menuCollapseMobile() {
   $('.navbar-toggle').on('click', function () {
     $(this).toggleClass('collapsed');
@@ -68,9 +59,6 @@ function resizePlayerBlock() {
 function loginPopInConnexion() {
   $('.navbar-right').on('mouseover', function () {
     $('#login-pop-in').fadeIn();
-    /*$('.shape').delay(120).fadeIn().animate({
-      top: '88px'
-    });*/
   });
   $('#login-pop-in').on('mouseleave', function () {
     $('#login-pop-in').fadeOut();
@@ -101,7 +89,6 @@ $(function () {
 
   loginPopInConnexion();
   resizeContent();
-  changeImgHome();
   liveTweet();
   menuCollapseMobile();
   selectBtnActivities();
