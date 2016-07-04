@@ -115,12 +115,98 @@
   }
 }
 
+#candidates {
+  .name {
+    font-size: 0;
+    transition: all ease .2s;
+    opacity: 0;
+    &.first {
+      font-family: $opensans-regular;
+      color: $secondary-color-dark;
+      text-transform: capitalize;
+    }
+    &.last {
+      font-family: $opensans-bold;
+      color: $quaternary-color;
+      text-transform: uppercase;
+    }
+  }
+  padding: 0;
+  padding-bottom: 5em;
+  img {
+    width: 100%;
+  }
+  .no-padding {
+    padding: 0;
+  }
+  .list-candidates {
+    padding: 0 30px;
+    .overflow-hidden {
+      overflow: hidden;
+    }
+    figure {
+      padding: 0;
+      cursor: pointer;
+      border: 1px solid transparent;
+      overflow: hidden;
+      position: relative;
+      &.img-small-left {
+        padding-left: 0;
+      }
+      &.img-small-right {
+        padding-right: 0;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      figcaption {
+        text-align: center;
+        position: absolute;
+        bottom: 2em;
+        z-index: 100;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:hover,
+      &:focus {
+        .name {
+          opacity: 1;
+          font-size: 2.571rem;
+        }
+        &:before {
+          content: '';
+          background: url('../img/background-hover.png') center center / cover;
+          position: absolute;
+          animation: SmoothOver .3s linear;
+          padding-right: 15px;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      @keyframes SmoothOver {
+        0% {
+          bottom: -100%
+        }
+        100% {
+          bottom: 0
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: $screen-sm-min) {
   #vote-activities {
     h1 {
       img {
         width: initial;
       }
+    }
+  }
+  #candidates {
+    img {
+      width: initial;
     }
   }
 }
