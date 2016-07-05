@@ -36,7 +36,7 @@
               </p>
             </div>
             <div class="col-xs-12 candidat-profil-description-bottom">
-              <p>Didier était un grand garçon, aux yeux bleus et aux cheveux blonds… Pour donner à votre phrase plus d’originalité et pour éviter les clichés, vous pouvez avoir recours à un présentatif ou à une tournure exclamative ou interrogative. Son deuxième prénom est Jawad et il aime prêter son appart.</p>
+              <p>Didier était un grand garçon, aux yeux marrons et aux cheveux bruns… Il fait des Selfie toute la journée et adore parler de la pluie et du beau temps. Il souhaite devenir l'homme le plus populaire de France d'ici 3 semaines. Son deuxième prénom est Jawad et il aime prêter son appart. N'hésitez pas à le contacter à la fin de l'émission.</p>
             </div>
           </div>
         </div>
