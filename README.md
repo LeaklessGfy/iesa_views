@@ -17,6 +17,10 @@ Technology:
 - HTML / CSS
 - JS
 
-You will find installation procedure of these project in their appropriate folder's readme.
+Put credentials.json in api/update/app (with local db credentials)
+Put credentials.php in www/app  that follows the credentials.php.dist
+
+`npm install && node app` => API
+`composer install` => WWW
 
 *ALL RIGHTS RESERVED TO: Views - IESA (Mathieu Rodrigues, Morgane Delorme & Vincent Rasquier)*
