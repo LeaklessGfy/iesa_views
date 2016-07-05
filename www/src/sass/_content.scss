@@ -11,6 +11,201 @@
   padding-top: 0;
 }
 
+#homepage-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  #player-youtube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    animation: SmoothClick .75s linear;
+  }
+}
+
+@keyframes SmoothClick {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+// Profil Candidat
+
+#candidats {
+  .left-column {
+    background-image: url('../img/background-opacity.png'), url('../img/avatar/1.jpg');
+    background-position: center center, center center;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
+    img {
+        width: 70%;
+        height: auto;
+        border: 1em solid $primary-color;
+        border-radius: 50%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 3em;
+    }
+    figcaption {
+      position: relative;
+      bottom: -5em;
+      text-align: center;
+    }
+    .name {
+      font-size: 2rem;
+      transition: all ease .2s;
+      &.first {
+        font-family: $opensans-regular;
+        color: $secondary-color-dark;
+        text-transform: capitalize;
+      }
+      &.last {
+        font-family: $opensans-bold;
+        color: $primary-color;
+        text-transform: uppercase;
+      }
+    }
+    @media (max-width: $screen-sm-min) {
+      img {
+        top: 1em;
+      }
+      figcaption {
+        bottom: 0;
+        margin-top: 2em;
+      }
+    }
+    @media (max-width: $screen-md-min) {
+      margin-bottom: 2em;
+    }
+  }
+  .right-column {
+    .candidat-profil-description-top {
+      background: $secondary-color-dark;
+      padding: 40px;
+      box-shadow: inset 0px -40px 78px -7px rgba(0,0,0,0.2);
+      color: $tertiary-color-dark;
+      a {
+        text-decoration: none;
+      }
+      .icon-heart-like {
+        color: $primary-color;
+        font-size: 3.7rem;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          transition: all .3s;
+        }
+      }
+      .like-me-a-lot {
+        padding-left: 1em;
+        bottom: 10px;
+        position: relative;
+        font-size: 2rem;
+        font-family: $montserrat-regular;
+        transition: all .3s;
+      }
+      .age {
+        font-family: $montserrat-bold;
+        position: relative;
+        bottom: 10px;
+        padding: 0 25px;
+        font-size: 2.5rem;
+        margin: 0 .5em;
+        span:last-of-type {
+          font-size: 2rem;
+          font-family: $montserrat-regular;
+        }
+      }
+      .country, .astro {
+        position: relative;
+        bottom: 10px;
+        font-size: 3rem;
+        font-family: $montserrat-regular;
+        margin: 0 .5em;
+        span:last-of-type {
+          font-size: 2rem;
+          padding-left: 25px;
+        }
+      }
+      .icon-facebook,
+      .icon-twitter,
+      .icon-youtube,
+      .icon-instagram {
+        position: relative;
+        top: 10px;
+        color: $secondary-color-light;
+        font-size: 3rem;
+        padding: .2em;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      .icon-facebook {
+        margin-left: 3.5em;
+        background: #3a5897;
+        &:hover,
+        &:focus {
+          background: darken(#3a5897, 5%);
+        }
+      }
+      .icon-twitter {
+        background: #00abed;
+        &:hover,
+        &:focus {
+          background: darken(#00abed, 5%);
+        }
+      }
+      .icon-youtube {
+        background: #c6312c;
+        &:hover,
+        &:focus {
+          background: darken(#c6312c, 5%);
+        }
+      }
+      .icon-instagram {
+        background: #000000;
+        &:hover,
+        &:focus {
+          background: lighten(#000000, 5%);
+        }
+      }
+      @media (max-width: $screen-sm-min) {
+        .age {
+          font-size: 2rem;
+        }
+        .icon-facebook,
+        .icon-twitter,
+        .icon-youtube,
+        .icon-instagram {
+          margin: 0;
+        }
+        .icon-facebook {
+          margin-left: 1.5em;
+        }
+      }
+    }
+    .candidat-profil-description-bottom {
+      background: $secondary-color-light;
+      padding: 40px;
+      color: $tertiary-color-dark;
+    }
+  }
+}
+
 // Register form RS Connect
 .rs-connect {
   display: block;

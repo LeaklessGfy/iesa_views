@@ -17,7 +17,7 @@
 
   <head>
     <?php include "include/head.inc.php" ?>
-      <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu</title>
+      <title>Fame on - Live TV - La télé-réalité comme vous ne l'avez jamais vu</title>
       <meta name="description" content="">
   </head>
 
@@ -36,7 +36,7 @@
             <div class="row slide-candidates">
               <div class="col-xs-12 candidate king-of-fame">
                 <div class="col-xs-4 col-md-4">
-                  <img src="res/img/test.png" alt="">
+                  <img src="res/img/avatar/1.jpg" alt="">
                 </div>
                 <div class="col-xs-7 col-xs-offset-1 col-md-7">
                   <a href="#"><span>Kaylee</span> Carlson</a>

@@ -24,7 +24,7 @@
 @font-face {
   font-family: 'icomoon';
 
-    src: url('../fonts/icomoon.ttf?mif2iq') format('truetype'), url('../fonts/icomoon.woff?mif2iq') format('woff');
+    src: url('../fonts/icomoon.ttf?v1966g') format('truetype'), url('../fonts/icomoon.woff?v1966g') format('woff');
 }
 
 [class^='icon-'],
@@ -76,6 +76,10 @@
   text-transform: none;
   speak: none;
   -webkit-font-smoothing: antialiased;
+}
+
+.icon-youtube:before {
+  content: '\e907';
 }
 
 .icon-vote:before {
@@ -512,6 +516,253 @@ p.link-initial a:focus {
   padding-top: 0;
 }
 
+#homepage-modal {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: rgba(0, 0, 0, .5);
+}
+
+#homepage-modal #player-youtube {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: SmoothClick .75s linear;
+          animation: SmoothClick .75s linear;
+}
+
+@-webkit-keyframes SmoothClick {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes SmoothClick {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(0);
+            transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+#candidats .left-column {
+  background-image: url('../img/background-opacity.png'), url('../img/avatar/1.jpg');
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: auto, cover;
+}
+
+#candidats .left-column img {
+  position: relative;
+  top: 3em;
+  left: 50%;
+  width: 70%;
+  height: auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: 1em solid #d1aa03;
+  border-radius: 50%;
+}
+
+#candidats .left-column figcaption {
+  position: relative;
+  bottom: -5em;
+  text-align: center;
+}
+
+#candidats .left-column .name {
+  font-size: 2rem;
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s;
+}
+
+#candidats .left-column .name.first {
+  font-family: 'Open Sans Regular', Helvetica, Arial, sans-serif;
+  text-transform: capitalize;
+  color: #f5f5f5;
+}
+
+#candidats .left-column .name.last {
+  font-family: 'Open Sans Bold', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #d1aa03;
+}
+
+@media (max-width: 768px) {
+  #candidats .left-column img {
+    top: 1em;
+  }
+
+  #candidats .left-column figcaption {
+    bottom: 0;
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 992px) {
+  #candidats .left-column {
+    margin-bottom: 2em;
+  }
+}
+
+#candidats .right-column .candidat-profil-description-top {
+  padding: 40px;
+  color: #777;
+  background: #f5f5f5;
+  box-shadow: inset 0 -40px 78px -7px rgba(0, 0, 0, .2);
+}
+
+#candidats .right-column .candidat-profil-description-top a {
+  text-decoration: none;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-heart-like {
+  font-size: 3.7rem;
+  cursor: pointer;
+  color: #d1aa03;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-heart-like:hover,
+#candidats .right-column .candidat-profil-description-top .icon-heart-like:focus {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#candidats .right-column .candidat-profil-description-top .like-me-a-lot {
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  position: relative;
+  bottom: 10px;
+  padding-left: 1em;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#candidats .right-column .candidat-profil-description-top .age {
+  font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
+  font-size: 2.5rem;
+  position: relative;
+  bottom: 10px;
+  margin: 0 .5em;
+  padding: 0 25px;
+}
+
+#candidats .right-column .candidat-profil-description-top .age span:last-of-type {
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+}
+
+#candidats .right-column .candidat-profil-description-top .country,
+#candidats .right-column .candidat-profil-description-top .astro {
+  font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  position: relative;
+  bottom: 10px;
+  margin: 0 .5em;
+}
+
+#candidats .right-column .candidat-profil-description-top .country span:last-of-type,
+#candidats .right-column .candidat-profil-description-top .astro span:last-of-type {
+  font-size: 2rem;
+  padding-left: 25px;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-facebook,
+#candidats .right-column .candidat-profil-description-top .icon-twitter,
+#candidats .right-column .candidat-profil-description-top .icon-youtube,
+#candidats .right-column .candidat-profil-description-top .icon-instagram {
+  font-size: 3rem;
+  position: relative;
+  top: 10px;
+  margin: 5px;
+  padding: .2em;
+  color: #fff;
+  border-radius: 50%;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-facebook {
+  margin-left: 3.5em;
+  background: #3a5897;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-facebook:hover,
+#candidats .right-column .candidat-profil-description-top .icon-facebook:focus {
+  background: #334d85;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-twitter {
+  background: #00abed;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-twitter:hover,
+#candidats .right-column .candidat-profil-description-top .icon-twitter:focus {
+  background: #0099d4;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-youtube {
+  background: #c6312c;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-youtube:hover,
+#candidats .right-column .candidat-profil-description-top .icon-youtube:focus {
+  background: #b12c27;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-instagram {
+  background: #000;
+}
+
+#candidats .right-column .candidat-profil-description-top .icon-instagram:hover,
+#candidats .right-column .candidat-profil-description-top .icon-instagram:focus {
+  background: #0d0d0d;
+}
+
+@media (max-width: 768px) {
+  #candidats .right-column .candidat-profil-description-top .age {
+    font-size: 2rem;
+  }
+
+  #candidats .right-column .candidat-profil-description-top .icon-facebook,
+    #candidats .right-column .candidat-profil-description-top .icon-twitter,
+    #candidats .right-column .candidat-profil-description-top .icon-youtube,
+    #candidats .right-column .candidat-profil-description-top .icon-instagram {
+    margin: 0;
+  }
+
+  #candidats .right-column .candidat-profil-description-top .icon-facebook {
+    margin-left: 1.5em;
+  }
+}
+
+#candidats .right-column .candidat-profil-description-bottom {
+  padding: 40px;
+  color: #777;
+  background: #fff;
+}
+
 .rs-connect {
   display: block;
   width: 100%;
@@ -805,6 +1056,7 @@ p.link-initial a:focus {
 }
 
 #block-player #aside-player .slide-candidates .candidate img {
+  width: 80%;
   border: 4px solid #d1aa03;
   border-radius: 50%;
 }

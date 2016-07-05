@@ -7,6 +7,19 @@ function resizeContent() {
   $('main.container').css('min-height', $(window).height() - footerContainerHeight - headerContainerHeight + 'px');
 }
 
+function homepageVideoLauncher() {
+  $('.video-presentation').on('click', function () {
+    $('#homepage-modal').fadeIn();
+  });
+}
+
+function homepageVideoOut() {
+  $('#homepage-modal').on('click', function () {
+    $('#homepage-modal').fadeOut();
+    $('#player-youtube').get(0).stopVideo();
+  });
+}
+
 function menuCollapseMobile() {
   $('.navbar-toggle').on('click', function () {
     $(this).toggleClass('collapsed');
@@ -56,6 +69,15 @@ function resizePlayerBlock() {
   }
 }
 
+function resizeCandidatBlock() {
+  if ($(window).width() > 991) {
+    var getHeightDescriptionRightBlock = $('#candidats .right-column').height(),
+        setHeightDescriptionLeftBlock = $('#candidats .left-column');
+
+    $(setHeightDescriptionLeftBlock).height(getHeightDescriptionRightBlock);
+  }
+}
+
 function loginPopInConnexion() {
   $('.navbar-right').on('mouseover', function () {
     $('#login-pop-in').fadeIn();
@@ -93,6 +115,9 @@ $(function () {
   menuCollapseMobile();
   selectBtnActivities();
   resizePlayerBlock();
+  homepageVideoLauncher();
+  homepageVideoOut();
+  resizeCandidatBlock();
 
   $(window).on('resize', function () {
     windowWidth = $(window).width();
@@ -100,6 +125,8 @@ $(function () {
     loginPopInConnexion();
     resizeContent();
     resizePlayerBlock();
+    resizeCandidatBlock();
+    
     if (windowWidth > 767) {
       $(".navbar-collapse").show();
     }

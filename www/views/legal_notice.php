@@ -3,7 +3,7 @@
 
 <head>
   <?php include "include/head.inc.php" ?>
-    <title>Fame on - La télé-réalité comme vous ne l'avez jamais vu - Mentions légales</title>
+    <title>Fame on - Mentions légales - La télé-réalité comme vous ne l'avez jamais vu - Mentions légales</title>
     <meta name="description" content="">
 </head>
 
