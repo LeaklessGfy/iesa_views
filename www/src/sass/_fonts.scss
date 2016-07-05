@@ -24,8 +24,8 @@
 
 @font-face {
     font-family: 'icomoon';
-    src: url('../fonts/icomoon.ttf?mif2iq') format('truetype'),
-         url('../fonts/icomoon.woff?mif2iq') format('woff');
+    src: url('../fonts/icomoon.ttf?v1966g') format('truetype'),
+         url('../fonts/icomoon.woff?v1966g') format('woff');
 }
 
 [class^="icon-"], [class*=" icon-"] {
@@ -78,6 +78,9 @@
   }
 }
 
+.icon-youtube:before {
+    content: "\e907";
+}
 .icon-vote:before {
     content: "\e906";
 }

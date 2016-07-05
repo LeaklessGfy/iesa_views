@@ -7,6 +7,19 @@ function resizeContent() {
   $('main.container').css('min-height', $(window).height() - footerContainerHeight - headerContainerHeight + 'px');
 }
 
+function homepageVideoLauncher() {
+  $('.video-presentation').on('click', function () {
+    $('#homepage-modal').fadeIn();
+  });
+}
+
+function homepageVideoOut() {
+  $('#homepage-modal').on('click', function () {
+    $('#homepage-modal').fadeOut();
+    $('#player-youtube').get(0).stopVideo();
+  });
+}
+
 function menuCollapseMobile() {
   $('.navbar-toggle').on('click', function () {
     $(this).toggleClass('collapsed');
@@ -93,6 +106,8 @@ $(function () {
   menuCollapseMobile();
   selectBtnActivities();
   resizePlayerBlock();
+  homepageVideoLauncher();
+  homepageVideoOut();
 
   $(window).on('resize', function () {
     windowWidth = $(window).width();

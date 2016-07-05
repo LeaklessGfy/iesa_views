@@ -11,6 +11,141 @@
   padding-top: 0;
 }
 
+#homepage-modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  #player-youtube {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    animation: SmoothClick .75s linear;
+  }
+}
+
+@keyframes SmoothClick {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+}
+
+// Profil Candidat
+
+#candidats {
+  .left-column {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .right-column {
+    .candidat-profil-description {
+      background: $secondary-color-dark;
+      padding: 40px;
+      box-shadow: inset 0px -40px 78px -7px rgba(0,0,0,0.2);
+      color: $tertiary-color-dark;
+      a {
+        text-decoration: none;
+      }
+      .icon-heart-like {
+        color: $primary-color;
+        font-size: 3.7rem;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+          transition: all .3s;
+        }
+      }
+      .like-me-a-lot {
+        padding-left: 1em;
+        bottom: 10px;
+        position: relative;
+        font-size: 2rem;
+        font-family: $montserrat-regular;
+        transition: all .3s;
+      }
+      .age {
+        font-family: $montserrat-bold;
+        position: relative;
+        bottom: 10px;
+        padding: 0 25px;
+        font-size: 2.5rem;
+        margin: 0 .5em;
+        span:last-of-type {
+          font-size: 2rem;
+          font-family: $montserrat-regular;
+        }
+      }
+      .country, .astro {
+        position: relative;
+        bottom: 10px;
+        font-size: 3rem;
+        font-family: $montserrat-regular;
+        margin: 0 .5em;
+        span:last-of-type {
+          font-size: 2rem;
+          padding-left: 25px;
+        }
+      }
+      .icon-facebook,
+      .icon-twitter,
+      .icon-youtube,
+      .icon-instagram {
+        position: relative;
+        top: 10px;
+        color: $secondary-color-light;
+        font-size: 4rem;
+        padding: .2em;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      .icon-facebook {
+        margin-left: 1em;
+        background: #3a5897;
+        &:hover,
+        &:focus {
+          background: darken(#3a5897, 5%);
+        }
+      }
+      .icon-twitter {
+        background: #00abed;
+        &:hover,
+        &:focus {
+          background: darken(#00abed, 5%);
+        }
+      }
+      .icon-youtube {
+        background: #c6312c;
+        &:hover,
+        &:focus {
+          background: darken(#c6312c, 5%);
+        }
+      }
+      .icon-instagram {
+        background: #000000;
+        &:hover,
+        &:focus {
+          background: darken(#000000, 5%);
+        }
+      }
+    }
+  }
+}
+
 // Register form RS Connect
 .rs-connect {
   display: block;
