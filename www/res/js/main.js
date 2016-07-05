@@ -69,6 +69,13 @@ function resizePlayerBlock() {
   }
 }
 
+function resizeCandidatBlock() {
+  var getHeightDescriptionRightBlock = $('#candidats .right-column').height(),
+      setHeightDescriptionLeftBlock = $('#candidats .left-column');
+  
+  $(setHeightDescriptionLeftBlock).height(getHeightDescriptionRightBlock);
+}
+
 function loginPopInConnexion() {
   $('.navbar-right').on('mouseover', function () {
     $('#login-pop-in').fadeIn();
@@ -108,6 +115,7 @@ $(function () {
   resizePlayerBlock();
   homepageVideoLauncher();
   homepageVideoOut();
+  resizeCandidatBlock();
 
   $(window).on('resize', function () {
     windowWidth = $(window).width();

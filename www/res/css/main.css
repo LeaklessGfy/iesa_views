@@ -568,35 +568,73 @@ p.link-initial a:focus {
   }
 }
 
-#candidats .left-column img {
-  width: 100%;
-  height: auto;
+#candidats .left-column {
+  background-image: url('../img/background-opacity.png'), url('../img/avatar/1.jpg');
+  background-repeat: repeat, no-repeat;
+  background-position: center center, center center;
+  background-size: auto, cover;
 }
 
-#candidats .right-column .candidat-profil-description {
+#candidats .left-column img {
+  position: relative;
+  top: 3em;
+  left: 50%;
+  width: 70%;
+  height: auto;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border: 1em solid #d1aa03;
+  border-radius: 50%;
+}
+
+#candidats .left-column figcaption {
+  position: relative;
+  bottom: -5em;
+  text-align: center;
+}
+
+#candidats .left-column .name {
+  font-size: 2rem;
+  -webkit-transition: all ease .2s;
+  transition: all ease .2s;
+}
+
+#candidats .left-column .name.first {
+  font-family: 'Open Sans Regular', Helvetica, Arial, sans-serif;
+  text-transform: capitalize;
+  color: #f5f5f5;
+}
+
+#candidats .left-column .name.last {
+  font-family: 'Open Sans Bold', Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  color: #d1aa03;
+}
+
+#candidats .right-column .candidat-profil-description-top {
   padding: 40px;
   color: #777;
   background: #f5f5f5;
   box-shadow: inset 0 -40px 78px -7px rgba(0, 0, 0, .2);
 }
 
-#candidats .right-column .candidat-profil-description a {
+#candidats .right-column .candidat-profil-description-top a {
   text-decoration: none;
 }
 
-#candidats .right-column .candidat-profil-description .icon-heart-like {
+#candidats .right-column .candidat-profil-description-top .icon-heart-like {
   font-size: 3.7rem;
   cursor: pointer;
   color: #d1aa03;
 }
 
-#candidats .right-column .candidat-profil-description .icon-heart-like:hover,
-#candidats .right-column .candidat-profil-description .icon-heart-like:focus {
+#candidats .right-column .candidat-profil-description-top .icon-heart-like:hover,
+#candidats .right-column .candidat-profil-description-top .icon-heart-like:focus {
   -webkit-transition: all .3s;
   transition: all .3s;
 }
 
-#candidats .right-column .candidat-profil-description .like-me-a-lot {
+#candidats .right-column .candidat-profil-description-top .like-me-a-lot {
   font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
   font-size: 2rem;
   position: relative;
@@ -606,7 +644,7 @@ p.link-initial a:focus {
   transition: all .3s;
 }
 
-#candidats .right-column .candidat-profil-description .age {
+#candidats .right-column .candidat-profil-description-top .age {
   font-family: 'Montserrat Bold', Helvetica, Arial, sans-serif;
   font-size: 2.5rem;
   position: relative;
@@ -615,13 +653,13 @@ p.link-initial a:focus {
   padding: 0 25px;
 }
 
-#candidats .right-column .candidat-profil-description .age span:last-of-type {
+#candidats .right-column .candidat-profil-description-top .age span:last-of-type {
   font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
   font-size: 2rem;
 }
 
-#candidats .right-column .candidat-profil-description .country,
-#candidats .right-column .candidat-profil-description .astro {
+#candidats .right-column .candidat-profil-description-top .country,
+#candidats .right-column .candidat-profil-description-top .astro {
   font-family: 'Montserrat Regular', Helvetica, Arial, sans-serif;
   font-size: 3rem;
   position: relative;
@@ -629,17 +667,17 @@ p.link-initial a:focus {
   margin: 0 .5em;
 }
 
-#candidats .right-column .candidat-profil-description .country span:last-of-type,
-#candidats .right-column .candidat-profil-description .astro span:last-of-type {
+#candidats .right-column .candidat-profil-description-top .country span:last-of-type,
+#candidats .right-column .candidat-profil-description-top .astro span:last-of-type {
   font-size: 2rem;
   padding-left: 25px;
 }
 
-#candidats .right-column .candidat-profil-description .icon-facebook,
-#candidats .right-column .candidat-profil-description .icon-twitter,
-#candidats .right-column .candidat-profil-description .icon-youtube,
-#candidats .right-column .candidat-profil-description .icon-instagram {
-  font-size: 4rem;
+#candidats .right-column .candidat-profil-description-top .icon-facebook,
+#candidats .right-column .candidat-profil-description-top .icon-twitter,
+#candidats .right-column .candidat-profil-description-top .icon-youtube,
+#candidats .right-column .candidat-profil-description-top .icon-instagram {
+  font-size: 3rem;
   position: relative;
   top: 10px;
   margin: 5px;
@@ -648,41 +686,47 @@ p.link-initial a:focus {
   border-radius: 50%;
 }
 
-#candidats .right-column .candidat-profil-description .icon-facebook {
-  margin-left: 1em;
+#candidats .right-column .candidat-profil-description-top .icon-facebook {
+  margin-left: 3.5em;
   background: #3a5897;
 }
 
-#candidats .right-column .candidat-profil-description .icon-facebook:hover,
-#candidats .right-column .candidat-profil-description .icon-facebook:focus {
+#candidats .right-column .candidat-profil-description-top .icon-facebook:hover,
+#candidats .right-column .candidat-profil-description-top .icon-facebook:focus {
   background: #334d85;
 }
 
-#candidats .right-column .candidat-profil-description .icon-twitter {
+#candidats .right-column .candidat-profil-description-top .icon-twitter {
   background: #00abed;
 }
 
-#candidats .right-column .candidat-profil-description .icon-twitter:hover,
-#candidats .right-column .candidat-profil-description .icon-twitter:focus {
+#candidats .right-column .candidat-profil-description-top .icon-twitter:hover,
+#candidats .right-column .candidat-profil-description-top .icon-twitter:focus {
   background: #0099d4;
 }
 
-#candidats .right-column .candidat-profil-description .icon-youtube {
+#candidats .right-column .candidat-profil-description-top .icon-youtube {
   background: #c6312c;
 }
 
-#candidats .right-column .candidat-profil-description .icon-youtube:hover,
-#candidats .right-column .candidat-profil-description .icon-youtube:focus {
+#candidats .right-column .candidat-profil-description-top .icon-youtube:hover,
+#candidats .right-column .candidat-profil-description-top .icon-youtube:focus {
   background: #b12c27;
 }
 
-#candidats .right-column .candidat-profil-description .icon-instagram {
+#candidats .right-column .candidat-profil-description-top .icon-instagram {
   background: #000;
 }
 
-#candidats .right-column .candidat-profil-description .icon-instagram:hover,
-#candidats .right-column .candidat-profil-description .icon-instagram:focus {
-  background: black;
+#candidats .right-column .candidat-profil-description-top .icon-instagram:hover,
+#candidats .right-column .candidat-profil-description-top .icon-instagram:focus {
+  background: #0d0d0d;
+}
+
+#candidats .right-column .candidat-profil-description-bottom {
+  padding: 40px;
+  color: #777;
+  background: #fff;
 }
 
 .rs-connect {

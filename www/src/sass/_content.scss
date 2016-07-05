@@ -47,13 +47,42 @@
 
 #candidats {
   .left-column {
+    background-image: url('../img/background-opacity.png'), url('../img/avatar/1.jpg');
+    background-position: center center, center center;
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
     img {
-      width: 100%;
-      height: auto;
+        width: 70%;
+        height: auto;
+        border: 1em solid $primary-color;
+        border-radius: 50%;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 3em;
+    }
+    figcaption {
+      position: relative;
+      bottom: -5em;
+      text-align: center;
+    }
+    .name {
+      font-size: 2rem;
+      transition: all ease .2s;
+      &.first {
+        font-family: $opensans-regular;
+        color: $secondary-color-dark;
+        text-transform: capitalize;
+      }
+      &.last {
+        font-family: $opensans-bold;
+        color: $primary-color;
+        text-transform: uppercase;
+      }
     }
   }
   .right-column {
-    .candidat-profil-description {
+    .candidat-profil-description-top {
       background: $secondary-color-dark;
       padding: 40px;
       box-shadow: inset 0px -40px 78px -7px rgba(0,0,0,0.2);
@@ -108,13 +137,13 @@
         position: relative;
         top: 10px;
         color: $secondary-color-light;
-        font-size: 4rem;
+        font-size: 3rem;
         padding: .2em;
         border-radius: 50%;
         margin: 5px;
       }
       .icon-facebook {
-        margin-left: 1em;
+        margin-left: 3.5em;
         background: #3a5897;
         &:hover,
         &:focus {
@@ -139,9 +168,14 @@
         background: #000000;
         &:hover,
         &:focus {
-          background: darken(#000000, 5%);
+          background: lighten(#000000, 5%);
         }
       }
+    }
+    .candidat-profil-description-bottom {
+      background: $secondary-color-light;
+      padding: 40px;
+      color: $tertiary-color-dark;
     }
   }
 }

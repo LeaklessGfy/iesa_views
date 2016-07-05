@@ -12,8 +12,7 @@
 
       <main id="candidats" class="container">
         <div class="row">
-          <div class="col-xs-12 col-md-4 left-column">
-            <div class="candidat-background" style="background: url('res/img/avatar/1.jpg') center center / cover"><!-- en prévision du php pour le bg--></div>
+          <div class="col-xs-12 col-md-4 left-column"><!-- bg à rajouter ici en php pour rendre dynamique-->
             <figure>
               <img src="res/img/avatar/1.jpg" alt="">
               <figcaption><span class="name first">Didier</span><br><span class="name last">Selbonne</span></figcaption>
@@ -21,7 +20,7 @@
           </div>
 
           <div class="col-xs-12 col-md-8 right-column">
-            <div class="col-xs-12 candidat-profil-description">
+            <div class="col-xs-12 candidat-profil-description-top">
               <p>
                 <span class="icon-heart-like"></span><span class="like-me-a-lot">1723</span>
                 <span class="age">25 <span>ans</span></span>
@@ -35,8 +34,9 @@
                 <a href="#"><span class="icon-youtube"></span></a>
                 <a href="#"><span class="icon-instagram"></span></a>
               </p>
-              
-              
+            </div>
+            <div class="col-xs-12 candidat-profil-description-bottom">
+              <p>Didier était un grand garçon, aux yeux bleus et aux cheveux blonds… Pour donner à votre phrase plus d’originalité et pour éviter les clichés, vous pouvez avoir recours à un présentatif ou à une tournure exclamative ou interrogative. Son deuxième prénom est Jawad et il aime prêter son appart.</p>
             </div>
           </div>
         </div>
