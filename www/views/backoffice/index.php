@@ -9,7 +9,7 @@
 
 	<!-- ************** STYLESHEET ************** -->
 	<link rel="stylesheet" href="res/css/bootstrap.min.old.css">
-	<title>Admin</title>
+	<title>Fame On - Administration</title>
 </head>
 <body>
 	<div class="container">

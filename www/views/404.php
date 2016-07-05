@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../res/css/bootstrap.min.css">
   <link rel="stylesheet" href="../res/css/main.css">
   <!-- ************ END STYLESHEET ************ -->
-    <title>Fame on - La page qui ne mène à rien...</title>
+    <title>Fame on - Maxi fail - La page qui ne mène à rien...</title>
     <meta name="description" content="C'est bien d'être arrivé jusqu'ici... Mais ca ne sert finalement à rien, si ce n'est pour voir cette magnifique page 404.">
 </head>
 
