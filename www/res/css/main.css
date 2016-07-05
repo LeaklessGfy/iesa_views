@@ -611,6 +611,23 @@ p.link-initial a:focus {
   color: #d1aa03;
 }
 
+@media (max-width: 768px) {
+  #candidats .left-column img {
+    top: 1em;
+  }
+
+  #candidats .left-column figcaption {
+    bottom: 0;
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 992px) {
+  #candidats .left-column {
+    margin-bottom: 2em;
+  }
+}
+
 #candidats .right-column .candidat-profil-description-top {
   padding: 40px;
   color: #777;
@@ -721,6 +738,23 @@ p.link-initial a:focus {
 #candidats .right-column .candidat-profil-description-top .icon-instagram:hover,
 #candidats .right-column .candidat-profil-description-top .icon-instagram:focus {
   background: #0d0d0d;
+}
+
+@media (max-width: 768px) {
+  #candidats .right-column .candidat-profil-description-top .age {
+    font-size: 2rem;
+  }
+
+  #candidats .right-column .candidat-profil-description-top .icon-facebook,
+    #candidats .right-column .candidat-profil-description-top .icon-twitter,
+    #candidats .right-column .candidat-profil-description-top .icon-youtube,
+    #candidats .right-column .candidat-profil-description-top .icon-instagram {
+    margin: 0;
+  }
+
+  #candidats .right-column .candidat-profil-description-top .icon-facebook {
+    margin-left: 1.5em;
+  }
 }
 
 #candidats .right-column .candidat-profil-description-bottom {

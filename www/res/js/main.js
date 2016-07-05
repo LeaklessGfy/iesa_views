@@ -70,10 +70,12 @@ function resizePlayerBlock() {
 }
 
 function resizeCandidatBlock() {
-  var getHeightDescriptionRightBlock = $('#candidats .right-column').height(),
-      setHeightDescriptionLeftBlock = $('#candidats .left-column');
-  
-  $(setHeightDescriptionLeftBlock).height(getHeightDescriptionRightBlock);
+  if ($(window).width() > 991) {
+    var getHeightDescriptionRightBlock = $('#candidats .right-column').height(),
+        setHeightDescriptionLeftBlock = $('#candidats .left-column');
+
+    $(setHeightDescriptionLeftBlock).height(getHeightDescriptionRightBlock);
+  }
 }
 
 function loginPopInConnexion() {
@@ -123,6 +125,8 @@ $(function () {
     loginPopInConnexion();
     resizeContent();
     resizePlayerBlock();
+    resizeCandidatBlock();
+    
     if (windowWidth > 767) {
       $(".navbar-collapse").show();
     }

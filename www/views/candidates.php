@@ -82,7 +82,7 @@
             <a href="<?php $this->utils->generateUrl("/candidat"); ?>">
               <figure class="col-sm-4 col-md-6">
                 <img src="res/img/avatar/8.jpg" alt="">
-                <figcaption><span class="name first">PE</span><br><span class="name last">S</span></figcaption>
+                <figcaption><span class="name first">Damien</span><br><span class="name last">Flosi</span></figcaption>
               </figure>
             </a>
             <a href="<?php $this->utils->generateUrl("/candidat"); ?>">

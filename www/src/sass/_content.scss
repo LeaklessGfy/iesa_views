@@ -80,6 +80,18 @@
         text-transform: uppercase;
       }
     }
+    @media (max-width: $screen-sm-min) {
+      img {
+        top: 1em;
+      }
+      figcaption {
+        bottom: 0;
+        margin-top: 2em;
+      }
+    }
+    @media (max-width: $screen-md-min) {
+      margin-bottom: 2em;
+    }
   }
   .right-column {
     .candidat-profil-description-top {
@@ -169,6 +181,20 @@
         &:hover,
         &:focus {
           background: lighten(#000000, 5%);
+        }
+      }
+      @media (max-width: $screen-sm-min) {
+        .age {
+          font-size: 2rem;
+        }
+        .icon-facebook,
+        .icon-twitter,
+        .icon-youtube,
+        .icon-instagram {
+          margin: 0;
+        }
+        .icon-facebook {
+          margin-left: 1.5em;
         }
       }
     }
