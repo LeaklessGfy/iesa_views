@@ -42,6 +42,7 @@ class Controller {
 
         $router->map('GET', '/live', function() {
         	$results = $this->api->get('scripts');
+        	$candidates = $this->api->get('candidates', array("join" => "users"));
 
     		require __DIR__ . '/../../views/live.php';
 		});

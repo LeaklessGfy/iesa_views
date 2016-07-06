@@ -46,6 +46,19 @@
                   </p>
                 </div>
               </div>
+              <?php foreach ($candidates as $key => $value) {
+                echo '<div class="col-xs-12 candidate king-of-fame">' .
+                '<div class="col-xs-4 col-md-4">' .
+                '<img src="'.$value['user']['avatar'].'" alt="">' .
+                '</div>' .
+                '<div class="col-xs-7 col-xs-offset-1 col-md-7">' .
+                '<a href="#"><span>'. $value['user']['name'] .'</span> ' . $value['user']['lastname'] . '</a>' .
+                '<p>'.
+                '<span class="icon-heart-like"></span><span class="like-me-a-lot">' . $value['hype'] . '</span>' .
+                '<span class="icon-share-ico"></span><a href="" class="share-me-a-lot">Partager son profil</a>' .
+                '</p>' .
+                '</div></div>';
+              } ?>
             </div>
             <div class="row">
               <div class="slide-twitter-timeline col-xs-12">
@@ -68,7 +81,7 @@
               '<p>' . $value['description'] . '</p>' .
               '<button onclick="window.location =\'' . $this->utils->getUrl('/api/participate') . "/" . $value['id'] .'\';" class="vote-yes icon-vote"></button>' .
               '<button href="#" class="vote-no icon-vote"></button>' .
-              '<div class="row"><a href="#" class="see-results">Voir les résultats</a></div>' .
+              '<div class="row">' . $value['hype'] . '</div>' .
               '</div>';
             } 
           ?>
