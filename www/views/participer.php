@@ -30,19 +30,19 @@
           <h1 class="text-center"><img src="res/img/participe-toi-aussi.png" alt="Participe toi aussi"></h1>
           <form id="participe-form" class="text-center" method="POST">
             <span class="input">
-              <input class="input__field" type="text" name="user[email]" id="user-email" autofocus>
+              <input class="input__field" type="text" name="user[email]" id="user-email" autofocus required>
               <label class="input__label" for="user-email">
                 <span class="input__label-content">Email</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[lastname]" id="user-lastname">
+              <input class="input__field" type="text" name="user[lastname]" id="user-lastname" required>
               <label class="input__label" for="user-lastname">
                 <span class="input__label-content">Nom</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[firstname]" id="user-firstname">
+              <input class="input__field" type="text" name="user[firstname]" id="user-firstname" required>
               <label class="input__label" for="user-firstname">
                 <span class="input__label-content">Prénom</span>
               </label>
@@ -54,43 +54,43 @@
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[age]" id="user-age">
+              <input class="input__field" type="text" name="user[age]" id="user-age" required>
               <label class="input__label" for="user-age">
                 <span class="input__label-content">Âge</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[adress]" id="user-adresse">
+              <input class="input__field" type="text" name="user[adress]" id="user-adresse" required>
               <label class="input__label" for="user-adress">
                 <span class="input__label-content">Adresse postale</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[zipcode]" id="user-zipcode">
+              <input class="input__field" type="text" name="user[zipcode]" id="user-zipcode" required>
               <label class="input__label" for="user-zipcode">
                 <span class="input__label-content">Code postale</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[city]" id="user-city">
+              <input class="input__field" type="text" name="user[city]" id="user-city" required>
               <label class="input__label" for="user-city">
                 <span class="input__label-content">Ville</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[country]" id="user-country">
+              <input class="input__field" type="text" name="user[country]" id="user-country" required>
               <label class="input__label" for="user-country">
                 <span class="input__label-content">Pays</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[phone]" id="user-phone">
+              <input class="input__field" type="text" name="user[phone]" id="user-phone" required>
               <label class="input__label" for="user-phone">
                 <span class="input__label-content">Téléphone</span>
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="text" name="user[motivations]" id="user-motivations">
+              <input class="input__field" type="text" name="user[motivations]" id="user-motivations" required>
               <label class="input__label" for="user-motivations">
                 <span class="input__label-content">Motivations</span>
               </label>
@@ -102,7 +102,7 @@
               </label>
             </span>
             <span class="input">
-              <input class="input__field" type="password" name="user[password]" id="user-password">
+              <input class="input__field" type="password" name="user[password]" id="user-password" required>
               <label class="input__label" for="user-password">
                 <span class="input__label-content">Password</span>
               </label>
