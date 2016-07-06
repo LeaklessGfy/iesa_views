@@ -829,22 +829,11 @@ p.link-initial a:focus {
   background: none;
 }
 
-#vote-activities .slider-activities .slick-list .slick-track .slick-slide button:last-of-type {
-  -webkit-transform: rotate(180deg) scale(.8);
-          transform: rotate(180deg) scale(.8);
-}
-
 #vote-activities .slider-activities .slick-list .slick-track .slick-slide button:hover,
 #vote-activities .slider-activities .slick-list .slick-track .slick-slide button:focus {
   -webkit-transform: scale(1);
           transform: scale(1);
   color: #d1aa03;
-}
-
-#vote-activities .slider-activities .slick-list .slick-track .slick-slide button:hover:last-of-type,
-#vote-activities .slider-activities .slick-list .slick-track .slick-slide button:focus:last-of-type {
-  -webkit-transform: rotate(180deg) scale(1);
-          transform: rotate(180deg) scale(1);
 }
 
 #vote-activities .slider-activities .slick-dots {
@@ -1048,6 +1037,10 @@ p.link-initial a:focus {
 #block-player #aside-player {
   position: relative;
   min-height: 100%;
+}
+
+#block-player #aside-player .slide-candidates {
+  overflow-x: hidden;
 }
 
 #block-player #aside-player .slide-candidates .candidate {

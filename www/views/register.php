@@ -17,13 +17,13 @@
           <h1 class="text-center"><img src="res/img/inscription.png" alt="Inscription"></h1>
           <form id="connexion" class="text-center" method="POST">
             <span class="input">
-              <input class="input__field" type="text" name="user[email]" id="user-email" autofocus>
+              <input class="input__field" type="text" name="user[email]" id="user-email" autofocus required>
               <label class="input__label" for="user-email">
                 <span class="input__label-content">Email</span>
             </label>
             </span>
             <span class="input">
-              <input class="input__field" type="password" name="user[password]" id="user-password">
+              <input class="input__field" type="password" name="user[password]" id="user-password" required>
               <label class="input__label" for="user-password">
                 <span class="input__label-content">Mot de passe</span>
             </label>

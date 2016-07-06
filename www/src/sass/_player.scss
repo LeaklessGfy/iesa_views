@@ -10,6 +10,7 @@
     min-height: 100%;
     position: relative;
     .slide-candidates {
+      overflow-x: hidden;
       .candidate {
         img {
           border: 4px solid $primary-color;

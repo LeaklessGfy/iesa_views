@@ -12,13 +12,13 @@
 
       <main id="candidates" class="container">
         <h1 class="text-center"><img src="res/img/decouvrez-et-votez.png" alt="Découvrez et votez pour les candidats"></h1>
-          <?php
+          <!--<?php
             if($results != false) {
               foreach ($results as $value) {
                 $img = '<img src="res/img/avatar-empty.png" alt="" class="img-thumbnail">';
 
                 if($value['user']['avatar'] != null) {
-                  $img = '<img src="res/img/'.  htmlspecialchars($value['user']['avatar'], ENT_QUOTES, 'UTF-8') .'" alt="" class="img-thumbnail">';
+                  $img = '<img src="res/img/avatar/'.  htmlspecialchars($value['user']['avatar'], ENT_QUOTES, 'UTF-8') .'" alt="" class="img-thumbnail">';
                 }
 
                 echo '<figure class="col-xs-6 col-sm-4 col-md-2">' .
@@ -27,7 +27,7 @@
                 '</figure>';
               }
             }
-          ?>
+          ?>-->
 
         <div class="row list-candidates">
           <div class="col-md-4 overflow-hidden no-padding">

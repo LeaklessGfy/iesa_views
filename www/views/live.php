@@ -34,31 +34,21 @@
         <aside id="aside-player" class="col-md-4">
           <div class="slider-live-tweet-candidates">
             <div class="row slide-candidates">
-              <div class="col-xs-12 candidate king-of-fame">
-                <div class="col-xs-4 col-md-4">
-                  <img src="res/img/avatar/1.jpg" alt="">
-                </div>
-                <div class="col-xs-7 col-xs-offset-1 col-md-7">
-                  <a href="#"><span>Kaylee</span> Carlson</a>
-                  <p>
-                    <span class="icon-heart-like"></span><span class="like-me-a-lot">1723</span>
-                    <span class="icon-share-ico"></span><a href="" class="share-me-a-lot">Partager son profil</a>
-                  </p>
-                </div>
-              </div>
+              <div class="bloc-overflow-hidden">
               <?php foreach ($candidates as $key => $value) {
                 echo '<div class="col-xs-12 candidate king-of-fame">' .
                 '<div class="col-xs-4 col-md-4">' .
-                '<img src="'.$value['user']['avatar'].'" alt="">' .
+                '<img src="res/img/avatar/'.$value['user']['avatar'].'" alt="">' .
                 '</div>' .
                 '<div class="col-xs-7 col-xs-offset-1 col-md-7">' .
                 '<a href="#"><span>'. $value['user']['name'] .'</span> ' . $value['user']['lastname'] . '</a>' .
                 '<p>'.
-                '<span class="icon-heart-like"></span><span class="like-me-a-lot">' . $value['hype'] . '</span>' .
+                '<span class="icon-heart-like" onclick="window.location =\'' . $this->utils->getUrl('/api/participate') . "/" . $value['id'] .'\';"></span><span class="like-me-a-lot">' . $value['hype'] . '</span>' .
                 '<span class="icon-share-ico"></span><a href="" class="share-me-a-lot">Partager son profil</a>' .
                 '</p>' .
                 '</div></div>';
               } ?>
+              </div>
             </div>
             <div class="row">
               <div class="slide-twitter-timeline col-xs-12">
@@ -77,10 +67,9 @@
           <?php 
             foreach ($results as $key => $value) {
               echo '<div class="col-xs-12">' .
-              '<h2>Activité ' . ($key + 1) . '</h2>' .
+              '<h2>Activité ' . ($key + 1) . ' : ' . $value['title'] . '</h2>' .
               '<p>' . $value['description'] . '</p>' .
               '<button onclick="window.location =\'' . $this->utils->getUrl('/api/participate') . "/" . $value['id'] .'\';" class="vote-yes icon-vote"></button>' .
-              '<button href="#" class="vote-no icon-vote"></button>' .
               '<div class="row">' . $value['hype'] . '</div>' .
               '</div>';
             } 

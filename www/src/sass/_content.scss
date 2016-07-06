@@ -257,16 +257,10 @@
             color: $tertiary-color-light;
             transform: scale(.8);
             transition: all .3s;
-            &:last-of-type {
-              transform: rotate(180deg) scale(.8);
-            }
             &:hover,
             &:focus {
               color: $primary-color;
               transform: scale(1);
-              &:last-of-type {
-                transform: rotate(180deg) scale(1);
-              }
             }
           }
         }

@@ -60,6 +60,7 @@ function resizePlayerBlock() {
     $(setHeightPlayerToAside).height(getHeightPlayer);
     $('#block-player').height(getHeightPlayer);
     $('#block-player #aside-player .slide-twitter-timeline').height(getHeightAsideWithoutDots);
+    $('#block-player #aside-player  .slide-candidates').height(getHeightAsideWithoutDots);
   } else if ($(window).width() > 767 && $(window).width() < 992) {
     $('#block-player').height('auto');
     $('#block-player #aside-player .slide-twitter-timeline').height(650);
