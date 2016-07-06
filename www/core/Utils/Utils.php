@@ -26,7 +26,7 @@ class Utils {
 			$user = unserialize($user);
 		}
 		$user->update($instance);
-		
+
 		$_SESSION['user'] = serialize($user);
 	}
 
@@ -40,9 +40,13 @@ class Utils {
 		return $this->creds->getBasePath() . $url;
 	}
 
-	public function getUser() 
+	public function getUser()
 	{
-		return unserialize($_SESSION['user']); 
+    if(!isset($_SESSION['user'])) {
+      return null;
+    }
+    
+		return unserialize($_SESSION['user']);
 	}
 
 	public function getAdmin()
