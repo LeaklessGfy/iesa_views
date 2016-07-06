@@ -1,4 +1,4 @@
-footer {
+/*footer {
   border-top: 1px solid $primary-color;
   padding: 10px 0;
   color: $secondary-color;
@@ -8,5 +8,51 @@ footer {
   }
   @media (max-width: 767px) {
     text-align: center;
+  }
+}*/
+
+footer {
+  border-top: 1px solid darken($secondary-color, 50%);;
+  padding: 22px 0;
+  color: $secondary-color;
+  img {
+    width: initial;
+  }
+}
+
+.copyright,
+.logo-agency {
+  display: inline-block;
+}
+
+.contact-us {
+  display: inline-block;
+  float: right;
+  a {
+    margin-left: 10px;
+  }
+}
+
+.legal-notice {
+  color: $secondary-color;
+  &:hover,
+  &:focus {
+    color: $secondary-color;
+  }
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    text-align: center;
+    display: block;
+}
+  .contact-us {
+    display: block;
+    text-align: center;
+    float: none;
+    margin: 15px 0;
+    a {
+      margin: 10px;
+    }
   }
 }
