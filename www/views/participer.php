@@ -101,6 +101,12 @@
                 <span class="input__label-content">Carte d'identité</span>
               </label>
             </span>
+            <span class="input">
+              <input class="input__field" type="password" name="user[password]" id="user-password">
+              <label class="input__label" for="user-password">
+                <span class="input__label-content">Password</span>
+              </label>
+            </span>
             <p class="link-initial text-center">En t'inscrivant, tu acceptes les <a href="#">Conditions Générales d'Utilisation</a> et la <a href="#">Politique de confidentialité</a> de Fame On.</p>
             <input class="btn btn-shine" type="submit" value="Inscription" name="action">
           </form>

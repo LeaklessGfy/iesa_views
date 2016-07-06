@@ -36,8 +36,14 @@
           <li><a <?php if($url=='live') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/live"); ?>">TV</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+        <?php if(!$this->utils->getUser()) { ?>
           <li><a <?php if($url=='connexion') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/connexion"); ?>">Connexion</a></li>
         </ul>
+        <?php } else { ?>
+          <li>
+            <a <?php if($url == 'profile') echo 'class="active"'; ?> href="<?php $this->utils->generateUrl("/profile"); ?>">Profile</a>
+          </li>
+        <?php } ?>
       </div>
     </div>
 

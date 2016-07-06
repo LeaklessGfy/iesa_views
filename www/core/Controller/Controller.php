@@ -22,11 +22,17 @@ class Controller {
     		require __DIR__ . '/../../views/index.php';
 		});
      
-     $router->map('GET', '/candidat', function() {
+    	$router->map('GET', '/candidat', function() {
     		require __DIR__ . '/../../views/candidat.php';
 		});
      
-     $router->map('GET', '/participer', function() {
+     	$router->map('GET|POST', '/participer', function() {
+     		if($_SERVER['REQUEST_METHOD'] === 'POST') {
+				$result = $this->api->post("users", $_POST['user']);
+
+				return header('Location: ' . $this->utils->getUrl("/connexion")); 
+			}
+
     		require __DIR__ . '/../../views/participer.php';
 		});
 
