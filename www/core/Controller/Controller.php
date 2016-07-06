@@ -41,6 +41,8 @@ class Controller {
 		});
 
         $router->map('GET', '/live', function() {
+        	$results = $this->api->get('scripts');
+
     		require __DIR__ . '/../../views/live.php';
 		});
       
@@ -84,6 +86,19 @@ class Controller {
 
 			$result = $this->api->post('swipes');
 			echo($result);
+		});
+
+		$router->map('GET', '/api/participate/[i:id]', function($id) {
+			$user = $this->utils->getUser();
+
+			if(!$user) {
+				return header('Location: ' . $this->utils->getUrl("/"));
+			}
+
+			$script = $this->api->get("scripts/" . $id);
+			$result = $this->api->put("scripts/" . $id, array("hype" => ($script['hype'] + 1)));
+
+			return header('Location: ' . $this->utils->getUrl("/live"));
 		});
 
 		$router->map('GET|POST', '/connexion', function() {
