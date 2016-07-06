@@ -30,6 +30,10 @@
             </span>
             <input class="btn btn-shine" type="submit" value="Connexion" name="action">
           </form>
+          
+          <button type="button" class="btn rs-connect rs-connect-fb">Se connecter avec Facebook</button>
+          <button type="button" class="btn rs-connect rs-connect-tw">Se connecter avec Twitter</button>
+          
           <p class="link-initial text-center"><a href="#" title="Réinitialiser votre mot de passe">Mot de passe oublié ?</a>
             <br> Tu n'as pas de compte ? <a href="<?php $this->utils->generateUrl("/inscription"); ?>" title="Créer un compte sur Fame On">Inscris toi !</a></p>
         </div>

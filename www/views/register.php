@@ -31,9 +31,6 @@
             <input class="btn btn-shine" type="submit" value="S'inscrire" name="action">
           </form>
 
-          <button type="button" class="btn rs-connect rs-connect-fb">S'inscrire avec Facebook</button>
-          <button type="button" class="btn rs-connect rs-connect-tw">S'inscrire avec Twitter</button>
-
           <p class="link-initial text-center">En t'inscrivant, tu acceptes les <a href="#">Conditions Générales d'Utilisation</a> et la <a href="#">Politique de confidentialité</a> de Fame On.</p>
           <p class="link-initial text-center add-border-before border-light"> Tu as déjà un compte ? <a href="<?php $this->utils->generateUrl("/connexion"); ?>" title="Se connecter à Fame On">Connecte toi !</a></p>
         </div>
