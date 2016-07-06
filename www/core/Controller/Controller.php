@@ -109,9 +109,9 @@ class Controller {
 				if($result && count($result) > 0) {
 					$this->utils->authentificator($result[0]);
 
-					return header('Location: ' . $this->utils->getUrl("/")); 
+					return header('Location: ' . $this->utils->getUrl("/"));
 				} else {
-					echo "Wrong values";die;
+					return header('Location: ' . $this->utils->getUrl("/connexion"));
 				}
 			}
 
